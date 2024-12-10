@@ -25,10 +25,12 @@ Partial Class frmCadastroAlunos
         Me.tcAlunos = New System.Windows.Forms.TabControl()
         Me.TabPage1 = New System.Windows.Forms.TabPage()
         Me.groupBox1 = New System.Windows.Forms.GroupBox()
+        Me.cmbEstCivil = New System.Windows.Forms.ComboBox()
+        Me.Label29 = New System.Windows.Forms.Label()
         Me.lblCodigo = New System.Windows.Forms.Label()
         Me.btImagem = New System.Windows.Forms.Button()
         Me.txtUF = New System.Windows.Forms.TextBox()
-        Me.pgImagem = New System.Windows.Forms.PictureBox()
+        Me.pbImagem = New System.Windows.Forms.PictureBox()
         Me.txtCompl = New System.Windows.Forms.TextBox()
         Me.txtComplemento = New System.Windows.Forms.TextBox()
         Me.Label28 = New System.Windows.Forms.Label()
@@ -65,6 +67,9 @@ Partial Class frmCadastroAlunos
         Me.label6 = New System.Windows.Forms.Label()
         Me.TabPage2 = New System.Windows.Forms.TabPage()
         Me.GroupBox2 = New System.Windows.Forms.GroupBox()
+        Me.btInserirOcupacao = New System.Windows.Forms.Button()
+        Me.cmbOcupacaoResp = New System.Windows.Forms.ComboBox()
+        Me.cmbOcupacaoMae = New System.Windows.Forms.ComboBox()
         Me.Label20 = New System.Windows.Forms.Label()
         Me.txtCelPai = New System.Windows.Forms.MaskedTextBox()
         Me.Label15 = New System.Windows.Forms.Label()
@@ -72,9 +77,7 @@ Partial Class frmCadastroAlunos
         Me.Label10 = New System.Windows.Forms.Label()
         Me.txtCelMae = New System.Windows.Forms.MaskedTextBox()
         Me.Label9 = New System.Windows.Forms.Label()
-        Me.cmbOcupacaoResp = New System.Windows.Forms.ComboBox()
         Me.Label17 = New System.Windows.Forms.Label()
-        Me.cmbOcupacaoMae = New System.Windows.Forms.ComboBox()
         Me.Label11 = New System.Windows.Forms.Label()
         Me.cmbOcupacaoPai = New System.Windows.Forms.ComboBox()
         Me.btnVoltar = New System.Windows.Forms.Button()
@@ -99,14 +102,13 @@ Partial Class frmCadastroAlunos
         Me.rbNome = New System.Windows.Forms.RadioButton()
         Me.txtBuscarCPF = New System.Windows.Forms.MaskedTextBox()
         Me.dg = New System.Windows.Forms.DataGridView()
-        Me.btCancelar = New System.Windows.Forms.Button()
         Me.btnExcluir = New System.Windows.Forms.Button()
         Me.btSalvarEditar = New System.Windows.Forms.Button()
         Me.btNovo = New System.Windows.Forms.Button()
         Me.tcAlunos.SuspendLayout()
         Me.TabPage1.SuspendLayout()
         Me.groupBox1.SuspendLayout()
-        CType(Me.pgImagem, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.pbImagem, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.TabPage2.SuspendLayout()
         Me.GroupBox2.SuspendLayout()
         Me.Panel2.SuspendLayout()
@@ -122,7 +124,7 @@ Partial Class frmCadastroAlunos
         Me.tcAlunos.Location = New System.Drawing.Point(4, 52)
         Me.tcAlunos.Name = "tcAlunos"
         Me.tcAlunos.SelectedIndex = 0
-        Me.tcAlunos.Size = New System.Drawing.Size(1092, 213)
+        Me.tcAlunos.Size = New System.Drawing.Size(1124, 213)
         Me.tcAlunos.TabIndex = 35
         '
         'TabPage1
@@ -133,7 +135,7 @@ Partial Class frmCadastroAlunos
         Me.TabPage1.Location = New System.Drawing.Point(4, 22)
         Me.TabPage1.Name = "TabPage1"
         Me.TabPage1.Padding = New System.Windows.Forms.Padding(3)
-        Me.TabPage1.Size = New System.Drawing.Size(1084, 187)
+        Me.TabPage1.Size = New System.Drawing.Size(1116, 187)
         Me.TabPage1.TabIndex = 0
         Me.TabPage1.Text = "Informações do Estudante"
         '
@@ -143,10 +145,12 @@ Partial Class frmCadastroAlunos
             Or System.Windows.Forms.AnchorStyles.Left) _
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.groupBox1.BackColor = System.Drawing.Color.Transparent
+        Me.groupBox1.Controls.Add(Me.cmbEstCivil)
+        Me.groupBox1.Controls.Add(Me.Label29)
         Me.groupBox1.Controls.Add(Me.lblCodigo)
         Me.groupBox1.Controls.Add(Me.btImagem)
         Me.groupBox1.Controls.Add(Me.txtUF)
-        Me.groupBox1.Controls.Add(Me.pgImagem)
+        Me.groupBox1.Controls.Add(Me.pbImagem)
         Me.groupBox1.Controls.Add(Me.txtCompl)
         Me.groupBox1.Controls.Add(Me.txtComplemento)
         Me.groupBox1.Controls.Add(Me.Label28)
@@ -185,15 +189,37 @@ Partial Class frmCadastroAlunos
         Me.groupBox1.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
         Me.groupBox1.Name = "groupBox1"
         Me.groupBox1.Padding = New System.Windows.Forms.Padding(3, 4, 3, 4)
-        Me.groupBox1.Size = New System.Drawing.Size(1071, 173)
+        Me.groupBox1.Size = New System.Drawing.Size(1103, 173)
         Me.groupBox1.TabIndex = 23
         Me.groupBox1.TabStop = False
+        '
+        'cmbEstCivil
+        '
+        Me.cmbEstCivil.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.cmbEstCivil.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
+        Me.cmbEstCivil.FormattingEnabled = True
+        Me.cmbEstCivil.Items.AddRange(New Object() {"Solteiro", "Casado", "Separado", "Divorciado", "Viúvo"})
+        Me.cmbEstCivil.Location = New System.Drawing.Point(333, 64)
+        Me.cmbEstCivil.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
+        Me.cmbEstCivil.Name = "cmbEstCivil"
+        Me.cmbEstCivil.Size = New System.Drawing.Size(127, 21)
+        Me.cmbEstCivil.TabIndex = 5
+        '
+        'Label29
+        '
+        Me.Label29.AutoSize = True
+        Me.Label29.Font = New System.Drawing.Font("Verdana", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label29.Location = New System.Drawing.Point(336, 49)
+        Me.Label29.Name = "Label29"
+        Me.Label29.Size = New System.Drawing.Size(74, 13)
+        Me.Label29.TabIndex = 330
+        Me.Label29.Text = "Estado Civil"
         '
         'lblCodigo
         '
         Me.lblCodigo.AutoSize = True
         Me.lblCodigo.Font = New System.Drawing.Font("Verdana", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lblCodigo.Location = New System.Drawing.Point(382, 17)
+        Me.lblCodigo.Location = New System.Drawing.Point(594, 146)
         Me.lblCodigo.Name = "lblCodigo"
         Me.lblCodigo.Size = New System.Drawing.Size(14, 13)
         Me.lblCodigo.TabIndex = 329
@@ -201,47 +227,50 @@ Partial Class frmCadastroAlunos
         '
         'btImagem
         '
+        Me.btImagem.Cursor = System.Windows.Forms.Cursors.Hand
         Me.btImagem.FlatAppearance.BorderSize = 0
         Me.btImagem.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btImagem.Image = Global.MinhaEscola.My.Resources.Resources.camera
-        Me.btImagem.Location = New System.Drawing.Point(993, 122)
+        Me.btImagem.Location = New System.Drawing.Point(1016, 140)
         Me.btImagem.Name = "btImagem"
         Me.btImagem.Size = New System.Drawing.Size(39, 22)
-        Me.btImagem.TabIndex = 190
+        Me.btImagem.TabIndex = 16
         Me.btImagem.UseVisualStyleBackColor = True
         '
         'txtUF
         '
         Me.txtUF.Enabled = False
-        Me.txtUF.Location = New System.Drawing.Point(874, 64)
+        Me.txtUF.Location = New System.Drawing.Point(902, 64)
         Me.txtUF.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
         Me.txtUF.Name = "txtUF"
+        Me.txtUF.ReadOnly = True
         Me.txtUF.Size = New System.Drawing.Size(54, 20)
         Me.txtUF.TabIndex = 189
         '
-        'pgImagem
+        'pbImagem
         '
-        Me.pgImagem.Location = New System.Drawing.Point(950, 17)
-        Me.pgImagem.Name = "pgImagem"
-        Me.pgImagem.Size = New System.Drawing.Size(100, 100)
-        Me.pgImagem.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
-        Me.pgImagem.TabIndex = 328
-        Me.pgImagem.TabStop = False
+        Me.pbImagem.Location = New System.Drawing.Point(974, 14)
+        Me.pbImagem.Name = "pbImagem"
+        Me.pbImagem.Size = New System.Drawing.Size(120, 120)
+        Me.pbImagem.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+        Me.pbImagem.TabIndex = 328
+        Me.pbImagem.TabStop = False
         '
         'txtCompl
         '
-        Me.txtCompl.Location = New System.Drawing.Point(685, 64)
+        Me.txtCompl.Location = New System.Drawing.Point(713, 64)
         Me.txtCompl.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
         Me.txtCompl.Name = "txtCompl"
         Me.txtCompl.Size = New System.Drawing.Size(183, 20)
-        Me.txtCompl.TabIndex = 188
+        Me.txtCompl.TabIndex = 15
         '
         'txtComplemento
         '
         Me.txtComplemento.Enabled = False
-        Me.txtComplemento.Location = New System.Drawing.Point(515, 64)
+        Me.txtComplemento.Location = New System.Drawing.Point(543, 64)
         Me.txtComplemento.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
         Me.txtComplemento.Name = "txtComplemento"
+        Me.txtComplemento.ReadOnly = True
         Me.txtComplemento.Size = New System.Drawing.Size(159, 20)
         Me.txtComplemento.TabIndex = 187
         '
@@ -249,7 +278,7 @@ Partial Class frmCadastroAlunos
         '
         Me.Label28.AutoSize = True
         Me.Label28.Font = New System.Drawing.Font("Verdana", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label28.Location = New System.Drawing.Point(512, 49)
+        Me.Label28.Location = New System.Drawing.Point(540, 49)
         Me.Label28.Name = "Label28"
         Me.Label28.Size = New System.Drawing.Size(87, 13)
         Me.Label28.TabIndex = 186
@@ -257,28 +286,29 @@ Partial Class frmCadastroAlunos
         '
         'btConsultaCEP
         '
+        Me.btConsultaCEP.Cursor = System.Windows.Forms.Cursors.Hand
         Me.btConsultaCEP.FlatAppearance.BorderSize = 0
         Me.btConsultaCEP.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btConsultaCEP.Image = Global.MinhaEscola.My.Resources.Resources.View
-        Me.btConsultaCEP.Location = New System.Drawing.Point(520, 23)
+        Me.btConsultaCEP.Image = Global.MinhaEscola.My.Resources.Resources.Find1
+        Me.btConsultaCEP.Location = New System.Drawing.Point(548, 23)
         Me.btConsultaCEP.Name = "btConsultaCEP"
         Me.btConsultaCEP.Size = New System.Drawing.Size(39, 22)
-        Me.btConsultaCEP.TabIndex = 185
+        Me.btConsultaCEP.TabIndex = 13
         Me.btConsultaCEP.UseVisualStyleBackColor = True
         '
         'txtNum
         '
-        Me.txtNum.Location = New System.Drawing.Point(451, 64)
+        Me.txtNum.Location = New System.Drawing.Point(479, 64)
         Me.txtNum.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
         Me.txtNum.Name = "txtNum"
         Me.txtNum.Size = New System.Drawing.Size(54, 20)
-        Me.txtNum.TabIndex = 184
+        Me.txtNum.TabIndex = 14
         '
         'Label24
         '
         Me.Label24.AutoSize = True
         Me.Label24.Font = New System.Drawing.Font("Verdana", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label24.Location = New System.Drawing.Point(448, 49)
+        Me.Label24.Location = New System.Drawing.Point(476, 49)
         Me.Label24.Name = "Label24"
         Me.Label24.Size = New System.Drawing.Size(25, 13)
         Me.Label24.TabIndex = 183
@@ -291,62 +321,61 @@ Partial Class frmCadastroAlunos
         Me.btnProximo.Cursor = System.Windows.Forms.Cursors.Hand
         Me.btnProximo.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnProximo.ForeColor = System.Drawing.Color.White
-        Me.btnProximo.Location = New System.Drawing.Point(809, 141)
+        Me.btnProximo.Location = New System.Drawing.Point(837, 140)
         Me.btnProximo.Name = "btnProximo"
         Me.btnProximo.Size = New System.Drawing.Size(123, 25)
-        Me.btnProximo.TabIndex = 172
+        Me.btnProximo.TabIndex = 17
         Me.btnProximo.Text = "Próximo..."
         Me.btnProximo.UseVisualStyleBackColor = False
         '
         'txtRG
         '
         Me.txtRG.BackColor = System.Drawing.Color.White
-        Me.txtRG.Enabled = False
         Me.txtRG.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.txtRG.ForeColor = System.Drawing.Color.Black
-        Me.txtRG.Location = New System.Drawing.Point(119, 64)
+        Me.txtRG.Location = New System.Drawing.Point(3, 64)
         Me.txtRG.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
         Me.txtRG.Name = "txtRG"
         Me.txtRG.Size = New System.Drawing.Size(134, 20)
-        Me.txtRG.TabIndex = 182
+        Me.txtRG.TabIndex = 3
         '
         'Label22
         '
         Me.Label22.AutoSize = True
         Me.Label22.Font = New System.Drawing.Font("Verdana", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label22.Location = New System.Drawing.Point(128, 49)
+        Me.Label22.Location = New System.Drawing.Point(5, 49)
         Me.Label22.Name = "Label22"
-        Me.Label22.Size = New System.Drawing.Size(67, 13)
+        Me.Label22.Size = New System.Drawing.Size(60, 13)
         Me.Label22.TabIndex = 181
-        Me.Label22.Text = "RG / RNE*"
+        Me.Label22.Text = "RG / RNE"
         '
         'txtCPF
         '
-        Me.txtCPF.Location = New System.Drawing.Point(3, 64)
+        Me.txtCPF.Location = New System.Drawing.Point(368, 24)
         Me.txtCPF.Mask = "000.000.000-00"
         Me.txtCPF.Name = "txtCPF"
-        Me.txtCPF.Size = New System.Drawing.Size(100, 20)
-        Me.txtCPF.TabIndex = 180
+        Me.txtCPF.Size = New System.Drawing.Size(92, 20)
+        Me.txtCPF.TabIndex = 2
         '
         'cmbAno
         '
         Me.cmbAno.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
         Me.cmbAno.FormattingEnabled = True
         Me.cmbAno.Items.AddRange(New Object() {"1960", "1961", "1962", "1963", "1964", "1965", "1966", "1967", "1968", "1969", "1970", "1971", "1972", "1973", "1974", "1975", "1976", "1977", "1978", "1979", "1980", "1981", "1982", "1983", "1984", "1985", "1986", "1987", "1988", "1989", "1990", "1991", "1992", "1993", "1994", "1995", "1996", "1997", "1998", "1999", "2000", "2001", "2002", "2003", "2004", "2005", "2006", "2007", "2008", "2009", "2010", "2011", "2012", "2013", "2014", "2015", "2016", "2017", "2018", "2019", "2020", "2021", "2022", "2023"})
-        Me.cmbAno.Location = New System.Drawing.Point(79, 104)
+        Me.cmbAno.Location = New System.Drawing.Point(75, 104)
         Me.cmbAno.Name = "cmbAno"
         Me.cmbAno.Size = New System.Drawing.Size(51, 21)
-        Me.cmbAno.TabIndex = 177
+        Me.cmbAno.TabIndex = 8
         '
         'cmbMes
         '
         Me.cmbMes.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
         Me.cmbMes.FormattingEnabled = True
         Me.cmbMes.Items.AddRange(New Object() {"01", "02", "03", "04", "05", "06", "07", "08", "09", "10", "11", "12"})
-        Me.cmbMes.Location = New System.Drawing.Point(40, 104)
+        Me.cmbMes.Location = New System.Drawing.Point(39, 104)
         Me.cmbMes.Name = "cmbMes"
         Me.cmbMes.Size = New System.Drawing.Size(37, 21)
-        Me.cmbMes.TabIndex = 176
+        Me.cmbMes.TabIndex = 7
         '
         'cmbDia
         '
@@ -356,13 +385,13 @@ Partial Class frmCadastroAlunos
         Me.cmbDia.Location = New System.Drawing.Point(3, 104)
         Me.cmbDia.Name = "cmbDia"
         Me.cmbDia.Size = New System.Drawing.Size(37, 21)
-        Me.cmbDia.TabIndex = 175
+        Me.cmbDia.TabIndex = 6
         '
         'Label14
         '
         Me.Label14.AutoSize = True
         Me.Label14.Font = New System.Drawing.Font("Verdana", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label14.Location = New System.Drawing.Point(448, 89)
+        Me.Label14.Location = New System.Drawing.Point(476, 89)
         Me.Label14.Name = "Label14"
         Me.Label14.Size = New System.Drawing.Size(46, 13)
         Me.Label14.TabIndex = 169
@@ -371,9 +400,10 @@ Partial Class frmCadastroAlunos
         'txtBairro
         '
         Me.txtBairro.Enabled = False
-        Me.txtBairro.Location = New System.Drawing.Point(451, 104)
+        Me.txtBairro.Location = New System.Drawing.Point(479, 104)
         Me.txtBairro.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
         Me.txtBairro.Name = "txtBairro"
+        Me.txtBairro.ReadOnly = True
         Me.txtBairro.Size = New System.Drawing.Size(244, 20)
         Me.txtBairro.TabIndex = 168
         '
@@ -381,7 +411,7 @@ Partial Class frmCadastroAlunos
         '
         Me.Label12.AutoSize = True
         Me.Label12.Font = New System.Drawing.Font("Verdana", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label12.Location = New System.Drawing.Point(6, 49)
+        Me.Label12.Location = New System.Drawing.Point(371, 11)
         Me.Label12.Name = "Label12"
         Me.Label12.Size = New System.Drawing.Size(36, 13)
         Me.Label12.TabIndex = 165
@@ -391,7 +421,7 @@ Partial Class frmCadastroAlunos
         '
         Me.Label5.AutoSize = True
         Me.Label5.Font = New System.Drawing.Font("Verdana", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label5.Location = New System.Drawing.Point(699, 89)
+        Me.Label5.Location = New System.Drawing.Point(727, 89)
         Me.Label5.Name = "Label5"
         Me.Label5.Size = New System.Drawing.Size(51, 13)
         Me.Label5.TabIndex = 43
@@ -401,17 +431,18 @@ Partial Class frmCadastroAlunos
         '
         Me.Label4.AutoSize = True
         Me.Label4.Font = New System.Drawing.Font("Verdana", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label4.Location = New System.Drawing.Point(876, 49)
+        Me.Label4.Location = New System.Drawing.Point(904, 49)
         Me.Label4.Name = "Label4"
-        Me.Label4.Size = New System.Drawing.Size(45, 13)
+        Me.Label4.Size = New System.Drawing.Size(21, 13)
         Me.Label4.TabIndex = 42
-        Me.Label4.Text = "Estado"
+        Me.Label4.Text = "UF"
         '
         'txtCidade
         '
         Me.txtCidade.Enabled = False
-        Me.txtCidade.Location = New System.Drawing.Point(702, 104)
+        Me.txtCidade.Location = New System.Drawing.Point(730, 104)
         Me.txtCidade.Name = "txtCidade"
+        Me.txtCidade.ReadOnly = True
         Me.txtCidade.Size = New System.Drawing.Size(230, 20)
         Me.txtCidade.TabIndex = 39
         '
@@ -419,7 +450,7 @@ Partial Class frmCadastroAlunos
         '
         Me.Label2.AutoSize = True
         Me.Label2.Font = New System.Drawing.Font("Verdana", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label2.Location = New System.Drawing.Point(454, 11)
+        Me.Label2.Location = New System.Drawing.Point(482, 11)
         Me.Label2.Name = "Label2"
         Me.Label2.Size = New System.Drawing.Size(41, 13)
         Me.Label2.TabIndex = 38
@@ -427,17 +458,17 @@ Partial Class frmCadastroAlunos
         '
         'txtCep
         '
-        Me.txtCep.Location = New System.Drawing.Point(449, 24)
+        Me.txtCep.Location = New System.Drawing.Point(477, 24)
         Me.txtCep.Mask = "00000-999"
         Me.txtCep.Name = "txtCep"
         Me.txtCep.Size = New System.Drawing.Size(69, 20)
-        Me.txtCep.TabIndex = 37
+        Me.txtCep.TabIndex = 12
         '
         'Label21
         '
         Me.Label21.AutoSize = True
         Me.Label21.Font = New System.Drawing.Font("Verdana", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label21.Location = New System.Drawing.Point(18, 89)
+        Me.Label21.Location = New System.Drawing.Point(5, 89)
         Me.Label21.Name = "Label21"
         Me.Label21.Size = New System.Drawing.Size(104, 13)
         Me.Label21.TabIndex = 36
@@ -447,7 +478,7 @@ Partial Class frmCadastroAlunos
         '
         Me.Label27.AutoSize = True
         Me.Label27.Font = New System.Drawing.Font("Verdana", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label27.Location = New System.Drawing.Point(276, 89)
+        Me.Label27.Location = New System.Drawing.Point(368, 89)
         Me.Label27.Name = "Label27"
         Me.Label27.Size = New System.Drawing.Size(48, 13)
         Me.Label27.TabIndex = 32
@@ -455,17 +486,17 @@ Partial Class frmCadastroAlunos
         '
         'txtCelular
         '
-        Me.txtCelular.Location = New System.Drawing.Point(276, 104)
+        Me.txtCelular.Location = New System.Drawing.Point(368, 104)
         Me.txtCelular.Mask = "(99) 9 9999-9999"
         Me.txtCelular.Name = "txtCelular"
         Me.txtCelular.Size = New System.Drawing.Size(89, 20)
-        Me.txtCelular.TabIndex = 31
+        Me.txtCelular.TabIndex = 10
         '
         'Label26
         '
         Me.Label26.AutoSize = True
         Me.Label26.Font = New System.Drawing.Font("Verdana", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label26.Location = New System.Drawing.Point(150, 89)
+        Me.Label26.Location = New System.Drawing.Point(194, 89)
         Me.Label26.Name = "Label26"
         Me.Label26.Size = New System.Drawing.Size(55, 13)
         Me.Label26.TabIndex = 30
@@ -473,18 +504,19 @@ Partial Class frmCadastroAlunos
         '
         'txtTelefone
         '
-        Me.txtTelefone.Location = New System.Drawing.Point(149, 104)
+        Me.txtTelefone.Location = New System.Drawing.Point(193, 104)
         Me.txtTelefone.Mask = "(99) 9999-9999"
         Me.txtTelefone.Name = "txtTelefone"
         Me.txtTelefone.Size = New System.Drawing.Size(92, 20)
-        Me.txtTelefone.TabIndex = 29
+        Me.txtTelefone.TabIndex = 9
         '
         'txtEndereco
         '
         Me.txtEndereco.Enabled = False
-        Me.txtEndereco.Location = New System.Drawing.Point(565, 24)
+        Me.txtEndereco.Location = New System.Drawing.Point(593, 24)
         Me.txtEndereco.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
         Me.txtEndereco.Name = "txtEndereco"
+        Me.txtEndereco.ReadOnly = True
         Me.txtEndereco.Size = New System.Drawing.Size(367, 20)
         Me.txtEndereco.TabIndex = 28
         '
@@ -492,7 +524,7 @@ Partial Class frmCadastroAlunos
         '
         Me.Label25.AutoSize = True
         Me.Label25.Font = New System.Drawing.Font("Verdana", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label25.Location = New System.Drawing.Point(567, 10)
+        Me.Label25.Location = New System.Drawing.Point(595, 10)
         Me.Label25.Name = "Label25"
         Me.Label25.Size = New System.Drawing.Size(64, 13)
         Me.Label25.TabIndex = 27
@@ -505,13 +537,13 @@ Partial Class frmCadastroAlunos
         Me.txtEmail.MaxLength = 100
         Me.txtEmail.Name = "txtEmail"
         Me.txtEmail.Size = New System.Drawing.Size(362, 20)
-        Me.txtEmail.TabIndex = 26
+        Me.txtEmail.TabIndex = 11
         '
         'Label3
         '
         Me.Label3.AutoSize = True
         Me.Label3.Font = New System.Drawing.Font("Verdana", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label3.Location = New System.Drawing.Point(13, 131)
+        Me.Label3.Location = New System.Drawing.Point(5, 131)
         Me.Label3.Name = "Label3"
         Me.Label3.Size = New System.Drawing.Size(43, 13)
         Me.Label3.TabIndex = 25
@@ -523,21 +555,21 @@ Partial Class frmCadastroAlunos
         Me.cmbSexo.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
         Me.cmbSexo.FormattingEnabled = True
         Me.cmbSexo.Items.AddRange(New Object() {"Masculino", "Feminino"})
-        Me.cmbSexo.Location = New System.Drawing.Point(265, 64)
+        Me.cmbSexo.Location = New System.Drawing.Point(185, 64)
         Me.cmbSexo.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
         Me.cmbSexo.Name = "cmbSexo"
         Me.cmbSexo.Size = New System.Drawing.Size(100, 21)
-        Me.cmbSexo.TabIndex = 18
+        Me.cmbSexo.TabIndex = 4
         '
         'label13
         '
         Me.label13.AutoSize = True
         Me.label13.Font = New System.Drawing.Font("Verdana", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.label13.Location = New System.Drawing.Point(268, 49)
+        Me.label13.Location = New System.Drawing.Point(188, 49)
         Me.label13.Name = "label13"
-        Me.label13.Size = New System.Drawing.Size(47, 13)
+        Me.label13.Size = New System.Drawing.Size(40, 13)
         Me.label13.TabIndex = 17
-        Me.label13.Text = "Sexo *"
+        Me.label13.Text = "Sexo "
         '
         'txtNomeAluno
         '
@@ -547,14 +579,14 @@ Partial Class frmCadastroAlunos
         Me.txtNomeAluno.Location = New System.Drawing.Point(3, 24)
         Me.txtNomeAluno.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
         Me.txtNomeAluno.Name = "txtNomeAluno"
-        Me.txtNomeAluno.Size = New System.Drawing.Size(363, 20)
-        Me.txtNomeAluno.TabIndex = 3
+        Me.txtNomeAluno.Size = New System.Drawing.Size(359, 20)
+        Me.txtNomeAluno.TabIndex = 1
         '
         'label6
         '
         Me.label6.AutoSize = True
         Me.label6.Font = New System.Drawing.Font("Verdana", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.label6.Location = New System.Drawing.Point(8, 11)
+        Me.label6.Location = New System.Drawing.Point(5, 11)
         Me.label6.Name = "label6"
         Me.label6.Size = New System.Drawing.Size(87, 13)
         Me.label6.TabIndex = 2
@@ -568,7 +600,7 @@ Partial Class frmCadastroAlunos
         Me.TabPage2.Location = New System.Drawing.Point(4, 22)
         Me.TabPage2.Name = "TabPage2"
         Me.TabPage2.Padding = New System.Windows.Forms.Padding(3)
-        Me.TabPage2.Size = New System.Drawing.Size(1084, 187)
+        Me.TabPage2.Size = New System.Drawing.Size(1116, 187)
         Me.TabPage2.TabIndex = 1
         Me.TabPage2.Text = "Informações de Filiação"
         '
@@ -578,6 +610,9 @@ Partial Class frmCadastroAlunos
             Or System.Windows.Forms.AnchorStyles.Left) _
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.GroupBox2.BackColor = System.Drawing.Color.Transparent
+        Me.GroupBox2.Controls.Add(Me.btInserirOcupacao)
+        Me.GroupBox2.Controls.Add(Me.cmbOcupacaoResp)
+        Me.GroupBox2.Controls.Add(Me.cmbOcupacaoMae)
         Me.GroupBox2.Controls.Add(Me.Label20)
         Me.GroupBox2.Controls.Add(Me.txtCelPai)
         Me.GroupBox2.Controls.Add(Me.Label15)
@@ -585,9 +620,7 @@ Partial Class frmCadastroAlunos
         Me.GroupBox2.Controls.Add(Me.Label10)
         Me.GroupBox2.Controls.Add(Me.txtCelMae)
         Me.GroupBox2.Controls.Add(Me.Label9)
-        Me.GroupBox2.Controls.Add(Me.cmbOcupacaoResp)
         Me.GroupBox2.Controls.Add(Me.Label17)
-        Me.GroupBox2.Controls.Add(Me.cmbOcupacaoMae)
         Me.GroupBox2.Controls.Add(Me.Label11)
         Me.GroupBox2.Controls.Add(Me.cmbOcupacaoPai)
         Me.GroupBox2.Controls.Add(Me.btnVoltar)
@@ -607,6 +640,38 @@ Partial Class frmCadastroAlunos
         Me.GroupBox2.TabIndex = 24
         Me.GroupBox2.TabStop = False
         '
+        'btInserirOcupacao
+        '
+        Me.btInserirOcupacao.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.btInserirOcupacao.FlatAppearance.BorderSize = 0
+        Me.btInserirOcupacao.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btInserirOcupacao.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btInserirOcupacao.Image = Global.MinhaEscola.My.Resources.Resources.Create
+        Me.btInserirOcupacao.Location = New System.Drawing.Point(529, 128)
+        Me.btInserirOcupacao.Name = "btInserirOcupacao"
+        Me.btInserirOcupacao.Size = New System.Drawing.Size(27, 26)
+        Me.btInserirOcupacao.TabIndex = 328
+        Me.btInserirOcupacao.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
+        Me.btInserirOcupacao.UseVisualStyleBackColor = True
+        '
+        'cmbOcupacaoResp
+        '
+        Me.cmbOcupacaoResp.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.cmbOcupacaoResp.FormattingEnabled = True
+        Me.cmbOcupacaoResp.Location = New System.Drawing.Point(314, 101)
+        Me.cmbOcupacaoResp.Name = "cmbOcupacaoResp"
+        Me.cmbOcupacaoResp.Size = New System.Drawing.Size(255, 21)
+        Me.cmbOcupacaoResp.TabIndex = 25
+        '
+        'cmbOcupacaoMae
+        '
+        Me.cmbOcupacaoMae.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.cmbOcupacaoMae.FormattingEnabled = True
+        Me.cmbOcupacaoMae.Location = New System.Drawing.Point(315, 61)
+        Me.cmbOcupacaoMae.Name = "cmbOcupacaoMae"
+        Me.cmbOcupacaoMae.Size = New System.Drawing.Size(255, 21)
+        Me.cmbOcupacaoMae.TabIndex = 22
+        '
         'Label20
         '
         Me.Label20.AutoSize = True
@@ -623,7 +688,7 @@ Partial Class frmCadastroAlunos
         Me.txtCelPai.Mask = "(99) 9 9999-9999"
         Me.txtCelPai.Name = "txtCelPai"
         Me.txtCelPai.Size = New System.Drawing.Size(89, 20)
-        Me.txtCelPai.TabIndex = 190
+        Me.txtCelPai.TabIndex = 20
         '
         'Label15
         '
@@ -641,7 +706,7 @@ Partial Class frmCadastroAlunos
         Me.txtCelResp.Mask = "(99) 9 9999-9999"
         Me.txtCelResp.Name = "txtCelResp"
         Me.txtCelResp.Size = New System.Drawing.Size(89, 20)
-        Me.txtCelResp.TabIndex = 188
+        Me.txtCelResp.TabIndex = 26
         '
         'Label10
         '
@@ -659,7 +724,7 @@ Partial Class frmCadastroAlunos
         Me.txtCelMae.Mask = "(99) 9 9999-9999"
         Me.txtCelMae.Name = "txtCelMae"
         Me.txtCelMae.Size = New System.Drawing.Size(89, 20)
-        Me.txtCelMae.TabIndex = 186
+        Me.txtCelMae.TabIndex = 23
         '
         'Label9
         '
@@ -671,16 +736,6 @@ Partial Class frmCadastroAlunos
         Me.Label9.TabIndex = 185
         Me.Label9.Text = "Ocupação *"
         '
-        'cmbOcupacaoResp
-        '
-        Me.cmbOcupacaoResp.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.cmbOcupacaoResp.FormattingEnabled = True
-        Me.cmbOcupacaoResp.Items.AddRange(New Object() {"Advogado", "Administrador", "Atendente", "Bombeiro", "Caseiro ", "Cantor", "Caminhoneiro", "Dentista", "Desenhista", "Diagramador", "Eletricista", "Enfermeira", "Farmacêutico", "Fiscal", "Fisioterapeuta", "Gerente", "Guitarrista", "Gari", "Humorista", "Ilusionista", "Iluminador", "Jardineiro", "Juiz", "Lavadeira", "Médico", "Nadador", "Operador De Máquinas", "Professor", "Químico", "Radialista", "Sapateiro", "Secretária", "Superintendente", "Torneiro Mecânico", "Tratorista", "Ufólogo", "Vigia", "Vendedor", "Xerocador", "Zelador"})
-        Me.cmbOcupacaoResp.Location = New System.Drawing.Point(314, 99)
-        Me.cmbOcupacaoResp.Name = "cmbOcupacaoResp"
-        Me.cmbOcupacaoResp.Size = New System.Drawing.Size(255, 21)
-        Me.cmbOcupacaoResp.TabIndex = 184
-        '
         'Label17
         '
         Me.Label17.AutoSize = True
@@ -690,16 +745,6 @@ Partial Class frmCadastroAlunos
         Me.Label17.Size = New System.Drawing.Size(74, 13)
         Me.Label17.TabIndex = 183
         Me.Label17.Text = "Ocupação *"
-        '
-        'cmbOcupacaoMae
-        '
-        Me.cmbOcupacaoMae.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.cmbOcupacaoMae.FormattingEnabled = True
-        Me.cmbOcupacaoMae.Items.AddRange(New Object() {"Advogado", "Administrador", "Atendente", "Bombeiro", "Caseiro ", "Cantor", "Caminhoneiro", "Dentista", "Desenhista", "Diagramador", "Eletricista", "Enfermeira", "Farmacêutico", "Fiscal", "Fisioterapeuta", "Gerente", "Guitarrista", "Gari", "Humorista", "Ilusionista", "Iluminador", "Jardineiro", "Juiz", "Lavadeira", "Médico", "Nadador", "Operador De Máquinas", "Professor", "Químico", "Radialista", "Sapateiro", "Secretária", "Superintendente", "Torneiro Mecânico", "Tratorista", "Ufólogo", "Vigia", "Vendedor", "Xerocador", "Zelador"})
-        Me.cmbOcupacaoMae.Location = New System.Drawing.Point(316, 62)
-        Me.cmbOcupacaoMae.Name = "cmbOcupacaoMae"
-        Me.cmbOcupacaoMae.Size = New System.Drawing.Size(255, 21)
-        Me.cmbOcupacaoMae.TabIndex = 182
         '
         'Label11
         '
@@ -715,11 +760,10 @@ Partial Class frmCadastroAlunos
         '
         Me.cmbOcupacaoPai.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.cmbOcupacaoPai.FormattingEnabled = True
-        Me.cmbOcupacaoPai.Items.AddRange(New Object() {"Advogado", "Administrador", "Atendente", "Bombeiro", "Caseiro ", "Cantor", "Caminhoneiro", "Dentista", "Desenhista", "Diagramador", "Eletricista", "Enfermeira", "Farmacêutico", "Fiscal", "Fisioterapeuta", "Gerente", "Guitarrista", "Gari", "Humorista", "Ilusionista", "Iluminador", "Jardineiro", "Juiz", "Lavadeira", "Médico", "Nadador", "Operador De Máquinas", "Professor", "Químico", "Radialista", "Sapateiro", "Secretária", "Superintendente", "Torneiro Mecânico", "Tratorista", "Ufólogo", "Vigia", "Vendedor", "Xerocador", "Zelador"})
         Me.cmbOcupacaoPai.Location = New System.Drawing.Point(316, 25)
         Me.cmbOcupacaoPai.Name = "cmbOcupacaoPai"
         Me.cmbOcupacaoPai.Size = New System.Drawing.Size(255, 21)
-        Me.cmbOcupacaoPai.TabIndex = 180
+        Me.cmbOcupacaoPai.TabIndex = 19
         '
         'btnVoltar
         '
@@ -731,7 +775,7 @@ Partial Class frmCadastroAlunos
         Me.btnVoltar.Location = New System.Drawing.Point(919, 135)
         Me.btnVoltar.Name = "btnVoltar"
         Me.btnVoltar.Size = New System.Drawing.Size(114, 25)
-        Me.btnVoltar.TabIndex = 174
+        Me.btnVoltar.TabIndex = 28
         Me.btnVoltar.Text = "Voltar..."
         Me.btnVoltar.UseVisualStyleBackColor = False
         '
@@ -741,7 +785,7 @@ Partial Class frmCadastroAlunos
         Me.txtNomeMae.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
         Me.txtNomeMae.Name = "txtNomeMae"
         Me.txtNomeMae.Size = New System.Drawing.Size(305, 20)
-        Me.txtNomeMae.TabIndex = 25
+        Me.txtNomeMae.TabIndex = 21
         '
         'Label1
         '
@@ -761,7 +805,7 @@ Partial Class frmCadastroAlunos
         Me.txtObs.Name = "txtObs"
         Me.txtObs.ScrollBars = System.Windows.Forms.ScrollBars.Both
         Me.txtObs.Size = New System.Drawing.Size(313, 80)
-        Me.txtObs.TabIndex = 20
+        Me.txtObs.TabIndex = 27
         '
         'Label16
         '
@@ -779,7 +823,7 @@ Partial Class frmCadastroAlunos
         Me.txtNomeResp.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
         Me.txtNomeResp.Name = "txtNomeResp"
         Me.txtNomeResp.Size = New System.Drawing.Size(305, 20)
-        Me.txtNomeResp.TabIndex = 16
+        Me.txtNomeResp.TabIndex = 24
         '
         'Label19
         '
@@ -797,7 +841,7 @@ Partial Class frmCadastroAlunos
         Me.txtNomePai.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
         Me.txtNomePai.Name = "txtNomePai"
         Me.txtNomePai.Size = New System.Drawing.Size(305, 20)
-        Me.txtNomePai.TabIndex = 8
+        Me.txtNomePai.TabIndex = 18
         '
         'Label23
         '
@@ -849,7 +893,7 @@ Partial Class frmCadastroAlunos
         Me.btFechar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btFechar.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btFechar.Image = Global.MinhaEscola.My.Resources.Resources.back_32
-        Me.btFechar.Location = New System.Drawing.Point(1009, 6)
+        Me.btFechar.Location = New System.Drawing.Point(993, 7)
         Me.btFechar.Name = "btFechar"
         Me.btFechar.Size = New System.Drawing.Size(105, 32)
         Me.btFechar.TabIndex = 4
@@ -969,21 +1013,6 @@ Partial Class frmCadastroAlunos
         Me.dg.Size = New System.Drawing.Size(1098, 251)
         Me.dg.TabIndex = 324
         '
-        'btCancelar
-        '
-        Me.btCancelar.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.btCancelar.FlatAppearance.BorderSize = 0
-        Me.btCancelar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btCancelar.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btCancelar.Image = Global.MinhaEscola.My.Resources.Resources.Turn_off
-        Me.btCancelar.Location = New System.Drawing.Point(875, 276)
-        Me.btCancelar.Name = "btCancelar"
-        Me.btCancelar.Size = New System.Drawing.Size(97, 37)
-        Me.btCancelar.TabIndex = 3
-        Me.btCancelar.Text = "Cancelar"
-        Me.btCancelar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
-        Me.btCancelar.UseVisualStyleBackColor = True
-        '
         'btnExcluir
         '
         Me.btnExcluir.Cursor = System.Windows.Forms.Cursors.Hand
@@ -991,7 +1020,7 @@ Partial Class frmCadastroAlunos
         Me.btnExcluir.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnExcluir.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnExcluir.Image = Global.MinhaEscola.My.Resources.Resources.apagar
-        Me.btnExcluir.Location = New System.Drawing.Point(759, 277)
+        Me.btnExcluir.Location = New System.Drawing.Point(977, 280)
         Me.btnExcluir.Name = "btnExcluir"
         Me.btnExcluir.Size = New System.Drawing.Size(108, 37)
         Me.btnExcluir.TabIndex = 2
@@ -1006,10 +1035,10 @@ Partial Class frmCadastroAlunos
         Me.btSalvarEditar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btSalvarEditar.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btSalvarEditar.Image = Global.MinhaEscola.My.Resources.Resources.Notes
-        Me.btSalvarEditar.Location = New System.Drawing.Point(629, 272)
+        Me.btSalvarEditar.Location = New System.Drawing.Point(847, 275)
         Me.btSalvarEditar.Name = "btSalvarEditar"
         Me.btSalvarEditar.Size = New System.Drawing.Size(124, 45)
-        Me.btSalvarEditar.TabIndex = 1
+        Me.btSalvarEditar.TabIndex = 29
         Me.btSalvarEditar.Text = "Salvar/Editar"
         Me.btSalvarEditar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
         Me.btSalvarEditar.UseVisualStyleBackColor = True
@@ -1021,7 +1050,7 @@ Partial Class frmCadastroAlunos
         Me.btNovo.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btNovo.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btNovo.Image = Global.MinhaEscola.My.Resources.Resources.New_document
-        Me.btNovo.Location = New System.Drawing.Point(541, 276)
+        Me.btNovo.Location = New System.Drawing.Point(759, 279)
         Me.btNovo.Name = "btNovo"
         Me.btNovo.Size = New System.Drawing.Size(82, 34)
         Me.btNovo.TabIndex = 0
@@ -1041,7 +1070,6 @@ Partial Class frmCadastroAlunos
         Me.Controls.Add(Me.dg)
         Me.Controls.Add(Me.Panel2)
         Me.Controls.Add(Me.tcAlunos)
-        Me.Controls.Add(Me.btCancelar)
         Me.Controls.Add(Me.btnExcluir)
         Me.Controls.Add(Me.btSalvarEditar)
         Me.Controls.Add(Me.btNovo)
@@ -1053,7 +1081,7 @@ Partial Class frmCadastroAlunos
         Me.TabPage1.ResumeLayout(False)
         Me.groupBox1.ResumeLayout(False)
         Me.groupBox1.PerformLayout()
-        CType(Me.pgImagem, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.pbImagem, System.ComponentModel.ISupportInitialize).EndInit()
         Me.TabPage2.ResumeLayout(False)
         Me.GroupBox2.ResumeLayout(False)
         Me.GroupBox2.PerformLayout()
@@ -1071,7 +1099,6 @@ Partial Class frmCadastroAlunos
     Friend WithEvents btNovo As Button
     Friend WithEvents btSalvarEditar As Button
     Friend WithEvents btnExcluir As Button
-    Friend WithEvents btCancelar As Button
     Friend WithEvents btFechar As Button
     Friend WithEvents PictureBox1 As PictureBox
     Friend WithEvents tcAlunos As TabControl
@@ -1105,7 +1132,6 @@ Partial Class frmCadastroAlunos
     Friend WithEvents TabPage2 As TabPage
     Private WithEvents GroupBox2 As GroupBox
     Private WithEvents Label17 As Label
-    Friend WithEvents cmbOcupacaoMae As ComboBox
     Private WithEvents Label11 As Label
     Friend WithEvents cmbOcupacaoPai As ComboBox
     Private WithEvents txtNomeMae As TextBox
@@ -1138,7 +1164,7 @@ Partial Class frmCadastroAlunos
     Friend WithEvents rbNome As RadioButton
     Friend WithEvents txtBuscarCPF As MaskedTextBox
     Friend WithEvents dg As DataGridView
-    Friend WithEvents pgImagem As PictureBox
+    Friend WithEvents pbImagem As PictureBox
     Friend WithEvents btImagem As Button
     Private WithEvents Label20 As Label
     Friend WithEvents txtCelPai As MaskedTextBox
@@ -1147,6 +1173,10 @@ Partial Class frmCadastroAlunos
     Private WithEvents Label10 As Label
     Friend WithEvents txtCelMae As MaskedTextBox
     Private WithEvents Label9 As Label
-    Friend WithEvents cmbOcupacaoResp As ComboBox
     Private WithEvents lblCodigo As Label
+    Friend WithEvents btInserirOcupacao As Button
+    Friend WithEvents cmbOcupacaoResp As ComboBox
+    Friend WithEvents cmbOcupacaoMae As ComboBox
+    Private WithEvents cmbEstCivil As ComboBox
+    Private WithEvents Label29 As Label
 End Class

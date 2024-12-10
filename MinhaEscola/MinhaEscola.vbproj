@@ -76,16 +76,17 @@
     <Import Include="System.Threading.Tasks" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="ControleAlunos\frmCadastroAlunos.Designer.vb">
-      <DependentUpon>frmCadastroAlunos.vb</DependentUpon>
+    <Compile Include="cadastros\frmOcupacoes.Designer.vb">
+      <DependentUpon>frmOcupacoes.vb</DependentUpon>
     </Compile>
-    <Compile Include="ControleAlunos\frmCadastroAlunos.vb">
+    <Compile Include="cadastros\frmOcupacoes.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="ControleAlunos\frmRelacaoAlunos.Designer.vb">
-      <DependentUpon>frmRelacaoAlunos.vb</DependentUpon>
+    <Compile Include="classes\clsCep.vb" />
+    <Compile Include="cadastros\frmCadastroAlunos.Designer.vb">
+      <DependentUpon>frmCadastroAlunos.vb</DependentUpon>
     </Compile>
-    <Compile Include="ControleAlunos\frmRelacaoAlunos.vb">
+    <Compile Include="cadastros\frmCadastroAlunos.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="frmPrincipal.vb">
@@ -113,11 +114,11 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="ControleAlunos\frmCadastroAlunos.resx">
-      <DependentUpon>frmCadastroAlunos.vb</DependentUpon>
+    <EmbeddedResource Include="cadastros\frmOcupacoes.resx">
+      <DependentUpon>frmOcupacoes.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="ControleAlunos\frmRelacaoAlunos.resx">
-      <DependentUpon>frmRelacaoAlunos.vb</DependentUpon>
+    <EmbeddedResource Include="cadastros\frmCadastroAlunos.resx">
+      <DependentUpon>frmCadastroAlunos.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmPrincipal.resx">
       <DependentUpon>frmPrincipal.vb</DependentUpon>
@@ -155,10 +156,18 @@
     <None Include="Resources\View.png" />
     <None Include="Resources\search.png" />
     <None Include="Resources\camera.png" />
+    <None Include="Resources\Create.png" />
+    <None Include="Resources\Find1.png" />
+    <None Include="Resources\Apply.png" />
     <Content Include="school.ico" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="imagens\" />
+    <Folder Include="ControleAlunos\" />
+  </ItemGroup>
+  <ItemGroup>
+    <PackageReference Include="Newtonsoft.Json">
+      <Version>13.0.3</Version>
+    </PackageReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
 </Project>

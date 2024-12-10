@@ -123,14 +123,14 @@ Partial Class frmPrincipal
         'ControleDeGastosToolStripMenuItem
         '
         Me.ControleDeGastosToolStripMenuItem.Name = "ControleDeGastosToolStripMenuItem"
-        Me.ControleDeGastosToolStripMenuItem.Size = New System.Drawing.Size(180, 22)
+        Me.ControleDeGastosToolStripMenuItem.Size = New System.Drawing.Size(173, 22)
         Me.ControleDeGastosToolStripMenuItem.Text = "Controle de gastos"
         '
         'FluxoDeCaixaToolStripMenuItem
         '
         Me.FluxoDeCaixaToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.LançamentoNoCaixaToolStripMenuItem, Me.CadasttrarTipoDeLançamentoToolStripMenuItem})
         Me.FluxoDeCaixaToolStripMenuItem.Name = "FluxoDeCaixaToolStripMenuItem"
-        Me.FluxoDeCaixaToolStripMenuItem.Size = New System.Drawing.Size(180, 22)
+        Me.FluxoDeCaixaToolStripMenuItem.Size = New System.Drawing.Size(173, 22)
         Me.FluxoDeCaixaToolStripMenuItem.Text = "Fluxo de caixa"
         '
         'LançamentoNoCaixaToolStripMenuItem
@@ -148,7 +148,7 @@ Partial Class frmPrincipal
         'ControleBancárioToolStripMenuItem
         '
         Me.ControleBancárioToolStripMenuItem.Name = "ControleBancárioToolStripMenuItem"
-        Me.ControleBancárioToolStripMenuItem.Size = New System.Drawing.Size(180, 22)
+        Me.ControleBancárioToolStripMenuItem.Size = New System.Drawing.Size(173, 22)
         Me.ControleBancárioToolStripMenuItem.Text = "Controle Bancário"
         '
         'AdmininstrativoToolStripMenuItem
@@ -199,7 +199,7 @@ Partial Class frmPrincipal
         '
         Me.AlunosToolStripMenuItem1.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.ListaDeAlunosToolStripMenuItem, Me.AlunoCursoToolStripMenuItem, Me.AniversariantesToolStripMenuItem})
         Me.AlunosToolStripMenuItem1.Name = "AlunosToolStripMenuItem1"
-        Me.AlunosToolStripMenuItem1.Size = New System.Drawing.Size(180, 22)
+        Me.AlunosToolStripMenuItem1.Size = New System.Drawing.Size(134, 22)
         Me.AlunosToolStripMenuItem1.Text = "Alunos"
         '
         'ListaDeAlunosToolStripMenuItem
@@ -224,7 +224,7 @@ Partial Class frmPrincipal
         '
         Me.CursosToolStripMenuItem1.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.CursosPagosToolStripMenuItem})
         Me.CursosToolStripMenuItem1.Name = "CursosToolStripMenuItem1"
-        Me.CursosToolStripMenuItem1.Size = New System.Drawing.Size(180, 22)
+        Me.CursosToolStripMenuItem1.Size = New System.Drawing.Size(134, 22)
         Me.CursosToolStripMenuItem1.Text = "Cursos"
         '
         'CursosPagosToolStripMenuItem
@@ -236,7 +236,7 @@ Partial Class frmPrincipal
         'ProfessoresToolStripMenuItem1
         '
         Me.ProfessoresToolStripMenuItem1.Name = "ProfessoresToolStripMenuItem1"
-        Me.ProfessoresToolStripMenuItem1.Size = New System.Drawing.Size(180, 22)
+        Me.ProfessoresToolStripMenuItem1.Size = New System.Drawing.Size(134, 22)
         Me.ProfessoresToolStripMenuItem1.Text = "Professores"
         '
         'InformaçõesToolStripMenuItem
@@ -249,19 +249,19 @@ Partial Class frmPrincipal
         'SobreOSistemaToolStripMenuItem
         '
         Me.SobreOSistemaToolStripMenuItem.Name = "SobreOSistemaToolStripMenuItem"
-        Me.SobreOSistemaToolStripMenuItem.Size = New System.Drawing.Size(180, 22)
+        Me.SobreOSistemaToolStripMenuItem.Size = New System.Drawing.Size(177, 22)
         Me.SobreOSistemaToolStripMenuItem.Text = "Sobre o Sistema"
         '
         'VersãoDoWindowsToolStripMenuItem
         '
         Me.VersãoDoWindowsToolStripMenuItem.Name = "VersãoDoWindowsToolStripMenuItem"
-        Me.VersãoDoWindowsToolStripMenuItem.Size = New System.Drawing.Size(180, 22)
+        Me.VersãoDoWindowsToolStripMenuItem.Size = New System.Drawing.Size(177, 22)
         Me.VersãoDoWindowsToolStripMenuItem.Text = "Versão do Windows"
         '
         'RegistrarSoftwareToolStripMenuItem
         '
         Me.RegistrarSoftwareToolStripMenuItem.Name = "RegistrarSoftwareToolStripMenuItem"
-        Me.RegistrarSoftwareToolStripMenuItem.Size = New System.Drawing.Size(180, 22)
+        Me.RegistrarSoftwareToolStripMenuItem.Size = New System.Drawing.Size(177, 22)
         Me.RegistrarSoftwareToolStripMenuItem.Text = "Registrar Software"
         '
         'ConfiguraçõesToolStripMenuItem
@@ -274,20 +274,20 @@ Partial Class frmPrincipal
         'TrocarSenhaToolStripMenuItem
         '
         Me.TrocarSenhaToolStripMenuItem.Name = "TrocarSenhaToolStripMenuItem"
-        Me.TrocarSenhaToolStripMenuItem.Size = New System.Drawing.Size(180, 22)
+        Me.TrocarSenhaToolStripMenuItem.Size = New System.Drawing.Size(168, 22)
         Me.TrocarSenhaToolStripMenuItem.Text = "Trocar Senha"
         '
         'ConfigurarEmailToolStripMenuItem
         '
         Me.ConfigurarEmailToolStripMenuItem.Name = "ConfigurarEmailToolStripMenuItem"
-        Me.ConfigurarEmailToolStripMenuItem.Size = New System.Drawing.Size(180, 22)
+        Me.ConfigurarEmailToolStripMenuItem.Size = New System.Drawing.Size(168, 22)
         Me.ConfigurarEmailToolStripMenuItem.Text = "Configurar email"
         '
         'PersonalizarCoresToolStripMenuItem
         '
         Me.PersonalizarCoresToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.MudarCorDoSistemaToolStripMenuItem, Me.UtilizarCorPadrãoToolStripMenuItem})
         Me.PersonalizarCoresToolStripMenuItem.Name = "PersonalizarCoresToolStripMenuItem"
-        Me.PersonalizarCoresToolStripMenuItem.Size = New System.Drawing.Size(180, 22)
+        Me.PersonalizarCoresToolStripMenuItem.Size = New System.Drawing.Size(168, 22)
         Me.PersonalizarCoresToolStripMenuItem.Text = "Personalizar cores"
         '
         'MudarCorDoSistemaToolStripMenuItem
