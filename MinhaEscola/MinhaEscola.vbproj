@@ -51,6 +51,9 @@
     <ApplicationIcon>school.ico</ApplicationIcon>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="AlphaBlendTextBox">
+      <HintPath>K:\backup\IMAGENS\modelos tela\TELA DE LOGIN\AlphaBlendTextBox.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Data" />
     <Reference Include="System.Deployment" />
@@ -76,10 +79,28 @@
     <Import Include="System.Threading.Tasks" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="cadastros\frmEscola.Designer.vb">
+      <DependentUpon>frmEscola.vb</DependentUpon>
+    </Compile>
+    <Compile Include="cadastros\frmEscola.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="cadastros\frmOcupacoes.Designer.vb">
       <DependentUpon>frmOcupacoes.vb</DependentUpon>
     </Compile>
     <Compile Include="cadastros\frmOcupacoes.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="cadastros\frmProfessores.Designer.vb">
+      <DependentUpon>frmProfessores.vb</DependentUpon>
+    </Compile>
+    <Compile Include="cadastros\frmProfessores.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="cadastros\frnCursos.Designer.vb">
+      <DependentUpon>frnCursos.vb</DependentUpon>
+    </Compile>
+    <Compile Include="cadastros\frnCursos.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="classes\clsCep.vb" />
@@ -87,6 +108,28 @@
       <DependentUpon>frmCadastroAlunos.vb</DependentUpon>
     </Compile>
     <Compile Include="cadastros\frmCadastroAlunos.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="classes\clsMenuDinamico.vb" />
+    <Compile Include="classes\clsUsuario.vb" />
+    <Compile Include="classes\CNPJ.vb" />
+    <Compile Include="classes\Utils.vb" />
+    <Compile Include="financeiro\frmControleGastos.Designer.vb">
+      <DependentUpon>frmControleGastos.vb</DependentUpon>
+    </Compile>
+    <Compile Include="financeiro\frmControleGastos.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="financeiro\frmTipoGastos.Designer.vb">
+      <DependentUpon>frmTipoGastos.vb</DependentUpon>
+    </Compile>
+    <Compile Include="financeiro\frmTipoGastos.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmLogin.Designer.vb">
+      <DependentUpon>frmLogin.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frmLogin.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="frmPrincipal.vb">
@@ -114,11 +157,26 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="cadastros\frmEscola.resx">
+      <DependentUpon>frmEscola.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="cadastros\frmOcupacoes.resx">
       <DependentUpon>frmOcupacoes.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="cadastros\frmCadastroAlunos.resx">
       <DependentUpon>frmCadastroAlunos.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="cadastros\frnCursos.resx">
+      <DependentUpon>frnCursos.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="financeiro\frmControleGastos.resx">
+      <DependentUpon>frmControleGastos.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="financeiro\frmTipoGastos.resx">
+      <DependentUpon>frmTipoGastos.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmLogin.resx">
+      <DependentUpon>frmLogin.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmPrincipal.resx">
       <DependentUpon>frmPrincipal.vb</DependentUpon>
@@ -159,11 +217,18 @@
     <None Include="Resources\Create.png" />
     <None Include="Resources\Find1.png" />
     <None Include="Resources\Apply.png" />
+    <None Include="Resources\tela login1.jpg" />
+    <None Include="Resources\fundo_frm_login.jpg" />
+    <None Include="Resources\bolinha_xis.png" />
+    <None Include="Resources\predioescola.jpg" />
+    <None Include="Resources\istockphoto-1145816065-612x612.jpg" />
+    <None Include="Resources\shopping-mall.png" />
+    <None Include="Resources\escola.png" />
+    <None Include="Resources\tela login11.jpg" />
+    <None Include="Resources\telalogin1.jpg" />
     <Content Include="school.ico" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="ControleAlunos\" />
-  </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
     <PackageReference Include="Newtonsoft.Json">
       <Version>13.0.3</Version>

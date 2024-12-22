@@ -2,6 +2,11 @@
 Imports System.Text
 
 Module mdlConexao
+
+    Public usuarioNome As String
+    Public objMenus As New ArrayList
+    Public empresaNome As String
+
     Public con As New SqlConnection("Data Source=DESKTOP-R5VHKNO\SQLEXPRESS;Initial Catalog=DBConectaEscola;Integrated Security=True")
 
     Sub abrir()

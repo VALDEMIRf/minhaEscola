@@ -1,11 +1,139 @@
-﻿Public Class frmPrincipal
-    Private Sub AlunosToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles AlunosToolStripMenuItem.Click
-        Dim form = New frmCadastroAlunos
-        form.ShowDialog()
+﻿Imports System.Data.SqlClient
+
+Public Class frmPrincipal
+
+    Inherits System.Windows.Forms.Form
+    'Instância do objeto onde o menu será montado 
+    Private mmnMenuPrincipal As New MainMenu
+    'Instância da classe que manipula os menus
+    Private mndMenuD As New clsMenuDinamico
+    'Instância da classe que armazena o usuário
+    Private usrUsuario = New clsUsuario
+    'Instância do objeto de conexão
+    Private conDB As New SqlConnection
+
+    Private dsform As String = ""
+    Private dsform2 As String = ""
+
+
+    Private Sub frmPrincipal_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        'Atribui atributo ao menu do form
+        Me.Menu = mmnMenuPrincipal
+        conDB.ConnectionString = "Data Source=DESKTOP-R5VHKNO\SQLEXPRESS;Initial Catalog=DBConectaEscola;Integrated Security=True"
+
+        'Monta o menu default (nenhum usuário autenticado)
+        Try
+            mndMenuD.MontaMenu(0, mmnMenuPrincipal, conDB,
+                       AddressOf EventoMenu_Click)
+
+        Catch ex As Exception
+            MessageBox.Show("Ocorreu um erro durante a criação dos menus: " & ex.Message.ToString, "Menu Dinamico", MessageBoxButtons.OK, MessageBoxIcon.Error)
+        End Try
+        Conectar(sender, e)
+
+
     End Sub
 
-    Private Sub ProfessoresToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles ProfessoresToolStripMenuItem.Click
-        Dim form = New frmOcupacoes
-        form.ShowDialog()
+    Public Sub New()
+        MyBase.New()
+
+        InitializeComponent()
+
     End Sub
+
+    Private Sub frmPrincipal_KeyDown(sender As Object, e As KeyEventArgs) Handles MyBase.KeyDown
+        Select Case e.KeyCode
+            Case Keys.Escape
+                End
+        End Select
+    End Sub
+
+    Private Sub EventoMenu_Click(ByVal sender As Object, ByVal e As System.EventArgs)
+        'Apresento o item clicado e, após o casting, 
+        'obtenho a propriedade Text do objeto
+        Select Case CType(sender, MenuItem).Text
+            Case "&Conectar"
+                Conectar(sender, e)
+            Case "&Desconectar"
+                'Executa o método MontaMenu p/ o menu Default
+                Try
+                    mndMenuD.MontaMenu(0, mmnMenuPrincipal,
+                   conDB, AddressOf EventoMenu_Click)
+                Catch ex As Exception
+                    MessageBox.Show("Ocorreu um erro durante a criação dos menus: " & ex.Message.ToString,
+           "Menu Dinamico", MessageBoxButtons.OK,
+           MessageBoxIcon.Error)
+                End Try
+            Case "Sai&r"
+                Me.Close()
+            Case Else
+
+                procuraopcao(CType(sender, MenuItem).Text)
+
+        End Select
+        'É possível manipular os atributos do menu através
+        'do método RetornaMenu (collection)
+        'Ex: mndMenuD.RetornaMenu("Form1").Enabled = False
+        'Não esqueça do Try...Catch
+    End Sub
+
+    Private Sub Conectar(ByVal sender As Object, ByVal e As System.EventArgs)
+        'Variável para formulário de login
+        Dim frm As frmLogin
+        Dim usrUsuarioLogin As New clsUsuario
+
+        'Nova instância do form de login, usando construtor
+        'customizado, passando a instância da classe 
+        'usuário e instância do objeto conexâo no BD
+        frm = New frmLogin(usrUsuarioLogin, conDB)
+        'Carregar form no modo modal
+        frm.ShowDialog(Me)
+
+        'Se um usuário foi autenticado, montar menu
+        If Not usrUsuarioLogin.Nome Is Nothing Then
+            mndMenuD.MontaMenu(usrUsuarioLogin.Grupo, mmnMenuPrincipal, con, AddressOf EventoMenu_Click)
+            Me.Text = "SISTEMA INTELIGENTE DE CONTRLOLE ESCOLAR        -        Usuário:      " & usrUsuarioLogin.Nome & "     Logado as: " & Now
+
+            lblEscola.Text = empresaNome
+            lblVersa.Text = "Versão: " & My.Application.Info.Version.ToString
+        End If
+    End Sub
+
+    Private Sub procuraopcao(ByVal opcao As String)
+
+        dsform2 = ""
+        dsform = opcao
+
+        Dim i As Integer = 0
+        Dim x As Integer = objMenus.Count
+
+        For i = 0 To x - 1
+            If objMenus.Item(i) = dsform Then
+                dsform2 = objMenus.Item(i + 1)
+                Exit For
+            End If
+        Next
+
+        Try
+            If ((dsform2 <> "") And (dsform2 <> "x")) Then
+                ' CarregaForm(dsform2).Show()  ''' Deixa abrir form um em cima do outro
+                Dim f As Form = CarregaForm(dsform2)
+                AddHandler f.KeyDown, AddressOf frmPrincipal_KeyDown
+                f.ShowDialog() ' Não Deixa abrir form um em cima do outro
+            Else
+                MessageBox.Show("Item """ & dsform & """ Indisponível.", "Menu Dinâmico", MessageBoxButtons.OK, MessageBoxIcon.Error)
+            End If
+        Catch ex As Exception
+            MessageBox.Show("Ocorreu Um Erro Durante a Carga do Item do Menu: " & ex.Message.ToString, "Menu Dinamico", MessageBoxButtons.OK, MessageBoxIcon.Error)
+        End Try
+
+    End Sub
+
+    Function CarregaForm(ByVal FormName As String) As Form
+        Dim Fullname As String = Application.ProductName & "." & FormName
+        Return Activator.CreateInstance(Type.GetType(Fullname, True, True))
+
+    End Function
+
+
 End Class

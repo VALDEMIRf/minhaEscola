@@ -15,10 +15,11 @@ Public Class frmCadastroAlunos
         carregarOcupacaoMae()
         carregarOcupacaoResp()
         Listar()
-
+        btSalvarEditar.Enabled = False
     End Sub
 
     Private Sub frmCadastroAlunos_Activated(sender As Object, e As EventArgs) Handles MyBase.Activated
+        DesabilitarCampos()
         carregarOcupacaoPai()
         carregarOcupacaoMae()
         carregarOcupacaoResp()
@@ -296,7 +297,6 @@ Public Class frmCadastroAlunos
         End If
         Return True
     End Function
-
 
     Private Sub btImagem_Click(sender As Object, e As EventArgs) Handles btImagem.Click
         pbImagem.Visible = True
