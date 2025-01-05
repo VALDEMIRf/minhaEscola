@@ -79,6 +79,12 @@
     <Import Include="System.Threading.Tasks" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="cadastros\frmDisciplinas.Designer.vb">
+      <DependentUpon>frmDisciplinas.vb</DependentUpon>
+    </Compile>
+    <Compile Include="cadastros\frmDisciplinas.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="cadastros\frmEscola.Designer.vb">
       <DependentUpon>frmEscola.vb</DependentUpon>
     </Compile>
@@ -114,6 +120,12 @@
     <Compile Include="classes\clsUsuario.vb" />
     <Compile Include="classes\CNPJ.vb" />
     <Compile Include="classes\Utils.vb" />
+    <Compile Include="financeiro\frmControleCaixa.Designer.vb">
+      <DependentUpon>frmControleCaixa.vb</DependentUpon>
+    </Compile>
+    <Compile Include="financeiro\frmControleCaixa.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="financeiro\frmControleGastos.Designer.vb">
       <DependentUpon>frmControleGastos.vb</DependentUpon>
     </Compile>
@@ -157,6 +169,9 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="cadastros\frmDisciplinas.resx">
+      <DependentUpon>frmDisciplinas.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="cadastros\frmEscola.resx">
       <DependentUpon>frmEscola.vb</DependentUpon>
     </EmbeddedResource>
@@ -166,8 +181,14 @@
     <EmbeddedResource Include="cadastros\frmCadastroAlunos.resx">
       <DependentUpon>frmCadastroAlunos.vb</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="cadastros\frmProfessores.resx">
+      <DependentUpon>frmProfessores.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="cadastros\frnCursos.resx">
       <DependentUpon>frnCursos.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="financeiro\frmControleCaixa.resx">
+      <DependentUpon>frmControleCaixa.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="financeiro\frmControleGastos.resx">
       <DependentUpon>frmControleGastos.vb</DependentUpon>
@@ -226,6 +247,9 @@
     <None Include="Resources\escola.png" />
     <None Include="Resources\tela login11.jpg" />
     <None Include="Resources\telalogin1.jpg" />
+    <None Include="Resources\telaloginFinal.jpg" />
+    <None Include="Resources\telaloginFinal1.jpg" />
+    <None Include="Resources\Keys-icon.png" />
     <Content Include="school.ico" />
   </ItemGroup>
   <ItemGroup />

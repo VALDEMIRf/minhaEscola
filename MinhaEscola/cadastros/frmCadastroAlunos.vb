@@ -550,7 +550,7 @@ Public Class frmCadastroAlunos
         If lblCodigo.Text <> "" Then
 
             Try
-                If (MessageBox.Show("Deseja excluir este funcionário?", Me.Text, MessageBoxButtons.YesNo, MessageBoxIcon.Question) = Windows.Forms.DialogResult.No) Then Exit Sub
+                If (MessageBox.Show("Deseja excluir este Aluno?", Me.Text, MessageBoxButtons.YesNo, MessageBoxIcon.Question) = Windows.Forms.DialogResult.No) Then Exit Sub
 
                 abrir()
                 cmd = New SqlCommand("pa_aluno_Excluir", con)

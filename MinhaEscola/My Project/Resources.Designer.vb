@@ -203,6 +203,16 @@ Namespace My.Resources
         '''<summary>
         '''  Consulta um recurso localizado do tipo System.Drawing.Bitmap.
         '''</summary>
+        Friend ReadOnly Property Keys_icon() As System.Drawing.Bitmap
+            Get
+                Dim obj As Object = ResourceManager.GetObject("Keys-icon", resourceCulture)
+                Return CType(obj,System.Drawing.Bitmap)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        '''</summary>
         Friend ReadOnly Property New_document() As System.Drawing.Bitmap
             Get
                 Dim obj As Object = ResourceManager.GetObject("New document", resourceCulture)
@@ -286,6 +296,26 @@ Namespace My.Resources
         Friend ReadOnly Property telalogin1() As System.Drawing.Bitmap
             Get
                 Dim obj As Object = ResourceManager.GetObject("telalogin1", resourceCulture)
+                Return CType(obj,System.Drawing.Bitmap)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        '''</summary>
+        Friend ReadOnly Property telaloginFinal() As System.Drawing.Bitmap
+            Get
+                Dim obj As Object = ResourceManager.GetObject("telaloginFinal", resourceCulture)
+                Return CType(obj,System.Drawing.Bitmap)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        '''</summary>
+        Friend ReadOnly Property telaloginFinal1() As System.Drawing.Bitmap
+            Get
+                Dim obj As Object = ResourceManager.GetObject("telaloginFinal1", resourceCulture)
                 Return CType(obj,System.Drawing.Bitmap)
             End Get
         End Property

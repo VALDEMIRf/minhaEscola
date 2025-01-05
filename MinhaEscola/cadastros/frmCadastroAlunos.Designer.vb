@@ -892,13 +892,13 @@ Partial Class frmCadastroAlunos
         Me.btFechar.FlatAppearance.BorderSize = 0
         Me.btFechar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btFechar.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btFechar.Image = Global.MinhaEscola.My.Resources.Resources.back_32
-        Me.btFechar.Location = New System.Drawing.Point(993, 7)
+        Me.btFechar.Image = Global.MinhaEscola.My.Resources.Resources._Exit
+        Me.btFechar.Location = New System.Drawing.Point(1039, 7)
         Me.btFechar.Name = "btFechar"
-        Me.btFechar.Size = New System.Drawing.Size(105, 32)
+        Me.btFechar.Size = New System.Drawing.Size(89, 32)
         Me.btFechar.TabIndex = 4
         Me.btFechar.Text = "Fechar"
-        Me.btFechar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
+        Me.btFechar.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage
         Me.btFechar.UseVisualStyleBackColor = True
         '
         'Label7

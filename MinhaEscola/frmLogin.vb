@@ -87,13 +87,13 @@ Public Class frmLogin
     End Sub
 
     Private Sub btAcessar_MouseHover(sender As Object, e As EventArgs) Handles btAcessar.MouseHover
-        btAcessar.BackColor = Color.Blue
-        btAcessar.ForeColor = Color.Black
+        'btAcessar.BackColor = Color.White
+        '  btAcessar.ForeColor = Color.DarkTurquoise
     End Sub
 
     Private Sub btAcessar_MouseLeave(sender As Object, e As EventArgs) Handles btAcessar.MouseLeave
-        btAcessar.BackColor = Color.SlateBlue
-        btAcessar.ForeColor = Color.White
+        ' btAcessar.BackColor = Color.DarkTurquoise
+        ' btAcessar.ForeColor = Color.White
     End Sub
 
 End Class

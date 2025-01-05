@@ -26,20 +26,23 @@ Partial Class frmLogin
         Me.txtSenha = New ZBobb.AlphaBlendTextBox()
         Me.txtUsuario = New ZBobb.AlphaBlendTextBox()
         Me.btCancelar = New System.Windows.Forms.Button()
+        Me.PictureBox1 = New System.Windows.Forms.PictureBox()
+        CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'btAcessar
         '
-        Me.btAcessar.BackColor = System.Drawing.Color.Transparent
+        Me.btAcessar.BackColor = System.Drawing.Color.DarkSlateGray
         Me.btAcessar.Cursor = System.Windows.Forms.Cursors.Hand
         Me.btAcessar.FlatAppearance.BorderSize = 0
         Me.btAcessar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btAcessar.Font = New System.Drawing.Font("Berlin Sans FB Demi", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btAcessar.Font = New System.Drawing.Font("Sitka Small", 23.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btAcessar.ForeColor = System.Drawing.Color.White
-        Me.btAcessar.Location = New System.Drawing.Point(2, 276)
+        Me.btAcessar.Location = New System.Drawing.Point(0, 273)
         Me.btAcessar.Name = "btAcessar"
-        Me.btAcessar.Size = New System.Drawing.Size(325, 43)
-        Me.btAcessar.TabIndex = 3
+        Me.btAcessar.Size = New System.Drawing.Size(333, 52)
+        Me.btAcessar.TabIndex = 33
+        Me.btAcessar.Text = "LOGIN"
         Me.btAcessar.UseVisualStyleBackColor = False
         '
         'txtSenha
@@ -81,21 +84,35 @@ Partial Class frmLogin
         Me.btCancelar.TabIndex = 4
         Me.btCancelar.UseVisualStyleBackColor = False
         '
+        'PictureBox1
+        '
+        Me.PictureBox1.BackColor = System.Drawing.Color.White
+        Me.PictureBox1.Image = Global.MinhaEscola.My.Resources.Resources.Keys_icon
+        Me.PictureBox1.Location = New System.Drawing.Point(7, 5)
+        Me.PictureBox1.Name = "PictureBox1"
+        Me.PictureBox1.Size = New System.Drawing.Size(66, 77)
+        Me.PictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+        Me.PictureBox1.TabIndex = 5
+        Me.PictureBox1.TabStop = False
+        '
         'frmLogin
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.DarkCyan
-        Me.BackgroundImage = Global.MinhaEscola.My.Resources.Resources.telalogin1
-        Me.ClientSize = New System.Drawing.Size(333, 325)
+        Me.BackgroundImage = Global.MinhaEscola.My.Resources.Resources.telaloginFinal1
+        Me.ClientSize = New System.Drawing.Size(334, 325)
+        Me.Controls.Add(Me.PictureBox1)
         Me.Controls.Add(Me.btCancelar)
         Me.Controls.Add(Me.txtUsuario)
         Me.Controls.Add(Me.txtSenha)
         Me.Controls.Add(Me.btAcessar)
+        Me.Font = New System.Drawing.Font("Berlin Sans FB", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None
         Me.Name = "frmLogin"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "frmLogin"
+        CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -105,4 +122,5 @@ Partial Class frmLogin
     Friend WithEvents txtSenha As ZBobb.AlphaBlendTextBox
     Friend WithEvents txtUsuario As ZBobb.AlphaBlendTextBox
     Friend WithEvents btCancelar As Button
+    Friend WithEvents PictureBox1 As PictureBox
 End Class
