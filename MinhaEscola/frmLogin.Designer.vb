@@ -38,7 +38,7 @@ Partial Class frmLogin
         Me.btAcessar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btAcessar.Font = New System.Drawing.Font("Sitka Small", 23.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btAcessar.ForeColor = System.Drawing.Color.White
-        Me.btAcessar.Location = New System.Drawing.Point(0, 273)
+        Me.btAcessar.Location = New System.Drawing.Point(1, 273)
         Me.btAcessar.Name = "btAcessar"
         Me.btAcessar.Size = New System.Drawing.Size(333, 52)
         Me.btAcessar.TabIndex = 33
@@ -50,7 +50,7 @@ Partial Class frmLogin
         Me.txtSenha.BackAlpha = 10
         Me.txtSenha.BackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(255, Byte), Integer))
         Me.txtSenha.BorderStyle = System.Windows.Forms.BorderStyle.None
-        Me.txtSenha.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.txtSenha.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.txtSenha.ForeColor = System.Drawing.Color.Black
         Me.txtSenha.Location = New System.Drawing.Point(79, 167)
         Me.txtSenha.Multiline = True
@@ -64,7 +64,7 @@ Partial Class frmLogin
         Me.txtUsuario.BackAlpha = 10
         Me.txtUsuario.BackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(255, Byte), Integer))
         Me.txtUsuario.BorderStyle = System.Windows.Forms.BorderStyle.None
-        Me.txtUsuario.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.txtUsuario.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.txtUsuario.ForeColor = System.Drawing.Color.Black
         Me.txtUsuario.Location = New System.Drawing.Point(79, 110)
         Me.txtUsuario.Multiline = True
@@ -88,7 +88,7 @@ Partial Class frmLogin
         '
         Me.PictureBox1.BackColor = System.Drawing.Color.White
         Me.PictureBox1.Image = Global.MinhaEscola.My.Resources.Resources.Keys_icon
-        Me.PictureBox1.Location = New System.Drawing.Point(7, 5)
+        Me.PictureBox1.Location = New System.Drawing.Point(7, 6)
         Me.PictureBox1.Name = "PictureBox1"
         Me.PictureBox1.Size = New System.Drawing.Size(66, 77)
         Me.PictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage

@@ -79,6 +79,24 @@
     <Import Include="System.Threading.Tasks" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="administrativo\cursos e horarios\frmTesteCursosHorarios.Designer.vb">
+      <DependentUpon>frmTesteCursosHorarios.vb</DependentUpon>
+    </Compile>
+    <Compile Include="administrativo\cursos e horarios\frmTesteCursosHorarios.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="administrativo\frmCursosHorarios.Designer.vb">
+      <DependentUpon>frmCursosHorarios.vb</DependentUpon>
+    </Compile>
+    <Compile Include="administrativo\frmCursosHorarios.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="administrativo\frmRelacaoCompletaHorarios.Designer.vb">
+      <DependentUpon>frmRelacaoCompletaHorarios.vb</DependentUpon>
+    </Compile>
+    <Compile Include="administrativo\frmRelacaoCompletaHorarios.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="cadastros\frmDisciplinas.Designer.vb">
       <DependentUpon>frmDisciplinas.vb</DependentUpon>
     </Compile>
@@ -169,6 +187,15 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="administrativo\cursos e horarios\frmTesteCursosHorarios.resx">
+      <DependentUpon>frmTesteCursosHorarios.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="administrativo\frmCursosHorarios.resx">
+      <DependentUpon>frmCursosHorarios.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="administrativo\frmRelacaoCompletaHorarios.resx">
+      <DependentUpon>frmRelacaoCompletaHorarios.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="cadastros\frmDisciplinas.resx">
       <DependentUpon>frmDisciplinas.vb</DependentUpon>
     </EmbeddedResource>
@@ -250,6 +277,7 @@
     <None Include="Resources\telaloginFinal.jpg" />
     <None Include="Resources\telaloginFinal1.jpg" />
     <None Include="Resources\Keys-icon.png" />
+    <None Include="Resources\dados.png" />
     <Content Include="school.ico" />
   </ItemGroup>
   <ItemGroup />

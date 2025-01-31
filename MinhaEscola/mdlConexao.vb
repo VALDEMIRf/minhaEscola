@@ -7,6 +7,28 @@ Module mdlConexao
     Public objMenus As New ArrayList
     Public empresaNome As String
 
+    Public intCodigoCursoHorario As Integer
+    Public intCodigoCursoHorarioExcluir As Integer
+    Public intPergunta As Integer
+    Public intCodigoLancamento As Integer = 0
+
+    Public Codigo As Integer
+    Public Periodo As String
+    Public Horas As String
+    Public Segunda As String
+    Public Terca As String
+    Public Quarta As String
+    Public Quinta As String
+    Public Sexta As String
+    Public Sabado As String
+    Public ProfSegunda As String
+    Public ProfTerca As String
+    Public ProfQuarta As String
+    Public ProfQuinta As String
+    Public ProfSexta As String
+    Public ProfSabado As String
+
+
     Public con As New SqlConnection("Data Source=DESKTOP-R5VHKNO\SQLEXPRESS;Initial Catalog=DBConectaEscola;Integrated Security=True")
 
     Sub abrir()
@@ -34,4 +56,33 @@ Module mdlConexao
 
         UTF8_to_ISO = textoISO
     End Function
+
+    Private Sub listaMinhaEmpresa()
+        Dim dr As SqlDataReader = Nothing
+
+
+        Try
+            abrir()
+
+            'strQuery.Append("select u.Nome, u.GrupoID,e.razaoSocial from usuario as u,tbEmpresa as e ")
+
+            Dim sql As String = "SELECT razaoSocial FROM tbEmpresa "
+            Dim cmd As SqlCommand = New SqlCommand(sql, con)
+            dr = cmd.ExecuteReader(CommandBehavior.SingleRow)
+
+            If dr.HasRows Then
+                dr.Read()
+
+                empresaNome = dr.Item("razaoSocial")
+
+
+            End If
+        Catch ex As Exception
+            MsgBox(ex.Message.ToString)
+        Finally
+            dr.Close()
+            fechar()
+        End Try
+
+    End Sub
 End Module
