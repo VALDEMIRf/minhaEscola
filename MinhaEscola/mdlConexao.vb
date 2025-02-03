@@ -57,32 +57,32 @@ Module mdlConexao
         UTF8_to_ISO = textoISO
     End Function
 
-    Private Sub listaMinhaEmpresa()
-        Dim dr As SqlDataReader = Nothing
+    'Private Sub listaMinhaEmpresa()
+    '    Dim dr As SqlDataReader = Nothing
 
 
-        Try
-            abrir()
+    '    Try
+    '        abrir()
 
-            'strQuery.Append("select u.Nome, u.GrupoID,e.razaoSocial from usuario as u,tbEmpresa as e ")
+    '        'strQuery.Append("select u.Nome, u.GrupoID,e.razaoSocial from usuario as u,tbEmpresa as e ")
 
-            Dim sql As String = "SELECT razaoSocial FROM tbEmpresa "
-            Dim cmd As SqlCommand = New SqlCommand(sql, con)
-            dr = cmd.ExecuteReader(CommandBehavior.SingleRow)
+    '        Dim sql As String = "SELECT razaoSocial FROM tbEmpresa "
+    '        Dim cmd As SqlCommand = New SqlCommand(sql, con)
+    '        dr = cmd.ExecuteReader(CommandBehavior.SingleRow)
 
-            If dr.HasRows Then
-                dr.Read()
+    '        If dr.HasRows Then
+    '            dr.Read()
 
-                empresaNome = dr.Item("razaoSocial")
+    '            empresaNome = dr.Item("razaoSocial")
 
 
-            End If
-        Catch ex As Exception
-            MsgBox(ex.Message.ToString)
-        Finally
-            dr.Close()
-            fechar()
-        End Try
+    '        End If
+    '    Catch ex As Exception
+    '        MsgBox(ex.Message.ToString)
+    '    Finally
+    '        dr.Close()
+    '        fechar()
+    '    End Try
 
-    End Sub
+    'End Sub
 End Module

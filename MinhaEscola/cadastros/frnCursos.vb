@@ -20,7 +20,7 @@ Public Class frnCursos
             da = New SqlDataAdapter("pa_curso_listar", con)
             da.SelectCommand.CommandType = CommandType.StoredProcedure
             da.Fill(dt)
-            dg.DataSource = dt
+            dgvCursos.DataSource = dt
 
             ContarLinhas()
 
@@ -34,54 +34,46 @@ Public Class frnCursos
     End Sub
 
     Private Sub Limpar()
-        txtCurso.Focus()
+        txtCodigo.Focus()
         txtCurso.Text = ""
         txtValor.Text = ""
-        txtValor.Text = "R$ 0,00"
+        txtCodigo.Text = ""
+        txtTurma.Text = ""
+
     End Sub
 
     Private Sub FormatarDG()
-        With dg
-
-            .AutoSizeRowsMode = DataGridViewAutoSizeRowsMode.AllCells
-            .AutoSizeRowsMode = DataGridViewAutoSizeRowsMode.AllHeaders
-            .ColumnHeadersBorderStyle = DataGridViewHeaderBorderStyle.Single
-            .AllowUserToResizeColumns = False
-            .EnableHeadersVisualStyles = False
-            .MultiSelect = False
-
-            'altera a cor das linhas alternadas no grid
-            .RowsDefaultCellStyle.BackColor = Color.White
+        With dgvCursos
 
             .Columns(0).Visible = False
-            .Columns(1).HeaderText = "Cursos"
-            .Columns(2).HeaderText = "Valor"
-            .Columns(1).Width = 150
+            .Columns(1).HeaderText = "Código"
+            .Columns(2).HeaderText = "Curso"
+            .Columns(3).HeaderText = "Valor"
+            .Columns(4).HeaderText = "Turma"
 
-            .Columns(1).AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill
-            .Columns(2).DefaultCellStyle.Format = "c"
-            .Columns(2).DefaultCellStyle.ForeColor = Color.Red
-            .Columns(2).DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleRight
-
-            .SelectionMode = DataGridViewSelectionMode.FullRowSelect
-            'permite que o texto maior que célula não seja truncado
-            .DefaultCellStyle.WrapMode = DataGridViewTriState.True
+            .Columns(1).Width = 50
+            .Columns(2).Width = 150
+            .Columns(3).Width = 70
+            .Columns(4).Width = 70
         End With
     End Sub
 
     Private Sub DesabilitarCampos()
         txtCurso.Enabled = False
         txtValor.Enabled = False
-
+        txtCodigo.Enabled = False
+        txtTurma.Enabled = False
     End Sub
 
     Private Sub HabilitarCampos()
         txtCurso.Enabled = True
         txtValor.Enabled = True
+        txtCodigo.Enabled = True
+        txtTurma.Enabled = True
     End Sub
 
     Private Sub ContarLinhas()
-        Dim total As Integer = dg.Rows.Count
+        Dim total As Integer = dgvCursos.Rows.Count
         lblTotal.Text = CInt(total)
 
     End Sub
@@ -111,8 +103,10 @@ Public Class frnCursos
             cmd = New SqlCommand("pa_curso_Salvar", con)
             cmd.CommandType = CommandType.StoredProcedure
 
+            cmd.Parameters.AddWithValue("@codigoCurso", txtCodigo.Text)
             cmd.Parameters.AddWithValue("@NomeCurso", txtCurso.Text)
             cmd.Parameters.AddWithValue("@ValorCurso", vlValor)
+            cmd.Parameters.AddWithValue("@turma", txtTurma.Text)
             cmd.Parameters.Add("@mensagem", SqlDbType.VarChar, 100).Direction = 2
             cmd.ExecuteNonQuery()
 
@@ -130,27 +124,43 @@ Public Class frnCursos
         End Try
     End Sub
 
-    Private Sub dg_Click(sender As Object, e As EventArgs) Handles dg.Click
+
+
+    Private Sub dgvCursos_Click(sender As Object, e As EventArgs) Handles dgvCursos.Click
         btSalvarEditar.Enabled = True
         btnExcluir.Enabled = True
 
-        lblCodigo.Text = dg.CurrentRow.Cells(0).Value
-        txtCurso.Text = dg.CurrentRow.Cells(1).Value
-        txtValor.Text = dg.CurrentRow.Cells(2).Value
+        lblCodigo.Text = dgvCursos.CurrentRow.Cells(0).Value
+        txtCodigo.Text = dgvCursos.CurrentRow.Cells(1).Value
+        txtCurso.Text = dgvCursos.CurrentRow.Cells(2).Value
+        txtValor.Text = dgvCursos.CurrentRow.Cells(3).Value
+        txtTurma.Text = dgvCursos.CurrentRow.Cells(4).Value
     End Sub
 
     Private Sub alterar()
         Dim cmd As SqlCommand
 
         Try
+
+
+            If txtCurso.Text.Equals(String.Empty) Then
+                ErrorProvider1.SetError(txtCurso, "Digite o nome de um curso")
+                MsgBox("Selecione um dos cursos listados")
+                Exit Sub
+            Else
+                ErrorProvider1.SetError(txtCurso, "")
+            End If
+
             Dim vlValor = Replace(txtValor.Text, ",", ".")
 
             abrir()
             cmd = New SqlCommand("pa_curso_Editar", con)
             cmd.CommandType = CommandType.StoredProcedure
-            cmd.Parameters.AddWithValue("@CodigoCurso", lblCodigo.Text)
+            cmd.Parameters.AddWithValue("@idCurso", lblCodigo.Text)
+            cmd.Parameters.AddWithValue("@codigoCurso", txtCodigo.Text)
             cmd.Parameters.AddWithValue("@NomeCurso", txtCurso.Text)
             cmd.Parameters.AddWithValue("@ValorCurso", vlValor)
+            cmd.Parameters.AddWithValue("@turma", txtTurma.Text)
             cmd.Parameters.Add("@mensagem", SqlDbType.VarChar, 100).Direction = 2
             cmd.ExecuteNonQuery()
 
@@ -178,10 +188,11 @@ Public Class frnCursos
             Try
                 If (MessageBox.Show("Deseja excluir este curso?", Me.Text, MessageBoxButtons.YesNo, MessageBoxIcon.Question) = Windows.Forms.DialogResult.No) Then Exit Sub
 
+                ' int,
                 abrir()
                 cmd = New SqlCommand("pa_curso_Excluir", con)
                 cmd.CommandType = CommandType.StoredProcedure
-                cmd.Parameters.AddWithValue("@CodigoCurso", lblCodigo.Text)
+                cmd.Parameters.AddWithValue("@idCurso", lblCodigo.Text)
                 cmd.Parameters.Add("@mensagem", SqlDbType.VarChar, 100).Direction = 2
                 cmd.ExecuteNonQuery()
 
@@ -212,4 +223,6 @@ Public Class frnCursos
     Private Sub btFechar_Click(sender As Object, e As EventArgs) Handles btFechar.Click
         Me.Close()
     End Sub
+
+
 End Class

@@ -10,20 +10,43 @@ Public Class frmCadastroAlunos
     Private _create As Net.HttpWebRequest
 
     Private Sub frmCadastroAlunos_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+
         carregarImagem()
+        carregarCurso()
         carregarOcupacaoPai()
         carregarOcupacaoMae()
         carregarOcupacaoResp()
         Listar()
         btSalvarEditar.Enabled = False
+
     End Sub
 
     Private Sub frmCadastroAlunos_Activated(sender As Object, e As EventArgs) Handles MyBase.Activated
         DesabilitarCampos()
+        carregarCurso()
         carregarOcupacaoPai()
         carregarOcupacaoMae()
         carregarOcupacaoResp()
         Listar()
+    End Sub
+
+    Sub carregarCurso()
+        Dim DT As New DataTable
+        Dim DA As SqlDataAdapter
+        Try
+            abrir()
+            DA = New SqlDataAdapter("pa_curso_listar", con)
+            DA.Fill(DT)
+
+            cmbCursos.ValueMember = "idCurso"
+            cmbCursos.DisplayMember = "NomeCurso"
+            cmbCursos.DataSource = DT
+
+        Catch ex As Exception : MessageBox.Show(ex.Message.ToString)
+        Finally
+            fechar()
+        End Try
+
     End Sub
 
     Sub carregarOcupacaoPai()
@@ -88,6 +111,8 @@ Public Class frmCadastroAlunos
         txtCPF.Enabled = False
         txtRG.Enabled = False
         cmbSexo.Enabled = False
+        cmbEstCivil.Enabled = False
+        cmbCursos.Enabled = False
         cmbDia.Enabled = False
         cmbMes.Enabled = False
         cmbAno.Enabled = False
@@ -115,6 +140,8 @@ Public Class frmCadastroAlunos
         txtCPF.Enabled = True
         txtRG.Enabled = True
         cmbSexo.Enabled = True
+        cmbEstCivil.Enabled = True
+        cmbCursos.Enabled = True
         cmbDia.Enabled = True
         cmbMes.Enabled = True
         cmbAno.Enabled = True
@@ -133,6 +160,7 @@ Public Class frmCadastroAlunos
         txtCelMae.Enabled = True
         txtCelResp.Enabled = True
         txtObs.Enabled = True
+
     End Sub
 
     Private Sub Limpar()
@@ -143,6 +171,7 @@ Public Class frmCadastroAlunos
         txtRG.Text = ""
         cmbSexo.Text = Nothing
         cmbEstCivil.Text = Nothing
+        cmbCursos.Text = Nothing
         cmbDia.Text = Nothing
         cmbMes.Text = Nothing
         cmbAno.Text = Nothing
@@ -202,18 +231,19 @@ Public Class frmCadastroAlunos
 
         With dg
             .Columns(0).Visible = False
-            .Columns(20).Visible = False
+            .Columns(22).Visible = False
             .Columns(3).Visible = False
             .Columns(4).Visible = False
             .Columns(5).Visible = False
             .Columns(6).Visible = False
-            .Columns(31).Visible = False
-            .Columns(32).Visible = False
-            .Columns(33).Visible = False
             .Columns(34).Visible = False
             .Columns(35).Visible = False
             .Columns(36).Visible = False
             .Columns(37).Visible = False
+            .Columns(38).Visible = False
+            .Columns(39).Visible = False
+            .Columns(40).Visible = False
+            .Columns(41).Visible = False
 
             .Columns(0).HeaderText = "CodigoAluno"
             .Columns(1).HeaderText = "NomeAluno"
@@ -221,38 +251,43 @@ Public Class frmCadastroAlunos
             .Columns(3).HeaderText = "RG"
             .Columns(4).HeaderText = "Sexo"
             .Columns(5).HeaderText = "est Civil"
-            .Columns(6).HeaderText = "Dia"
-            .Columns(7).HeaderText = "Mês"
-            .Columns(8).HeaderText = "Ano"
-            .Columns(9).HeaderText = "Telefone"
-            .Columns(10).HeaderText = "Celular"
+            .Columns(6).HeaderText = "Telefone"
+            .Columns(7).HeaderText = "Celular"
+            .Columns(8).HeaderText = "Dia"
+            .Columns(9).HeaderText = "Mês"
+            .Columns(10).HeaderText = "Ano"
             .Columns(11).HeaderText = "Email"
-            .Columns(12).HeaderText = "CEP"
-            .Columns(13).HeaderText = "Endereço"
-            .Columns(14).HeaderText = "Núm."
-            .Columns(15).HeaderText = "Compl"
-            .Columns(16).HeaderText = "Compl2"
-            .Columns(17).HeaderText = "UF"
-            .Columns(18).HeaderText = "Bairro"
-            .Columns(19).HeaderText = "Cidade"
-            .Columns(20).HeaderText = "Foto"
-            .Columns(21).HeaderText = "Pai"
-            .Columns(22).HeaderText = "Profissao Pai"
-            .Columns(23).HeaderText = "Tel Pai"
-            .Columns(24).HeaderText = "Mãe"
-            .Columns(25).HeaderText = "Profissao Mãe"
-            .Columns(26).HeaderText = "Tel Mae"
-            .Columns(27).HeaderText = "Responsável"
-            .Columns(28).HeaderText = "Profissão Resp."
-            .Columns(29).HeaderText = "Tel Resp"
-            .Columns(30).HeaderText = "Obs."
-            .Columns(31).HeaderText = "Dt Cadastro"
-            .Columns(32).HeaderText = "ID OcupacaoPai"
-            .Columns(33).HeaderText = "ID AlunoPai"
-            .Columns(34).HeaderText = "ID OcupacaoMae"
-            .Columns(35).HeaderText = "ID AlunoMae"
-            .Columns(36).HeaderText = "ID OcupacaoResp"
-            .Columns(37).HeaderText = "ID AlunoResp"
+            .Columns(12).HeaderText = "Curso"
+            .Columns(13).HeaderText = "Turma"
+            .Columns(14).HeaderText = "CEP"
+            .Columns(15).HeaderText = "Endereço"
+            .Columns(16).HeaderText = "Núm."
+            .Columns(17).HeaderText = "Compl"
+            .Columns(18).HeaderText = "Compl2"
+            .Columns(19).HeaderText = "UF"
+            .Columns(20).HeaderText = "Bairro"
+            .Columns(21).HeaderText = "Cidade"
+            .Columns(22).HeaderText = "Foto"
+            .Columns(23).HeaderText = "Pai"
+            .Columns(24).HeaderText = "Profissao Pai"
+            .Columns(25).HeaderText = "Tel Pai"
+            .Columns(26).HeaderText = "Mãe"
+            .Columns(27).HeaderText = "Profissao Mãe"
+            .Columns(28).HeaderText = "Tel Mae"
+            .Columns(29).HeaderText = "Responsável"
+            .Columns(30).HeaderText = "Profissão Resp."
+            .Columns(31).HeaderText = "Tel Resp"
+            .Columns(32).HeaderText = "Obs."
+            .Columns(33).HeaderText = "Dt Cadastro"
+            .Columns(34).HeaderText = "ID"
+            .Columns(35).HeaderText = "ID "
+            .Columns(36).HeaderText = "ID "
+            .Columns(37).HeaderText = "ID "
+            .Columns(38).HeaderText = "ID "
+            .Columns(39).HeaderText = "ID "
+            .Columns(40).HeaderText = "ID "
+            .Columns(41).HeaderText = "ID "
+
 
 
             '.Columns(1).Width = 150
@@ -272,6 +307,72 @@ Public Class frmCadastroAlunos
             '.Columns(17).Width = 150
             '.Columns(19).Width = 180
         End With
+
+    End Sub
+
+    Private Sub dg_Click(sender As Object, e As EventArgs) Handles dg.Click
+
+        txtCPF.Enabled = False
+        txtRG.Enabled = False
+        btSalvarEditar.Enabled = True
+        HabilitarCampos()
+
+        lblCodigo.Text = dg.CurrentRow.Cells(0).Value
+        txtNomeAluno.Text = dg.CurrentRow.Cells(1).Value
+        txtCPF.Text = dg.CurrentRow.Cells(2).Value
+        txtRG.Text = dg.CurrentRow.Cells(3).Value
+        cmbSexo.Text = dg.CurrentRow.Cells(4).Value
+        cmbEstCivil.Text = dg.CurrentRow.Cells(5).Value
+        txtTelefone.Text = dg.CurrentRow.Cells(6).Value
+        txtCelular.Text = dg.CurrentRow.Cells(7).Value
+        cmbDia.Text = dg.CurrentRow.Cells(8).Value
+        cmbMes.Text = dg.CurrentRow.Cells(9).Value
+        cmbAno.Text = dg.CurrentRow.Cells(10).Value
+        txtEmail.Text = dg.CurrentRow.Cells(11).Value
+        cmbCursos.Text = dg.CurrentRow.Cells(12).Value
+        'turma = dg.CurrentRow.Cells(13).Value
+        txtCep.Text = dg.CurrentRow.Cells(14).Value
+        txtEndereco.Text = dg.CurrentRow.Cells(15).Value
+        txtNum.Text = dg.CurrentRow.Cells(16).Value
+        txtComplemento.Text = dg.CurrentRow.Cells(17).Value
+        txtCompl.Text = dg.CurrentRow.Cells(18).Value
+        txtUF.Text = dg.CurrentRow.Cells(19).Value
+        txtBairro.Text = dg.CurrentRow.Cells(20).Value
+        txtCidade.Text = dg.CurrentRow.Cells(21).Value
+        ' foto = dg.CurrentRow.Cells(22).Value
+        txtNomePai.Text = dg.CurrentRow.Cells(23).Value
+        cmbOcupacaoPai.Text = dg.CurrentRow.Cells(24).Value
+        txtCelPai.Text = dg.CurrentRow.Cells(25).Value
+        txtNomeMae.Text = dg.CurrentRow.Cells(26).Value
+        cmbOcupacaoMae.Text = dg.CurrentRow.Cells(27).Value
+        txtCelMae.Text = dg.CurrentRow.Cells(28).Value
+        txtNomeResp.Text = dg.CurrentRow.Cells(29).Value
+        cmbOcupacaoResp.Text = dg.CurrentRow.Cells(30).Value
+        txtCelResp.Text = dg.CurrentRow.Cells(31).Value
+        txtObs.Text = dg.CurrentRow.Cells(32).Value
+        ' dg.CurrentRow.Cells(33).Value
+        'Text = dg.CurrentRow.Cells(34).Value
+        '.Text = dg.CurrentRow.Cells(35).Value
+        '.Text = dg.CurrentRow.Cells(36).Value
+        '.Text = dg.CurrentRow.Cells(37).Value
+        '.Text = dg.CurrentRow.Cells(38).Value
+        '.Text = dg.CurrentRow.Cells(39).Value
+        '.Text = dg.CurrentRow.Cells(40).Value
+        ''.Text = dg.CurrentRow.Cells(41).Value
+
+
+        Dim tempImagem As Byte() = DirectCast(dg.CurrentRow.Cells(22).Value, Byte())
+        If tempImagem Is Nothing Then
+            MessageBox.Show("Imagem não localizada", "Erro")
+            Exit Sub
+        End If
+        Dim strArquivo As String = Convert.ToString(DateTime.Now.ToFileTime())
+        Dim fs As New FileStream(strArquivo, FileMode.CreateNew, FileAccess.Write)
+        fs.Write(tempImagem, 0, tempImagem.Length)
+        fs.Flush()
+        fs.Close()
+        ImagemCarregada = Image.FromFile(strArquivo)
+        pbImagem.Image = ImagemCarregada
 
     End Sub
 
@@ -307,6 +408,7 @@ Public Class frmCadastroAlunos
                 pbImagem.Image = ImagemCarregada
             End If
         End Using
+        HabilitarCampos()
     End Sub
 
     Private Sub btNovo_Click(sender As Object, e As EventArgs) Handles btNovo.Click
@@ -362,11 +464,12 @@ Public Class frmCadastroAlunos
             cmd.Parameters.AddWithValue("@rg", txtRG.Text)
             cmd.Parameters.AddWithValue("@sexo", cmbSexo.Text)
             cmd.Parameters.AddWithValue("@estCivil", cmbEstCivil.Text)
+            cmd.Parameters.AddWithValue("@idCurso", cmbCursos.SelectedValue)
+            cmd.Parameters.AddWithValue("@telefone", txtTelefone.Text)
+            cmd.Parameters.AddWithValue("@celular", txtCelular.Text)
             cmd.Parameters.AddWithValue("@dia", cmbDia.Text)
             cmd.Parameters.AddWithValue("@mes", cmbMes.Text)
             cmd.Parameters.AddWithValue("@ano", cmbAno.Text)
-            cmd.Parameters.AddWithValue("@telefone", txtTelefone.Text)
-            cmd.Parameters.AddWithValue("@celular", txtCelular.Text)
             cmd.Parameters.AddWithValue("@email", txtEmail.Text)
             cmd.Parameters.AddWithValue("@cep", txtCep.Text)
             cmd.Parameters.AddWithValue("@endereco", txtEndereco.Text)
@@ -429,63 +532,13 @@ Public Class frmCadastroAlunos
         form.ShowDialog()
     End Sub
 
-    Private Sub dg_Click(sender As Object, e As EventArgs) Handles dg.Click
 
-        txtCPF.Enabled = False
-        txtRG.Enabled = False
-
-        lblCodigo.Text = dg.CurrentRow.Cells(0).Value
-        txtNomeAluno.Text = dg.CurrentRow.Cells(1).Value
-        txtCPF.Text = dg.CurrentRow.Cells(2).Value
-        txtRG.Text = dg.CurrentRow.Cells(3).Value
-        cmbSexo.Text = dg.CurrentRow.Cells(4).Value
-        cmbEstCivil.Text = dg.CurrentRow.Cells(5).Value
-        cmbDia.Text = dg.CurrentRow.Cells(6).Value
-        cmbMes.Text = dg.CurrentRow.Cells(7).Value
-        cmbAno.Text = dg.CurrentRow.Cells(8).Value
-        txtTelefone.Text = dg.CurrentRow.Cells(9).Value
-        txtCelular.Text = dg.CurrentRow.Cells(10).Value
-        txtEmail.Text = dg.CurrentRow.Cells(11).Value
-        txtCep.Text = dg.CurrentRow.Cells(12).Value
-        txtEndereco.Text = dg.CurrentRow.Cells(13).Value
-        txtNum.Text = dg.CurrentRow.Cells(14).Value
-        txtComplemento.Text = dg.CurrentRow.Cells(15).Value
-        txtCompl.Text = dg.CurrentRow.Cells(16).Value
-        txtUF.Text = dg.CurrentRow.Cells(17).Value
-        txtBairro.Text = dg.CurrentRow.Cells(18).Value
-        txtCidade.Text = dg.CurrentRow.Cells(19).Value
-        ' = dg.CurrentRow.Cells(20).Value
-        txtNomePai.Text = dg.CurrentRow.Cells(21).Value
-        cmbOcupacaoPai.Text = dg.CurrentRow.Cells(22).Value
-        txtCelPai.Text = dg.CurrentRow.Cells(23).Value
-        txtNomeMae.Text = dg.CurrentRow.Cells(24).Value
-        cmbOcupacaoMae.Text = dg.CurrentRow.Cells(25).Value
-        txtCelMae.Text = dg.CurrentRow.Cells(26).Value
-        txtNomeResp.Text = dg.CurrentRow.Cells(27).Value
-        cmbOcupacaoResp.Text = dg.CurrentRow.Cells(28).Value
-        txtCelResp.Text = dg.CurrentRow.Cells(29).Value
-        txtObs.Text = dg.CurrentRow.Cells(30).Value
-
-
-        Dim tempImagem As Byte() = DirectCast(dg.CurrentRow.Cells(20).Value, Byte())
-        If tempImagem Is Nothing Then
-            MessageBox.Show("Imagem não localizada", "Erro")
-            Exit Sub
-        End If
-        Dim strArquivo As String = Convert.ToString(DateTime.Now.ToFileTime())
-        Dim fs As New FileStream(strArquivo, FileMode.CreateNew, FileAccess.Write)
-        fs.Write(tempImagem, 0, tempImagem.Length)
-        fs.Flush()
-        fs.Close()
-        ImagemCarregada = Image.FromFile(strArquivo)
-        pbImagem.Image = ImagemCarregada
-
-    End Sub
 
     Private Sub alterar()
         Dim cmd As SqlCommand
 
         Try
+            HabilitarCampos()
 
             'CARREGANDO IMAGEM NO BANCO
             Dim MS As New IO.MemoryStream
@@ -500,11 +553,12 @@ Public Class frmCadastroAlunos
             cmd.Parameters.AddWithValue("@cpf", txtCPF.Text)
             cmd.Parameters.AddWithValue("@sexo", cmbSexo.Text)
             cmd.Parameters.AddWithValue("@estCivil", cmbEstCivil.Text)
+            cmd.Parameters.AddWithValue("@idCurso", cmbCursos.SelectedValue)
+            cmd.Parameters.AddWithValue("@telefone", txtTelefone.Text)
+            cmd.Parameters.AddWithValue("@celular", txtCelular.Text)
             cmd.Parameters.AddWithValue("@dia", cmbDia.Text)
             cmd.Parameters.AddWithValue("@mes", cmbMes.Text)
             cmd.Parameters.AddWithValue("@ano", cmbAno.Text)
-            cmd.Parameters.AddWithValue("@telefone", txtTelefone.Text)
-            cmd.Parameters.AddWithValue("@celular", txtCelular.Text)
             cmd.Parameters.AddWithValue("@email", txtEmail.Text)
             cmd.Parameters.AddWithValue("@cep", txtCep.Text)
             cmd.Parameters.AddWithValue("@endereco", txtEndereco.Text)

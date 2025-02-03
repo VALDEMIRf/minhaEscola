@@ -118,8 +118,8 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
-  <data name="telaloginFinal1" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\telaloginFinal1.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="istockphoto-1145816065-612x612" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\istockphoto-1145816065-612x612.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="telalogin1" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\telalogin1.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -151,14 +151,14 @@
   <data name="Find" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Find.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="istockphoto-1145816065-612x612" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\istockphoto-1145816065-612x612.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="telaloginFinal1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\telaloginFinal1.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="bolinha_xis" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\bolinha_xis.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="Create" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Create.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="Fall" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Fall.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="tela login1" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\tela login1.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -166,11 +166,20 @@
   <data name="shopping-mall" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\shopping-mall.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="Report" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Report.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="Keys-icon" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Keys-icon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="Create" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Create.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="camera" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\camera.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Download.16" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Download.16.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="Delete" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Delete.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -184,6 +193,9 @@
   <data name="predioescola" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\predioescola.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="dados" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\dados.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="apagar" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\apagar.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -193,8 +205,17 @@
   <data name="View" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\View.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="gerarmensalidade" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\gerarmensalidade.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="opcoes" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\opcoes.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="Notes" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Notes.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="dados1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\dados1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="fundo_frm_login" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\fundo_frm_login.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -202,7 +223,7 @@
   <data name="New document" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\New document.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="dados" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\dados.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="Excel.24" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Excel.24.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>

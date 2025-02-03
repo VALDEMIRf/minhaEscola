@@ -618,9 +618,9 @@ Partial Class frmCursosHorarios
         Me.btnExcluir.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnExcluir.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnExcluir.Image = Global.MinhaEscola.My.Resources.Resources.Turn_off
-        Me.btnExcluir.Location = New System.Drawing.Point(225, 53)
+        Me.btnExcluir.Location = New System.Drawing.Point(222, 50)
         Me.btnExcluir.Name = "btnExcluir"
-        Me.btnExcluir.Size = New System.Drawing.Size(97, 34)
+        Me.btnExcluir.Size = New System.Drawing.Size(91, 31)
         Me.btnExcluir.TabIndex = 331
         Me.btnExcluir.Text = "Deletar"
         Me.btnExcluir.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
@@ -633,9 +633,9 @@ Partial Class frmCursosHorarios
         Me.btSalvarEditar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btSalvarEditar.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btSalvarEditar.Image = Global.MinhaEscola.My.Resources.Resources.Notes
-        Me.btSalvarEditar.Location = New System.Drawing.Point(95, 49)
+        Me.btSalvarEditar.Location = New System.Drawing.Point(95, 47)
         Me.btSalvarEditar.Name = "btSalvarEditar"
-        Me.btSalvarEditar.Size = New System.Drawing.Size(124, 45)
+        Me.btSalvarEditar.Size = New System.Drawing.Size(124, 37)
         Me.btSalvarEditar.TabIndex = 332
         Me.btSalvarEditar.Text = "Salvar/Editar"
         Me.btSalvarEditar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
@@ -648,9 +648,9 @@ Partial Class frmCursosHorarios
         Me.btNovo.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btNovo.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btNovo.Image = Global.MinhaEscola.My.Resources.Resources.New_document
-        Me.btNovo.Location = New System.Drawing.Point(7, 53)
+        Me.btNovo.Location = New System.Drawing.Point(5, 49)
         Me.btNovo.Name = "btNovo"
-        Me.btNovo.Size = New System.Drawing.Size(82, 34)
+        Me.btNovo.Size = New System.Drawing.Size(84, 34)
         Me.btNovo.TabIndex = 330
         Me.btNovo.Text = "Novo"
         Me.btNovo.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
@@ -660,7 +660,7 @@ Partial Class frmCursosHorarios
         '
         Me.ToolStrip1.Dock = System.Windows.Forms.DockStyle.None
         Me.ToolStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.btVisualizar})
-        Me.ToolStrip1.Location = New System.Drawing.Point(345, 53)
+        Me.ToolStrip1.Location = New System.Drawing.Point(319, 57)
         Me.ToolStrip1.Name = "ToolStrip1"
         Me.ToolStrip1.Size = New System.Drawing.Size(97, 25)
         Me.ToolStrip1.TabIndex = 333
@@ -702,6 +702,7 @@ Partial Class frmCursosHorarios
         Me.lblCodigo.Size = New System.Drawing.Size(14, 13)
         Me.lblCodigo.TabIndex = 334
         Me.lblCodigo.Text = "0"
+        Me.lblCodigo.Visible = False
         '
         'frmCursosHorarios
         '

@@ -1,9 +1,9 @@
-﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()> _
+﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()>
 Partial Class frmCadastroAlunos
     Inherits System.Windows.Forms.Form
 
     'Descartar substituições de formulário para limpar a lista de componentes.
-    <System.Diagnostics.DebuggerNonUserCode()> _
+    <System.Diagnostics.DebuggerNonUserCode()>
     Protected Overrides Sub Dispose(ByVal disposing As Boolean)
         Try
             If disposing AndAlso components IsNot Nothing Then
@@ -20,11 +20,13 @@ Partial Class frmCadastroAlunos
     'OBSERVAÇÃO: o procedimento a seguir é exigido pelo Windows Form Designer
     'Pode ser modificado usando o Windows Form Designer.  
     'Não o modifique usando o editor de códigos.
-    <System.Diagnostics.DebuggerStepThrough()> _
+    <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
         Me.tcAlunos = New System.Windows.Forms.TabControl()
         Me.TabPage1 = New System.Windows.Forms.TabPage()
         Me.groupBox1 = New System.Windows.Forms.GroupBox()
+        Me.Label30 = New System.Windows.Forms.Label()
+        Me.cmbCursos = New System.Windows.Forms.ComboBox()
         Me.cmbEstCivil = New System.Windows.Forms.ComboBox()
         Me.Label29 = New System.Windows.Forms.Label()
         Me.lblCodigo = New System.Windows.Forms.Label()
@@ -145,6 +147,8 @@ Partial Class frmCadastroAlunos
             Or System.Windows.Forms.AnchorStyles.Left) _
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.groupBox1.BackColor = System.Drawing.Color.Transparent
+        Me.groupBox1.Controls.Add(Me.Label30)
+        Me.groupBox1.Controls.Add(Me.cmbCursos)
         Me.groupBox1.Controls.Add(Me.cmbEstCivil)
         Me.groupBox1.Controls.Add(Me.Label29)
         Me.groupBox1.Controls.Add(Me.lblCodigo)
@@ -193,6 +197,25 @@ Partial Class frmCadastroAlunos
         Me.groupBox1.TabIndex = 23
         Me.groupBox1.TabStop = False
         '
+        'Label30
+        '
+        Me.Label30.AutoSize = True
+        Me.Label30.Font = New System.Drawing.Font("Verdana", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label30.Location = New System.Drawing.Point(7, 87)
+        Me.Label30.Name = "Label30"
+        Me.Label30.Size = New System.Drawing.Size(46, 13)
+        Me.Label30.TabIndex = 332
+        Me.Label30.Text = "Curso:"
+        '
+        'cmbCursos
+        '
+        Me.cmbCursos.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.cmbCursos.FormattingEnabled = True
+        Me.cmbCursos.Location = New System.Drawing.Point(6, 102)
+        Me.cmbCursos.Name = "cmbCursos"
+        Me.cmbCursos.Size = New System.Drawing.Size(262, 21)
+        Me.cmbCursos.TabIndex = 331
+        '
         'cmbEstCivil
         '
         Me.cmbEstCivil.Cursor = System.Windows.Forms.Cursors.Hand
@@ -219,11 +242,12 @@ Partial Class frmCadastroAlunos
         '
         Me.lblCodigo.AutoSize = True
         Me.lblCodigo.Font = New System.Drawing.Font("Verdana", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lblCodigo.Location = New System.Drawing.Point(594, 146)
+        Me.lblCodigo.Location = New System.Drawing.Point(727, 145)
         Me.lblCodigo.Name = "lblCodigo"
         Me.lblCodigo.Size = New System.Drawing.Size(14, 13)
         Me.lblCodigo.TabIndex = 329
         Me.lblCodigo.Text = "0"
+        Me.lblCodigo.Visible = False
         '
         'btImagem
         '
@@ -362,7 +386,7 @@ Partial Class frmCadastroAlunos
         Me.cmbAno.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
         Me.cmbAno.FormattingEnabled = True
         Me.cmbAno.Items.AddRange(New Object() {"1960", "1961", "1962", "1963", "1964", "1965", "1966", "1967", "1968", "1969", "1970", "1971", "1972", "1973", "1974", "1975", "1976", "1977", "1978", "1979", "1980", "1981", "1982", "1983", "1984", "1985", "1986", "1987", "1988", "1989", "1990", "1991", "1992", "1993", "1994", "1995", "1996", "1997", "1998", "1999", "2000", "2001", "2002", "2003", "2004", "2005", "2006", "2007", "2008", "2009", "2010", "2011", "2012", "2013", "2014", "2015", "2016", "2017", "2018", "2019", "2020", "2021", "2022", "2023"})
-        Me.cmbAno.Location = New System.Drawing.Point(75, 104)
+        Me.cmbAno.Location = New System.Drawing.Point(77, 146)
         Me.cmbAno.Name = "cmbAno"
         Me.cmbAno.Size = New System.Drawing.Size(51, 21)
         Me.cmbAno.TabIndex = 8
@@ -372,7 +396,7 @@ Partial Class frmCadastroAlunos
         Me.cmbMes.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
         Me.cmbMes.FormattingEnabled = True
         Me.cmbMes.Items.AddRange(New Object() {"01", "02", "03", "04", "05", "06", "07", "08", "09", "10", "11", "12"})
-        Me.cmbMes.Location = New System.Drawing.Point(39, 104)
+        Me.cmbMes.Location = New System.Drawing.Point(41, 146)
         Me.cmbMes.Name = "cmbMes"
         Me.cmbMes.Size = New System.Drawing.Size(37, 21)
         Me.cmbMes.TabIndex = 7
@@ -382,7 +406,7 @@ Partial Class frmCadastroAlunos
         Me.cmbDia.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
         Me.cmbDia.FormattingEnabled = True
         Me.cmbDia.Items.AddRange(New Object() {"01", "02", "03", "04", "05", "06", "07", "08", "09", "10", "11", "12", "13", "14", "15", "16", "17", "18", "19", "20", "21", "22", "23", "24", "25", "26", "27", "28", "29", "30", "31"})
-        Me.cmbDia.Location = New System.Drawing.Point(3, 104)
+        Me.cmbDia.Location = New System.Drawing.Point(5, 146)
         Me.cmbDia.Name = "cmbDia"
         Me.cmbDia.Size = New System.Drawing.Size(37, 21)
         Me.cmbDia.TabIndex = 6
@@ -468,7 +492,7 @@ Partial Class frmCadastroAlunos
         '
         Me.Label21.AutoSize = True
         Me.Label21.Font = New System.Drawing.Font("Verdana", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label21.Location = New System.Drawing.Point(5, 89)
+        Me.Label21.Location = New System.Drawing.Point(7, 131)
         Me.Label21.Name = "Label21"
         Me.Label21.Size = New System.Drawing.Size(104, 13)
         Me.Label21.TabIndex = 36
@@ -478,7 +502,7 @@ Partial Class frmCadastroAlunos
         '
         Me.Label27.AutoSize = True
         Me.Label27.Font = New System.Drawing.Font("Verdana", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label27.Location = New System.Drawing.Point(368, 89)
+        Me.Label27.Location = New System.Drawing.Point(370, 89)
         Me.Label27.Name = "Label27"
         Me.Label27.Size = New System.Drawing.Size(48, 13)
         Me.Label27.TabIndex = 32
@@ -486,7 +510,7 @@ Partial Class frmCadastroAlunos
         '
         'txtCelular
         '
-        Me.txtCelular.Location = New System.Drawing.Point(368, 104)
+        Me.txtCelular.Location = New System.Drawing.Point(373, 104)
         Me.txtCelular.Mask = "(99) 9 9999-9999"
         Me.txtCelular.Name = "txtCelular"
         Me.txtCelular.Size = New System.Drawing.Size(89, 20)
@@ -496,7 +520,7 @@ Partial Class frmCadastroAlunos
         '
         Me.Label26.AutoSize = True
         Me.Label26.Font = New System.Drawing.Font("Verdana", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label26.Location = New System.Drawing.Point(194, 89)
+        Me.Label26.Location = New System.Drawing.Point(270, 89)
         Me.Label26.Name = "Label26"
         Me.Label26.Size = New System.Drawing.Size(55, 13)
         Me.Label26.TabIndex = 30
@@ -504,7 +528,7 @@ Partial Class frmCadastroAlunos
         '
         'txtTelefone
         '
-        Me.txtTelefone.Location = New System.Drawing.Point(193, 104)
+        Me.txtTelefone.Location = New System.Drawing.Point(274, 104)
         Me.txtTelefone.Mask = "(99) 9999-9999"
         Me.txtTelefone.Name = "txtTelefone"
         Me.txtTelefone.Size = New System.Drawing.Size(92, 20)
@@ -532,18 +556,18 @@ Partial Class frmCadastroAlunos
         '
         'txtEmail
         '
-        Me.txtEmail.Location = New System.Drawing.Point(3, 146)
+        Me.txtEmail.Location = New System.Drawing.Point(143, 147)
         Me.txtEmail.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
         Me.txtEmail.MaxLength = 100
         Me.txtEmail.Name = "txtEmail"
-        Me.txtEmail.Size = New System.Drawing.Size(362, 20)
+        Me.txtEmail.Size = New System.Drawing.Size(314, 20)
         Me.txtEmail.TabIndex = 11
         '
         'Label3
         '
         Me.Label3.AutoSize = True
         Me.Label3.Font = New System.Drawing.Font("Verdana", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label3.Location = New System.Drawing.Point(5, 131)
+        Me.Label3.Location = New System.Drawing.Point(152, 131)
         Me.Label3.Name = "Label3"
         Me.Label3.Size = New System.Drawing.Size(43, 13)
         Me.Label3.TabIndex = 25
@@ -1179,4 +1203,6 @@ Partial Class frmCadastroAlunos
     Friend WithEvents cmbOcupacaoMae As ComboBox
     Private WithEvents cmbEstCivil As ComboBox
     Private WithEvents Label29 As Label
+    Private WithEvents Label30 As Label
+    Friend WithEvents cmbCursos As ComboBox
 End Class

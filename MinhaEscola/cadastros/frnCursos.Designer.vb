@@ -22,10 +22,11 @@ Partial Class frnCursos
     'Não o modifique usando o editor de códigos.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
+        Me.components = New System.ComponentModel.Container()
         Me.Panel2 = New System.Windows.Forms.Panel()
+        Me.btFechar = New System.Windows.Forms.Button()
         Me.Label18 = New System.Windows.Forms.Label()
         Me.PictureBox1 = New System.Windows.Forms.PictureBox()
-        Me.dg = New System.Windows.Forms.DataGridView()
         Me.txtCurso = New System.Windows.Forms.TextBox()
         Me.txtValor = New System.Windows.Forms.TextBox()
         Me.Label1 = New System.Windows.Forms.Label()
@@ -36,10 +37,16 @@ Partial Class frnCursos
         Me.lblTotal = New System.Windows.Forms.Label()
         Me.Label3 = New System.Windows.Forms.Label()
         Me.lblCodigo = New System.Windows.Forms.Label()
-        Me.btFechar = New System.Windows.Forms.Button()
+        Me.Label4 = New System.Windows.Forms.Label()
+        Me.txtCodigo = New System.Windows.Forms.TextBox()
+        Me.Label5 = New System.Windows.Forms.Label()
+        Me.txtTurma = New System.Windows.Forms.TextBox()
+        Me.ErrorProvider1 = New System.Windows.Forms.ErrorProvider(Me.components)
+        Me.dgvCursos = New System.Windows.Forms.DataGridView()
         Me.Panel2.SuspendLayout()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.dg, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.ErrorProvider1, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.dgvCursos, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'Panel2
@@ -52,8 +59,23 @@ Partial Class frnCursos
         Me.Panel2.ForeColor = System.Drawing.Color.White
         Me.Panel2.Location = New System.Drawing.Point(0, 0)
         Me.Panel2.Name = "Panel2"
-        Me.Panel2.Size = New System.Drawing.Size(488, 41)
+        Me.Panel2.Size = New System.Drawing.Size(493, 41)
         Me.Panel2.TabIndex = 38
+        '
+        'btFechar
+        '
+        Me.btFechar.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.btFechar.FlatAppearance.BorderSize = 0
+        Me.btFechar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btFechar.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btFechar.Image = Global.MinhaEscola.My.Resources.Resources.back_32
+        Me.btFechar.Location = New System.Drawing.Point(375, 3)
+        Me.btFechar.Name = "btFechar"
+        Me.btFechar.Size = New System.Drawing.Size(105, 32)
+        Me.btFechar.TabIndex = 14
+        Me.btFechar.Text = "Fechar"
+        Me.btFechar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
+        Me.btFechar.UseVisualStyleBackColor = True
         '
         'Label18
         '
@@ -75,31 +97,16 @@ Partial Class frnCursos
         Me.PictureBox1.TabIndex = 0
         Me.PictureBox1.TabStop = False
         '
-        'dg
-        '
-        Me.dg.AllowUserToAddRows = False
-        Me.dg.AllowUserToDeleteRows = False
-        Me.dg.BackgroundColor = System.Drawing.SystemColors.ButtonHighlight
-        Me.dg.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.dg.GridColor = System.Drawing.SystemColors.HotTrack
-        Me.dg.Location = New System.Drawing.Point(3, 85)
-        Me.dg.Margin = New System.Windows.Forms.Padding(12, 10, 12, 10)
-        Me.dg.Name = "dg"
-        Me.dg.ReadOnly = True
-        Me.dg.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
-        Me.dg.Size = New System.Drawing.Size(473, 199)
-        Me.dg.TabIndex = 327
-        '
         'txtCurso
         '
-        Me.txtCurso.Location = New System.Drawing.Point(3, 60)
+        Me.txtCurso.Location = New System.Drawing.Point(121, 64)
         Me.txtCurso.Name = "txtCurso"
         Me.txtCurso.Size = New System.Drawing.Size(366, 20)
         Me.txtCurso.TabIndex = 326
         '
         'txtValor
         '
-        Me.txtValor.Location = New System.Drawing.Point(375, 60)
+        Me.txtValor.Location = New System.Drawing.Point(3, 104)
         Me.txtValor.Name = "txtValor"
         Me.txtValor.Size = New System.Drawing.Size(99, 20)
         Me.txtValor.TabIndex = 328
@@ -108,7 +115,7 @@ Partial Class frnCursos
         '
         Me.Label1.AutoSize = True
         Me.Label1.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label1.Location = New System.Drawing.Point(12, 42)
+        Me.Label1.Location = New System.Drawing.Point(130, 44)
         Me.Label1.Name = "Label1"
         Me.Label1.Size = New System.Drawing.Size(132, 17)
         Me.Label1.TabIndex = 329
@@ -118,7 +125,7 @@ Partial Class frnCursos
         '
         Me.Label2.AutoSize = True
         Me.Label2.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label2.Location = New System.Drawing.Point(399, 43)
+        Me.Label2.Location = New System.Drawing.Point(11, 87)
         Me.Label2.Name = "Label2"
         Me.Label2.Size = New System.Drawing.Size(41, 17)
         Me.Label2.TabIndex = 330
@@ -131,7 +138,7 @@ Partial Class frnCursos
         Me.btnExcluir.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnExcluir.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnExcluir.Image = Global.MinhaEscola.My.Resources.Resources.apagar
-        Me.btnExcluir.Location = New System.Drawing.Point(223, 293)
+        Me.btnExcluir.Location = New System.Drawing.Point(225, 401)
         Me.btnExcluir.Name = "btnExcluir"
         Me.btnExcluir.Size = New System.Drawing.Size(108, 37)
         Me.btnExcluir.TabIndex = 332
@@ -146,7 +153,7 @@ Partial Class frnCursos
         Me.btSalvarEditar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btSalvarEditar.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btSalvarEditar.Image = Global.MinhaEscola.My.Resources.Resources.Notes
-        Me.btSalvarEditar.Location = New System.Drawing.Point(93, 288)
+        Me.btSalvarEditar.Location = New System.Drawing.Point(95, 396)
         Me.btSalvarEditar.Name = "btSalvarEditar"
         Me.btSalvarEditar.Size = New System.Drawing.Size(124, 45)
         Me.btSalvarEditar.TabIndex = 333
@@ -161,7 +168,7 @@ Partial Class frnCursos
         Me.btNovo.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btNovo.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btNovo.Image = Global.MinhaEscola.My.Resources.Resources.New_document
-        Me.btNovo.Location = New System.Drawing.Point(5, 292)
+        Me.btNovo.Location = New System.Drawing.Point(7, 400)
         Me.btNovo.Name = "btNovo"
         Me.btNovo.Size = New System.Drawing.Size(82, 34)
         Me.btNovo.TabIndex = 331
@@ -172,7 +179,7 @@ Partial Class frnCursos
         'lblTotal
         '
         Me.lblTotal.AutoSize = True
-        Me.lblTotal.Location = New System.Drawing.Point(441, 305)
+        Me.lblTotal.Location = New System.Drawing.Point(443, 413)
         Me.lblTotal.Name = "lblTotal"
         Me.lblTotal.Size = New System.Drawing.Size(10, 13)
         Me.lblTotal.TabIndex = 334
@@ -181,7 +188,7 @@ Partial Class frnCursos
         'Label3
         '
         Me.Label3.AutoSize = True
-        Me.Label3.Location = New System.Drawing.Point(381, 305)
+        Me.Label3.Location = New System.Drawing.Point(383, 413)
         Me.Label3.Name = "Label3"
         Me.Label3.Size = New System.Drawing.Size(53, 13)
         Me.Label3.TabIndex = 335
@@ -190,33 +197,76 @@ Partial Class frnCursos
         'lblCodigo
         '
         Me.lblCodigo.AutoSize = True
-        Me.lblCodigo.Location = New System.Drawing.Point(467, 44)
+        Me.lblCodigo.Location = New System.Drawing.Point(428, 102)
         Me.lblCodigo.Name = "lblCodigo"
         Me.lblCodigo.Size = New System.Drawing.Size(13, 13)
         Me.lblCodigo.TabIndex = 336
         Me.lblCodigo.Text = "0"
         '
-        'btFechar
+        'Label4
         '
-        Me.btFechar.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.btFechar.FlatAppearance.BorderSize = 0
-        Me.btFechar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btFechar.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btFechar.Image = Global.MinhaEscola.My.Resources.Resources.back_32
-        Me.btFechar.Location = New System.Drawing.Point(375, 3)
-        Me.btFechar.Name = "btFechar"
-        Me.btFechar.Size = New System.Drawing.Size(105, 32)
-        Me.btFechar.TabIndex = 14
-        Me.btFechar.Text = "Fechar"
-        Me.btFechar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
-        Me.btFechar.UseVisualStyleBackColor = True
+        Me.Label4.AutoSize = True
+        Me.Label4.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label4.Location = New System.Drawing.Point(12, 44)
+        Me.Label4.Name = "Label4"
+        Me.Label4.Size = New System.Drawing.Size(52, 17)
+        Me.Label4.TabIndex = 338
+        Me.Label4.Text = "Código"
+        '
+        'txtCodigo
+        '
+        Me.txtCodigo.Location = New System.Drawing.Point(3, 64)
+        Me.txtCodigo.Name = "txtCodigo"
+        Me.txtCodigo.Size = New System.Drawing.Size(112, 20)
+        Me.txtCodigo.TabIndex = 337
+        '
+        'Label5
+        '
+        Me.Label5.AutoSize = True
+        Me.Label5.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label5.Location = New System.Drawing.Point(129, 87)
+        Me.Label5.Name = "Label5"
+        Me.Label5.Size = New System.Drawing.Size(49, 17)
+        Me.Label5.TabIndex = 340
+        Me.Label5.Text = "Turma"
+        '
+        'txtTurma
+        '
+        Me.txtTurma.Location = New System.Drawing.Point(121, 104)
+        Me.txtTurma.Name = "txtTurma"
+        Me.txtTurma.Size = New System.Drawing.Size(99, 20)
+        Me.txtTurma.TabIndex = 339
+        '
+        'ErrorProvider1
+        '
+        Me.ErrorProvider1.ContainerControl = Me
+        '
+        'dgvCursos
+        '
+        Me.dgvCursos.AllowUserToAddRows = False
+        Me.dgvCursos.AllowUserToDeleteRows = False
+        Me.dgvCursos.BackgroundColor = System.Drawing.SystemColors.ButtonHighlight
+        Me.dgvCursos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
+        Me.dgvCursos.GridColor = System.Drawing.SystemColors.HotTrack
+        Me.dgvCursos.Location = New System.Drawing.Point(3, 128)
+        Me.dgvCursos.Margin = New System.Windows.Forms.Padding(12, 10, 12, 10)
+        Me.dgvCursos.Name = "dgvCursos"
+        Me.dgvCursos.ReadOnly = True
+        Me.dgvCursos.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
+        Me.dgvCursos.Size = New System.Drawing.Size(484, 275)
+        Me.dgvCursos.TabIndex = 341
         '
         'frnCursos
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.Silver
-        Me.ClientSize = New System.Drawing.Size(488, 341)
+        Me.ClientSize = New System.Drawing.Size(493, 444)
+        Me.Controls.Add(Me.dgvCursos)
+        Me.Controls.Add(Me.Label5)
+        Me.Controls.Add(Me.txtTurma)
+        Me.Controls.Add(Me.Label4)
+        Me.Controls.Add(Me.txtCodigo)
         Me.Controls.Add(Me.lblCodigo)
         Me.Controls.Add(Me.Label3)
         Me.Controls.Add(Me.lblTotal)
@@ -226,7 +276,6 @@ Partial Class frnCursos
         Me.Controls.Add(Me.Label2)
         Me.Controls.Add(Me.Label1)
         Me.Controls.Add(Me.txtValor)
-        Me.Controls.Add(Me.dg)
         Me.Controls.Add(Me.txtCurso)
         Me.Controls.Add(Me.Panel2)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None
@@ -236,7 +285,8 @@ Partial Class frnCursos
         Me.Panel2.ResumeLayout(False)
         Me.Panel2.PerformLayout()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.dg, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.ErrorProvider1, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.dgvCursos, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -245,7 +295,6 @@ Partial Class frnCursos
     Friend WithEvents Panel2 As Panel
     Friend WithEvents Label18 As Label
     Friend WithEvents PictureBox1 As PictureBox
-    Friend WithEvents dg As DataGridView
     Friend WithEvents txtCurso As TextBox
     Friend WithEvents txtValor As TextBox
     Friend WithEvents Label1 As Label
@@ -257,4 +306,10 @@ Partial Class frnCursos
     Friend WithEvents Label3 As Label
     Friend WithEvents lblCodigo As Label
     Friend WithEvents btFechar As Button
+    Friend WithEvents Label4 As Label
+    Friend WithEvents txtCodigo As TextBox
+    Friend WithEvents Label5 As Label
+    Friend WithEvents txtTurma As TextBox
+    Friend WithEvents ErrorProvider1 As ErrorProvider
+    Friend WithEvents dgvCursos As DataGridView
 End Class

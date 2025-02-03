@@ -17,7 +17,7 @@ Public Class frmPrincipal
 
 
     Private Sub frmPrincipal_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-        listaMinhaEmpresa()
+
 
         'Atribui atributo ao menu do form
         Me.Menu = mmnMenuPrincipal
@@ -99,7 +99,8 @@ Public Class frmPrincipal
             mndMenuD.MontaMenu(usrUsuarioLogin.Grupo, mmnMenuPrincipal, con, AddressOf EventoMenu_Click)
             Me.Text = "SISTEMA INTELIGENTE DE CONTRLOLE ESCOLAR        -        Usuário: " & usrUsuarioLogin.Nome & "                                               Logado as: " & Now
 
-            'lblEscola.Text = empresaNome
+            '  lblRecebeNome.Text = empresaNome
+            ' lblEscola.Text = empresaNome
             lblVersa.Text = "Versão: " & My.Application.Info.Version.ToString
         End If
     End Sub
@@ -140,34 +141,34 @@ Public Class frmPrincipal
 
     End Function
 
-    Private Sub listaMinhaEmpresa()
-        Dim dr As SqlDataReader = Nothing
+    'Private Sub listaMinhaEmpresa()
+    '    Dim dr As SqlDataReader = Nothing
 
 
-        Try
-            abrir()
+    '    Try
+    '        abrir()
 
-            'strQuery.Append("select u.Nome, u.GrupoID,e.razaoSocial from usuario as u,tbEmpresa as e ")
+    '        'strQuery.Append("select u.Nome, u.GrupoID,e.razaoSocial from usuario as u,tbEmpresa as e ")
 
-            Dim sql As String = "SELECT razaoSocial FROM tbEmpresa "
-            Dim cmd As SqlCommand = New SqlCommand(sql, con)
-            dr = cmd.ExecuteReader(CommandBehavior.SingleRow)
+    '        Dim sql As String = "SELECT razaoSocial FROM tbEmpresa "
+    '        Dim cmd As SqlCommand = New SqlCommand(sql, con)
+    '        dr = cmd.ExecuteReader(CommandBehavior.SingleRow)
 
-            If dr.HasRows Then
-                dr.Read()
+    '        If dr.HasRows Then
+    '            dr.Read()
 
-                lblEscola.Text = dr.Item("razaoSocial")
+    '            lblEscola.Text = dr.Item("razaoSocial")
+    '            ' empresaNome = lblEscola.Text
 
+    '        End If
+    '    Catch ex As Exception
+    '        MsgBox(ex.Message.ToString)
+    '    Finally
+    '        dr.Close()
+    '        fechar()
+    '    End Try
 
-            End If
-        Catch ex As Exception
-            MsgBox(ex.Message.ToString)
-        Finally
-            dr.Close()
-            fechar()
-        End Try
-
-    End Sub
+    'End Sub
 
 
 End Class
