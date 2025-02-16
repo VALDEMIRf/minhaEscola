@@ -27,6 +27,8 @@ Module mdlConexao
     Public ProfQuinta As String
     Public ProfSexta As String
     Public ProfSabado As String
+    Public strSqlExcel As String
+    Public dblValorCurso As Double
 
 
     Public con As New SqlConnection("Data Source=DESKTOP-R5VHKNO\SQLEXPRESS;Initial Catalog=DBConectaEscola;Integrated Security=True")

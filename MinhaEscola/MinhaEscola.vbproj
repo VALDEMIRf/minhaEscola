@@ -97,10 +97,10 @@
     <Compile Include="administrativo\mensalidades\frmControleMensalidades.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="cadastros\frmDisciplinas.Designer.vb">
-      <DependentUpon>frmDisciplinas.vb</DependentUpon>
+    <Compile Include="cadastros\frmCadGrupos.Designer.vb">
+      <DependentUpon>frmCadGrupos.vb</DependentUpon>
     </Compile>
-    <Compile Include="cadastros\frmDisciplinas.vb">
+    <Compile Include="cadastros\frmCadGrupos.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="cadastros\frmEscola.Designer.vb">
@@ -196,8 +196,8 @@
     <EmbeddedResource Include="administrativo\mensalidades\frmControleMensalidades.resx">
       <DependentUpon>frmControleMensalidades.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="cadastros\frmDisciplinas.resx">
-      <DependentUpon>frmDisciplinas.vb</DependentUpon>
+    <EmbeddedResource Include="cadastros\frmCadGrupos.resx">
+      <DependentUpon>frmCadGrupos.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="cadastros\frmEscola.resx">
       <DependentUpon>frmEscola.vb</DependentUpon>

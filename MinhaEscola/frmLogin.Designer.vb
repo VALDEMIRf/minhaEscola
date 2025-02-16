@@ -40,7 +40,7 @@ Partial Class frmLogin
         Me.btAcessar.ForeColor = System.Drawing.Color.White
         Me.btAcessar.Location = New System.Drawing.Point(1, 273)
         Me.btAcessar.Name = "btAcessar"
-        Me.btAcessar.Size = New System.Drawing.Size(333, 52)
+        Me.btAcessar.Size = New System.Drawing.Size(332, 52)
         Me.btAcessar.TabIndex = 33
         Me.btAcessar.Text = "LOGIN"
         Me.btAcessar.UseVisualStyleBackColor = False
@@ -101,7 +101,7 @@ Partial Class frmLogin
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.DarkCyan
         Me.BackgroundImage = Global.MinhaEscola.My.Resources.Resources.telaloginFinal1
-        Me.ClientSize = New System.Drawing.Size(334, 325)
+        Me.ClientSize = New System.Drawing.Size(334, 326)
         Me.Controls.Add(Me.PictureBox1)
         Me.Controls.Add(Me.btCancelar)
         Me.Controls.Add(Me.txtUsuario)

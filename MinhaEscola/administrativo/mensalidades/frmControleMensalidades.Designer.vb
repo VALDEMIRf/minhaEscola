@@ -418,12 +418,12 @@ Partial Class frmControleMensalidades
         Me.dgvMensalidades.BackgroundColor = System.Drawing.SystemColors.ButtonHighlight
         Me.dgvMensalidades.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.dgvMensalidades.GridColor = System.Drawing.SystemColors.HotTrack
-        Me.dgvMensalidades.Location = New System.Drawing.Point(309, 277)
+        Me.dgvMensalidades.Location = New System.Drawing.Point(309, 260)
         Me.dgvMensalidades.Margin = New System.Windows.Forms.Padding(12, 10, 12, 10)
         Me.dgvMensalidades.Name = "dgvMensalidades"
         Me.dgvMensalidades.ReadOnly = True
         Me.dgvMensalidades.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
-        Me.dgvMensalidades.Size = New System.Drawing.Size(735, 140)
+        Me.dgvMensalidades.Size = New System.Drawing.Size(735, 157)
         Me.dgvMensalidades.TabIndex = 338
         '
         'lblMensagemPagamentos
@@ -479,14 +479,14 @@ Partial Class frmControleMensalidades
         Me.GroupBox3.Controls.Add(Me.txtCodigo)
         Me.GroupBox3.Location = New System.Drawing.Point(310, 88)
         Me.GroupBox3.Name = "GroupBox3"
-        Me.GroupBox3.Size = New System.Drawing.Size(734, 173)
+        Me.GroupBox3.Size = New System.Drawing.Size(734, 159)
         Me.GroupBox3.TabIndex = 357
         Me.GroupBox3.TabStop = False
         Me.GroupBox3.Text = "Detalhes (Principais) do Alunos"
         '
         'txtCelular
         '
-        Me.txtCelular.Location = New System.Drawing.Point(350, 125)
+        Me.txtCelular.Location = New System.Drawing.Point(350, 133)
         Me.txtCelular.Mask = "(99) 9 9999-9999"
         Me.txtCelular.Name = "txtCelular"
         Me.txtCelular.Size = New System.Drawing.Size(89, 20)
@@ -496,7 +496,7 @@ Partial Class frmControleMensalidades
         '
         Me.Label14.AutoSize = True
         Me.Label14.Font = New System.Drawing.Font("Verdana", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label14.Location = New System.Drawing.Point(93, 106)
+        Me.Label14.Location = New System.Drawing.Point(93, 111)
         Me.Label14.Name = "Label14"
         Me.Label14.Size = New System.Drawing.Size(51, 13)
         Me.Label14.TabIndex = 200
@@ -505,7 +505,7 @@ Partial Class frmControleMensalidades
         'txtBairro
         '
         Me.txtBairro.Enabled = False
-        Me.txtBairro.Location = New System.Drawing.Point(142, 102)
+        Me.txtBairro.Location = New System.Drawing.Point(142, 107)
         Me.txtBairro.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
         Me.txtBairro.Name = "txtBairro"
         Me.txtBairro.ReadOnly = True
@@ -516,7 +516,7 @@ Partial Class frmControleMensalidades
         '
         Me.Label6.AutoSize = True
         Me.Label6.Font = New System.Drawing.Font("Verdana", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label6.Location = New System.Drawing.Point(348, 109)
+        Me.Label6.Location = New System.Drawing.Point(348, 114)
         Me.Label6.Name = "Label6"
         Me.Label6.Size = New System.Drawing.Size(56, 13)
         Me.Label6.TabIndex = 198
@@ -525,7 +525,7 @@ Partial Class frmControleMensalidades
         'txtCidade
         '
         Me.txtCidade.Enabled = False
-        Me.txtCidade.Location = New System.Drawing.Point(402, 106)
+        Me.txtCidade.Location = New System.Drawing.Point(402, 111)
         Me.txtCidade.Name = "txtCidade"
         Me.txtCidade.ReadOnly = True
         Me.txtCidade.Size = New System.Drawing.Size(100, 20)
@@ -534,7 +534,7 @@ Partial Class frmControleMensalidades
         'txtUF
         '
         Me.txtUF.Enabled = False
-        Me.txtUF.Location = New System.Drawing.Point(33, 101)
+        Me.txtUF.Location = New System.Drawing.Point(36, 106)
         Me.txtUF.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
         Me.txtUF.Name = "txtUF"
         Me.txtUF.ReadOnly = True
@@ -543,7 +543,7 @@ Partial Class frmControleMensalidades
         '
         'txtCompl
         '
-        Me.txtCompl.Location = New System.Drawing.Point(348, 82)
+        Me.txtCompl.Location = New System.Drawing.Point(348, 85)
         Me.txtCompl.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
         Me.txtCompl.Name = "txtCompl"
         Me.txtCompl.Size = New System.Drawing.Size(120, 20)
@@ -553,7 +553,7 @@ Partial Class frmControleMensalidades
         '
         Me.Label5.AutoSize = True
         Me.Label5.Font = New System.Drawing.Font("Verdana", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label5.Location = New System.Drawing.Point(12, 104)
+        Me.Label5.Location = New System.Drawing.Point(12, 109)
         Me.Label5.Name = "Label5"
         Me.Label5.Size = New System.Drawing.Size(26, 13)
         Me.Label5.TabIndex = 195
@@ -562,7 +562,7 @@ Partial Class frmControleMensalidades
         'txtComplemento
         '
         Me.txtComplemento.Enabled = False
-        Me.txtComplemento.Location = New System.Drawing.Point(183, 82)
+        Me.txtComplemento.Location = New System.Drawing.Point(183, 85)
         Me.txtComplemento.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
         Me.txtComplemento.Name = "txtComplemento"
         Me.txtComplemento.ReadOnly = True
@@ -573,7 +573,7 @@ Partial Class frmControleMensalidades
         '
         Me.Label28.AutoSize = True
         Me.Label28.Font = New System.Drawing.Font("Verdana", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label28.Location = New System.Drawing.Point(93, 85)
+        Me.Label28.Location = New System.Drawing.Point(93, 88)
         Me.Label28.Name = "Label28"
         Me.Label28.Size = New System.Drawing.Size(92, 13)
         Me.Label28.TabIndex = 192
@@ -581,7 +581,7 @@ Partial Class frmControleMensalidades
         '
         'txtNum
         '
-        Me.txtNum.Location = New System.Drawing.Point(33, 80)
+        Me.txtNum.Location = New System.Drawing.Point(33, 83)
         Me.txtNum.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
         Me.txtNum.Name = "txtNum"
         Me.txtNum.Size = New System.Drawing.Size(54, 20)
@@ -591,7 +591,7 @@ Partial Class frmControleMensalidades
         '
         Me.Label24.AutoSize = True
         Me.Label24.Font = New System.Drawing.Font("Verdana", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label24.Location = New System.Drawing.Point(10, 84)
+        Me.Label24.Location = New System.Drawing.Point(10, 87)
         Me.Label24.Name = "Label24"
         Me.Label24.Size = New System.Drawing.Size(25, 13)
         Me.Label24.TabIndex = 191
@@ -696,7 +696,7 @@ Partial Class frmControleMensalidades
         Me.btnExportarExcel.ForeColor = System.Drawing.Color.White
         Me.btnExportarExcel.Image = Global.MinhaEscola.My.Resources.Resources.Excel_24
         Me.btnExportarExcel.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.btnExportarExcel.Location = New System.Drawing.Point(545, 122)
+        Me.btnExportarExcel.Location = New System.Drawing.Point(545, 108)
         Me.btnExportarExcel.Name = "btnExportarExcel"
         Me.btnExportarExcel.Size = New System.Drawing.Size(168, 30)
         Me.btnExportarExcel.TabIndex = 32
@@ -741,7 +741,7 @@ Partial Class frmControleMensalidades
         'Label10
         '
         Me.Label10.AutoSize = True
-        Me.Label10.Location = New System.Drawing.Point(312, 129)
+        Me.Label10.Location = New System.Drawing.Point(312, 137)
         Me.Label10.Name = "Label10"
         Me.Label10.Size = New System.Drawing.Size(37, 13)
         Me.Label10.TabIndex = 17
@@ -751,7 +751,7 @@ Partial Class frmControleMensalidades
         '
         Me.txtEmail.BackColor = System.Drawing.Color.White
         Me.txtEmail.Font = New System.Drawing.Font("Verdana", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txtEmail.Location = New System.Drawing.Point(52, 122)
+        Me.txtEmail.Location = New System.Drawing.Point(52, 130)
         Me.txtEmail.Name = "txtEmail"
         Me.txtEmail.ReadOnly = True
         Me.txtEmail.Size = New System.Drawing.Size(247, 21)
@@ -760,7 +760,7 @@ Partial Class frmControleMensalidades
         'Label8
         '
         Me.Label8.AutoSize = True
-        Me.Label8.Location = New System.Drawing.Point(12, 125)
+        Me.Label8.Location = New System.Drawing.Point(12, 133)
         Me.Label8.Name = "Label8"
         Me.Label8.Size = New System.Drawing.Size(41, 13)
         Me.Label8.TabIndex = 14

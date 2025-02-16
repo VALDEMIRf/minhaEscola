@@ -100,7 +100,7 @@ Public Class frmPrincipal
             Me.Text = "SISTEMA INTELIGENTE DE CONTRLOLE ESCOLAR        -        Usuário: " & usrUsuarioLogin.Nome & "                                               Logado as: " & Now
 
             '  lblRecebeNome.Text = empresaNome
-            ' lblEscola.Text = empresaNome
+            lblEscola.Text = empresaNome
             lblVersa.Text = "Versão: " & My.Application.Info.Version.ToString
         End If
     End Sub

@@ -59,7 +59,7 @@ Partial Class frnCursos
         Me.Panel2.ForeColor = System.Drawing.Color.White
         Me.Panel2.Location = New System.Drawing.Point(0, 0)
         Me.Panel2.Name = "Panel2"
-        Me.Panel2.Size = New System.Drawing.Size(493, 41)
+        Me.Panel2.Size = New System.Drawing.Size(472, 41)
         Me.Panel2.TabIndex = 38
         '
         'btFechar
@@ -69,7 +69,7 @@ Partial Class frnCursos
         Me.btFechar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btFechar.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btFechar.Image = Global.MinhaEscola.My.Resources.Resources.back_32
-        Me.btFechar.Location = New System.Drawing.Point(375, 3)
+        Me.btFechar.Location = New System.Drawing.Point(312, 3)
         Me.btFechar.Name = "btFechar"
         Me.btFechar.Size = New System.Drawing.Size(105, 32)
         Me.btFechar.TabIndex = 14
@@ -81,7 +81,7 @@ Partial Class frnCursos
         '
         Me.Label18.AutoSize = True
         Me.Label18.Font = New System.Drawing.Font("Verdana", 14.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label18.Location = New System.Drawing.Point(42, 9)
+        Me.Label18.Location = New System.Drawing.Point(36, 9)
         Me.Label18.Name = "Label18"
         Me.Label18.Size = New System.Drawing.Size(256, 23)
         Me.Label18.TabIndex = 13
@@ -101,7 +101,7 @@ Partial Class frnCursos
         '
         Me.txtCurso.Location = New System.Drawing.Point(121, 64)
         Me.txtCurso.Name = "txtCurso"
-        Me.txtCurso.Size = New System.Drawing.Size(366, 20)
+        Me.txtCurso.Size = New System.Drawing.Size(330, 20)
         Me.txtCurso.TabIndex = 326
         '
         'txtValor
@@ -138,7 +138,7 @@ Partial Class frnCursos
         Me.btnExcluir.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnExcluir.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnExcluir.Image = Global.MinhaEscola.My.Resources.Resources.apagar
-        Me.btnExcluir.Location = New System.Drawing.Point(225, 401)
+        Me.btnExcluir.Location = New System.Drawing.Point(220, 407)
         Me.btnExcluir.Name = "btnExcluir"
         Me.btnExcluir.Size = New System.Drawing.Size(108, 37)
         Me.btnExcluir.TabIndex = 332
@@ -153,7 +153,7 @@ Partial Class frnCursos
         Me.btSalvarEditar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btSalvarEditar.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btSalvarEditar.Image = Global.MinhaEscola.My.Resources.Resources.Notes
-        Me.btSalvarEditar.Location = New System.Drawing.Point(95, 396)
+        Me.btSalvarEditar.Location = New System.Drawing.Point(93, 404)
         Me.btSalvarEditar.Name = "btSalvarEditar"
         Me.btSalvarEditar.Size = New System.Drawing.Size(124, 45)
         Me.btSalvarEditar.TabIndex = 333
@@ -168,7 +168,7 @@ Partial Class frnCursos
         Me.btNovo.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btNovo.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btNovo.Image = Global.MinhaEscola.My.Resources.Resources.New_document
-        Me.btNovo.Location = New System.Drawing.Point(7, 400)
+        Me.btNovo.Location = New System.Drawing.Point(4, 408)
         Me.btNovo.Name = "btNovo"
         Me.btNovo.Size = New System.Drawing.Size(82, 34)
         Me.btNovo.TabIndex = 331
@@ -179,7 +179,7 @@ Partial Class frnCursos
         'lblTotal
         '
         Me.lblTotal.AutoSize = True
-        Me.lblTotal.Location = New System.Drawing.Point(443, 413)
+        Me.lblTotal.Location = New System.Drawing.Point(398, 414)
         Me.lblTotal.Name = "lblTotal"
         Me.lblTotal.Size = New System.Drawing.Size(10, 13)
         Me.lblTotal.TabIndex = 334
@@ -188,7 +188,7 @@ Partial Class frnCursos
         'Label3
         '
         Me.Label3.AutoSize = True
-        Me.Label3.Location = New System.Drawing.Point(383, 413)
+        Me.Label3.Location = New System.Drawing.Point(338, 414)
         Me.Label3.Name = "Label3"
         Me.Label3.Size = New System.Drawing.Size(53, 13)
         Me.Label3.TabIndex = 335
@@ -197,7 +197,7 @@ Partial Class frnCursos
         'lblCodigo
         '
         Me.lblCodigo.AutoSize = True
-        Me.lblCodigo.Location = New System.Drawing.Point(428, 102)
+        Me.lblCodigo.Location = New System.Drawing.Point(404, 91)
         Me.lblCodigo.Name = "lblCodigo"
         Me.lblCodigo.Size = New System.Drawing.Size(13, 13)
         Me.lblCodigo.TabIndex = 336
@@ -253,7 +253,7 @@ Partial Class frnCursos
         Me.dgvCursos.Name = "dgvCursos"
         Me.dgvCursos.ReadOnly = True
         Me.dgvCursos.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
-        Me.dgvCursos.Size = New System.Drawing.Size(484, 275)
+        Me.dgvCursos.Size = New System.Drawing.Size(448, 275)
         Me.dgvCursos.TabIndex = 341
         '
         'frnCursos
@@ -261,7 +261,7 @@ Partial Class frnCursos
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.Silver
-        Me.ClientSize = New System.Drawing.Size(493, 444)
+        Me.ClientSize = New System.Drawing.Size(472, 454)
         Me.Controls.Add(Me.dgvCursos)
         Me.Controls.Add(Me.Label5)
         Me.Controls.Add(Me.txtTurma)

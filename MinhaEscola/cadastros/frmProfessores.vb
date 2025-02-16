@@ -723,8 +723,7 @@ Public Class frmProfessores
     End Sub
 
     Private Sub btInserirDisciplina_Click(sender As Object, e As EventArgs) Handles btInserirDisciplina.Click
-        Dim form = New frmDisciplinas
-        form.ShowDialog()
+
     End Sub
 
     Private Sub ListarDisciplinas()
