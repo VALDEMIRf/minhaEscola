@@ -52,13 +52,13 @@ Public Class frmLogin
         Try
             'conDB.Open()
             abrir()
-            'strQuery.Append("select u.Nome, u.GrupoID,e.razaoSocial from usuario as u,tbEmpresa as e ")
-            strQuery.Append("select u.Nome, u.GrupoID from usuario as u ")
+            strQuery.Append("select u.Nome, u.GrupoID,e.razaoSocial from usuario as u,tbEmpresa as e ")
+            ' strQuery.Append("pa_Login ")
 
             strQuery.Append("where nome = '" & txtUsuario.Text.ToUpper() & "' ")
             strQuery.Append("and senha = '" & txtSenha.Text.ToUpper() & "' ")
 
-            olecmdCommand = New System.Data.SqlClient.SqlCommand(strQuery.ToString(), con)
+            olecmdCommand = New SqlCommand(strQuery.ToString(), con)
 
             olecmdCommand = New SqlCommand(strQuery.ToString().ToLower, con)
             olerdrReader = olecmdCommand.ExecuteReader()
@@ -66,8 +66,8 @@ Public Class frmLogin
             If olerdrReader.Read() Then
                 usrUsuario.Nome = olerdrReader.Item("Nome")
                 usrUsuario.Grupo = olerdrReader.Item("GrupoID")
-                ' empresaNome = olerdrReader.Item("razaoSocial")
-                ' usuarioNome = txtUsuario.Text
+                empresaNome = olerdrReader.Item("razaoSocial")
+                usuarioNome = olerdrReader.Item("Nome")
 
 
                 bolResult = True

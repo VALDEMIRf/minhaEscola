@@ -29,11 +29,11 @@ Public Class frmProfessores
         Dim DA As SqlDataAdapter
         Try
             abrir()
-            DA = New SqlDataAdapter("pa_disciplina_listar", con)
+            DA = New SqlDataAdapter("pa_curso_listar", con)
             DA.Fill(DT)
 
-            txtDisciplina.ValueMember = "idDisciplina"
-            txtDisciplina.DisplayMember = "disciplina"
+            txtDisciplina.ValueMember = "idCurso"
+            txtDisciplina.DisplayMember = "NomeCurso"
             txtDisciplina.DataSource = DT
 
         Catch ex As Exception : MessageBox.Show(ex.Message.ToString)
@@ -538,9 +538,9 @@ Public Class frmProfessores
             cmd.Parameters.AddWithValue("@dtRegistroFaltas", txtDtRegistroFalta.Text)
             cmd.Parameters.AddWithValue("@aulasfalta", txtAulaRegistroFalta.Text)
             cmd.Parameters.AddWithValue("@anotacaoFaltas", txtAnotarRegistroFalta.Text)
-            cmd.Parameters.AddWithValue("@CodigoDisciplina", txtCodDisciplina.Text)
-            cmd.Parameters.AddWithValue("@idDisciplina", txtDisciplina.SelectedValue)
-            cmd.Parameters.AddWithValue("@valorDisciplina", valorDisciplina)
+            cmd.Parameters.AddWithValue("@codigoCurso ", txtCodDisciplina.Text)
+            cmd.Parameters.AddWithValue("@idCurso", txtDisciplina.SelectedValue)
+            cmd.Parameters.AddWithValue("@valorCurso", valorDisciplina)
             cmd.Parameters.AddWithValue("@turma", txtTurmaDisciplina.Text)
             cmd.Parameters.AddWithValue("@DataCadProfessor", Now.ToShortDateString)
             cmd.Parameters.Add("@mensagem", SqlDbType.VarChar, 100).Direction = 2
@@ -615,9 +615,9 @@ Public Class frmProfessores
             cmd.Parameters.AddWithValue("@dtRegistroFaltas", txtDtRegistroFalta.Text)
             cmd.Parameters.AddWithValue("@aulasfalta", txtAulaRegistroFalta.Text)
             cmd.Parameters.AddWithValue("@anotacaoFaltas", txtAnotarRegistroFalta.Text)
-            cmd.Parameters.AddWithValue("@CodigoDisciplina", txtCodDisciplina.Text)
-            cmd.Parameters.AddWithValue("@idDisciplina", txtDisciplina.SelectedValue)
-            cmd.Parameters.AddWithValue("@valorDisciplina", valorDisciplina)
+            cmd.Parameters.AddWithValue("@codigoCurso ", txtCodDisciplina.Text)
+            cmd.Parameters.AddWithValue("@idCurso", txtDisciplina.SelectedValue)
+            cmd.Parameters.AddWithValue("@valorCurso", valorDisciplina)
             cmd.Parameters.AddWithValue("@turma", txtTurmaDisciplina.Text)
             cmd.Parameters.Add("@mensagem", SqlDbType.VarChar, 100).Direction = 2
             cmd.ExecuteNonQuery()
@@ -742,15 +742,15 @@ Public Class frmProfessores
             'da.Fill(dt)
             'dg.DataSource = dt
             sql = "
-            Select codigoDisciplina,valor,turma FROM tbDisciplinas WHERE disciplina='" & txtDisciplina.Text & "'"
+            Select codigoCurso,ValorCurso,turma FROM tbCursos WHERE NomeCurso='" & txtDisciplina.Text & "'"
             cmd = New SqlCommand(sql, con)
 
             dr = cmd.ExecuteReader(CommandBehavior.SingleRow)
 
             If dr.HasRows Then
                 dr.Read()
-                txtCodDisciplina.Text = dr.Item("codigoDisciplina")
-                txtValorDisciplina.Text = dr.Item("valor")
+                txtCodDisciplina.Text = dr.Item("codigoCurso")
+                txtValorDisciplina.Text = dr.Item("valorCurso")
                 txtTurmaDisciplina.Text = dr.Item("turma")
             End If
 
@@ -759,7 +759,7 @@ Public Class frmProfessores
             ' FormatarDG()
 
         Catch ex As Exception
-            MessageBox.Show("Erro ao Listar os Alunos" + ex.Message.ToString)
+            MessageBox.Show("Erro ao Listar os Cursos" + ex.Message.ToString)
         Finally
 
             fechar()

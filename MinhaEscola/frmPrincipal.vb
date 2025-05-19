@@ -18,10 +18,12 @@ Public Class frmPrincipal
 
     Private Sub frmPrincipal_Load(sender As Object, e As EventArgs) Handles MyBase.Load
 
+        Dim StringConexao As String = My.Settings.conexaoBD.ToString
 
         'Atribui atributo ao menu do form
         Me.Menu = mmnMenuPrincipal
-        conDB.ConnectionString = "Data Source=DESKTOP-R5VHKNO\SQLEXPRESS;Initial Catalog=DBConectaEscola;Integrated Security=True"
+        ' conDB.ConnectionString = "Data Source=DESKTOP-R5VHKNO\SQLEXPRESS;Initial Catalog=DBConectaEscola;Integrated Security=True"
+        conDB.ConnectionString = StringConexao
 
         'Monta o menu default (nenhum usuário autenticado)
         Try
@@ -99,7 +101,7 @@ Public Class frmPrincipal
             mndMenuD.MontaMenu(usrUsuarioLogin.Grupo, mmnMenuPrincipal, con, AddressOf EventoMenu_Click)
             Me.Text = "SISTEMA INTELIGENTE DE CONTRLOLE ESCOLAR        -        Usuário: " & usrUsuarioLogin.Nome & "                                               Logado as: " & Now
 
-            '  lblRecebeNome.Text = empresaNome
+
             lblEscola.Text = empresaNome
             lblVersa.Text = "Versão: " & My.Application.Info.Version.ToString
         End If
@@ -140,35 +142,6 @@ Public Class frmPrincipal
         Return Activator.CreateInstance(Type.GetType(Fullname, True, True))
 
     End Function
-
-    'Private Sub listaMinhaEmpresa()
-    '    Dim dr As SqlDataReader = Nothing
-
-
-    '    Try
-    '        abrir()
-
-    '        'strQuery.Append("select u.Nome, u.GrupoID,e.razaoSocial from usuario as u,tbEmpresa as e ")
-
-    '        Dim sql As String = "SELECT razaoSocial FROM tbEmpresa "
-    '        Dim cmd As SqlCommand = New SqlCommand(sql, con)
-    '        dr = cmd.ExecuteReader(CommandBehavior.SingleRow)
-
-    '        If dr.HasRows Then
-    '            dr.Read()
-
-    '            lblEscola.Text = dr.Item("razaoSocial")
-    '            ' empresaNome = lblEscola.Text
-
-    '        End If
-    '    Catch ex As Exception
-    '        MsgBox(ex.Message.ToString)
-    '    Finally
-    '        dr.Close()
-    '        fechar()
-    '    End Try
-
-    'End Sub
 
 
 End Class

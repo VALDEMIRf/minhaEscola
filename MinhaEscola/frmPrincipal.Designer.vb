@@ -23,74 +23,77 @@ Partial Class frmPrincipal
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(frmPrincipal))
-        Me.lblVersao = New System.Windows.Forms.StatusStrip()
-        Me.ToolStripStatusLabel1 = New System.Windows.Forms.ToolStripStatusLabel()
-        Me.lblEscola = New System.Windows.Forms.ToolStripStatusLabel()
-        Me.ToolStripStatusLabel2 = New System.Windows.Forms.ToolStripStatusLabel()
-        Me.lblVersa = New System.Windows.Forms.ToolStripStatusLabel()
-        Me.lblVersao.SuspendLayout()
+        Me.Label1 = New System.Windows.Forms.Label()
+        Me.lblEscola = New System.Windows.Forms.Label()
+        Me.lblVersa = New System.Windows.Forms.Label()
+        Me.Panel1 = New System.Windows.Forms.Panel()
+        Me.Panel1.SuspendLayout()
         Me.SuspendLayout()
         '
-        'lblVersao
+        'Label1
         '
-        Me.lblVersao.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.ToolStripStatusLabel1, Me.lblEscola, Me.ToolStripStatusLabel2, Me.lblVersa})
-        Me.lblVersao.Location = New System.Drawing.Point(0, 735)
-        Me.lblVersao.Name = "lblVersao"
-        Me.lblVersao.Size = New System.Drawing.Size(1148, 22)
-        Me.lblVersao.TabIndex = 1
-        '
-        'ToolStripStatusLabel1
-        '
-        Me.ToolStripStatusLabel1.BackColor = System.Drawing.Color.White
-        Me.ToolStripStatusLabel1.Name = "ToolStripStatusLabel1"
-        Me.ToolStripStatusLabel1.Size = New System.Drawing.Size(43, 17)
-        Me.ToolStripStatusLabel1.Text = "Escola:"
+        Me.Label1.AutoSize = True
+        Me.Label1.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label1.Location = New System.Drawing.Point(3, 6)
+        Me.Label1.Name = "Label1"
+        Me.Label1.Size = New System.Drawing.Size(54, 17)
+        Me.Label1.TabIndex = 2
+        Me.Label1.Text = "Escola:"
         '
         'lblEscola
         '
-        Me.lblEscola.BackColor = System.Drawing.Color.White
+        Me.lblEscola.AutoSize = True
+        Me.lblEscola.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblEscola.Location = New System.Drawing.Point(57, 6)
         Me.lblEscola.Name = "lblEscola"
-        Me.lblEscola.Size = New System.Drawing.Size(40, 17)
-        Me.lblEscola.Text = "Escola"
-        '
-        'ToolStripStatusLabel2
-        '
-        Me.ToolStripStatusLabel2.BackColor = System.Drawing.Color.White
-        Me.ToolStripStatusLabel2.Margin = New System.Windows.Forms.Padding(30, 3, 0, 2)
-        Me.ToolStripStatusLabel2.Name = "ToolStripStatusLabel2"
-        Me.ToolStripStatusLabel2.Size = New System.Drawing.Size(44, 17)
-        Me.ToolStripStatusLabel2.Text = "Versão:"
+        Me.lblEscola.Size = New System.Drawing.Size(13, 17)
+        Me.lblEscola.TabIndex = 3
+        Me.lblEscola.Text = "-"
         '
         'lblVersa
         '
-        Me.lblVersa.BackColor = System.Drawing.Color.White
+        Me.lblVersa.AutoSize = True
+        Me.lblVersa.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblVersa.Location = New System.Drawing.Point(1122, 6)
         Me.lblVersa.Name = "lblVersa"
-        Me.lblVersa.Size = New System.Drawing.Size(23, 17)
-        Me.lblVersa.Text = "ver"
+        Me.lblVersa.Size = New System.Drawing.Size(13, 17)
+        Me.lblVersa.TabIndex = 5
+        Me.lblVersa.Text = "-"
+        '
+        'Panel1
+        '
+        Me.Panel1.BackColor = System.Drawing.Color.Silver
+        Me.Panel1.Controls.Add(Me.Label1)
+        Me.Panel1.Controls.Add(Me.lblVersa)
+        Me.Panel1.Controls.Add(Me.lblEscola)
+        Me.Panel1.Dock = System.Windows.Forms.DockStyle.Bottom
+        Me.Panel1.Location = New System.Drawing.Point(0, 727)
+        Me.Panel1.Name = "Panel1"
+        Me.Panel1.Size = New System.Drawing.Size(1148, 30)
+        Me.Panel1.TabIndex = 6
         '
         'frmPrincipal
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.BackColor = System.Drawing.Color.LightSkyBlue
+        Me.BackColor = System.Drawing.Color.White
         Me.ClientSize = New System.Drawing.Size(1148, 757)
-        Me.Controls.Add(Me.lblVersao)
+        Me.Controls.Add(Me.Panel1)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D
         Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.MaximizeBox = False
         Me.Name = "frmPrincipal"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "Sistema Inteligente de Controle Escolar"
-        Me.lblVersao.ResumeLayout(False)
-        Me.lblVersao.PerformLayout()
+        Me.WindowState = System.Windows.Forms.FormWindowState.Maximized
+        Me.Panel1.ResumeLayout(False)
+        Me.Panel1.PerformLayout()
         Me.ResumeLayout(False)
-        Me.PerformLayout()
 
     End Sub
 
-    Friend WithEvents lblVersao As StatusStrip
-    Friend WithEvents ToolStripStatusLabel1 As ToolStripStatusLabel
-    Friend WithEvents lblEscola As ToolStripStatusLabel
-    Friend WithEvents ToolStripStatusLabel2 As ToolStripStatusLabel
-    Friend WithEvents lblVersa As ToolStripStatusLabel
+    Friend WithEvents Label1 As Label
+    Friend WithEvents lblEscola As Label
+    Friend WithEvents lblVersa As Label
+    Friend WithEvents Panel1 As Panel
 End Class

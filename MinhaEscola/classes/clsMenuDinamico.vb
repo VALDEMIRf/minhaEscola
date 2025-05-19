@@ -101,7 +101,7 @@ Public Class clsMenuDinamico
                 End If
             End While
         Catch ex As Exception
-            MessageBox.Show("Ocorreu um erro ao montar os menus: " & ex.Message, "Menu Dinamico", MessageBoxButtons.OK, MessageBoxIcon.Error)
+            MessageBox.Show("Ocorreu um erro ao montar os menus: " & ex.Message.ToString, "Menu Dinamico", MessageBoxButtons.OK, MessageBoxIcon.Error)
         End Try
         'pconDB.Close()
     End Sub

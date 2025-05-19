@@ -22,6 +22,7 @@ Partial Class frmLogin
     'Não o modifique usando o editor de códigos.
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
+        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(frmLogin))
         Me.btAcessar = New System.Windows.Forms.Button()
         Me.txtSenha = New ZBobb.AlphaBlendTextBox()
         Me.txtUsuario = New ZBobb.AlphaBlendTextBox()
@@ -75,6 +76,7 @@ Partial Class frmLogin
         'btCancelar
         '
         Me.btCancelar.BackColor = System.Drawing.Color.Transparent
+        Me.btCancelar.Cursor = System.Windows.Forms.Cursors.Hand
         Me.btCancelar.FlatAppearance.BorderSize = 0
         Me.btCancelar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btCancelar.Image = Global.MinhaEscola.My.Resources.Resources.bolinha_xis
@@ -109,6 +111,7 @@ Partial Class frmLogin
         Me.Controls.Add(Me.btAcessar)
         Me.Font = New System.Drawing.Font("Berlin Sans FB", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None
+        Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.Name = "frmLogin"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "frmLogin"

@@ -1,6 +1,9 @@
 ﻿Imports System.Data.SqlClient
 
 Public Class frmControleGastos
+
+    ' Dim usrUsuarioLogin As New clsUsuario
+
     Private Sub frmControleGastos_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         DesabilitarCampos()
         Listar()
@@ -51,7 +54,7 @@ Public Class frmControleGastos
             FormatarDG()
 
         Catch ex As Exception
-            MessageBox.Show("Erro ao Listar os Gastos" + ex.Message.ToString)
+            '  MessageBox.Show("Erro ao Listar os Gastos" + ex.Message.ToString)
         Finally
             fechar()
         End Try
@@ -63,17 +66,19 @@ Public Class frmControleGastos
         txtValor.Enabled = False
         txtObs.Enabled = False
         calendario.Enabled = False
-
+        cmbTipoGasto.Text = Nothing
 
     End Sub
 
     Private Sub HabilitarCampos()
+
         txtUsuarioLogado.Enabled = True
         cmbTipoGasto.Enabled = True
         txtValor.Enabled = True
         txtObs.Enabled = True
         calendario.Enabled = True
-        txtUsuarioLogado.Text = usuarioNome
+
+        ' txtUsuarioLogado.Text = usrUsuarioLogin.Nome
 
     End Sub
 
@@ -242,6 +247,7 @@ Public Class frmControleGastos
 
         btSalvar.Enabled = True
         btTipoGasto.Enabled = True
+        txtUsuarioLogado.Text = usuarioNome
         HabilitarCampos()
 
     End Sub

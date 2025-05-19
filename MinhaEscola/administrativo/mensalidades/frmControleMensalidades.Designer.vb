@@ -55,7 +55,11 @@ Partial Class frmControleMensalidades
         Me.dgvMensalidades = New System.Windows.Forms.DataGridView()
         Me.lblMensagemPagamentos = New System.Windows.Forms.Label()
         Me.GroupBox3 = New System.Windows.Forms.GroupBox()
+        Me.lblidCurso = New System.Windows.Forms.Label()
         Me.txtCelular = New System.Windows.Forms.MaskedTextBox()
+        Me.Label10 = New System.Windows.Forms.Label()
+        Me.txtEmail = New System.Windows.Forms.TextBox()
+        Me.Label8 = New System.Windows.Forms.Label()
         Me.Label14 = New System.Windows.Forms.Label()
         Me.txtBairro = New System.Windows.Forms.TextBox()
         Me.Label6 = New System.Windows.Forms.Label()
@@ -80,14 +84,11 @@ Partial Class frmControleMensalidades
         Me.rdExbirParcelasPagas = New System.Windows.Forms.RadioButton()
         Me.rdTodasParcelas = New System.Windows.Forms.RadioButton()
         Me.rdExibirParcelasNaoPagar = New System.Windows.Forms.RadioButton()
-        Me.Label10 = New System.Windows.Forms.Label()
-        Me.txtEmail = New System.Windows.Forms.TextBox()
-        Me.Label8 = New System.Windows.Forms.Label()
         Me.Label3 = New System.Windows.Forms.Label()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.txtNome = New System.Windows.Forms.TextBox()
         Me.txtCodigo = New System.Windows.Forms.TextBox()
-        Me.ToolStrip2 = New System.Windows.Forms.ToolStrip()
+        Me.tsMenu = New System.Windows.Forms.ToolStrip()
         Me.ToolStripDropDownButton1 = New System.Windows.Forms.ToolStripDropDownButton()
         Me.btNovaMatricula = New System.Windows.Forms.ToolStripMenuItem()
         Me.btnAlterarMatricula = New System.Windows.Forms.ToolStripMenuItem()
@@ -101,6 +102,9 @@ Partial Class frmControleMensalidades
         Me.btnBaixaMensalidade = New System.Windows.Forms.ToolStripButton()
         Me.ToolStripSeparator3 = New System.Windows.Forms.ToolStripSeparator()
         Me.btnRelatorio = New System.Windows.Forms.ToolStripButton()
+        Me.btLancar = New System.Windows.Forms.Button()
+        Me.Label7 = New System.Windows.Forms.Label()
+        Me.txtTotalContasPagar = New System.Windows.Forms.TextBox()
         Me.Panel2.SuspendLayout()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.StatusStrip1.SuspendLayout()
@@ -110,7 +114,7 @@ Partial Class frmControleMensalidades
         CType(Me.dgvCursos, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.dgvMensalidades, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.GroupBox3.SuspendLayout()
-        Me.ToolStrip2.SuspendLayout()
+        Me.tsMenu.SuspendLayout()
         Me.SuspendLayout()
         '
         'Panel2
@@ -164,7 +168,7 @@ Partial Class frmControleMensalidades
         'StatusStrip1
         '
         Me.StatusStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.lblAlunosMatriculados, Me.lblCurso, Me.lblContagemAlunos, Me.ToolStripStatusLabel2, Me.ToolStripStatusLabel6, Me.lblMediaContagemTotal, Me.ToolStripStatusLabel5, Me.ToolStripStatusLabel3, Me.lblTotalLinhasSelecionadas, Me.ToolStripStatusLabel4, Me.ToolStripStatusLabel1, Me.lblTotalItensSelecionados})
-        Me.StatusStrip1.Location = New System.Drawing.Point(0, 473)
+        Me.StatusStrip1.Location = New System.Drawing.Point(0, 578)
         Me.StatusStrip1.Name = "StatusStrip1"
         Me.StatusStrip1.Padding = New System.Windows.Forms.Padding(1, 0, 16, 0)
         Me.StatusStrip1.Size = New System.Drawing.Size(1055, 22)
@@ -257,13 +261,13 @@ Partial Class frmControleMensalidades
         Me.TableLayoutPanel1.RowCount = 2
         Me.TableLayoutPanel1.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50.0!))
         Me.TableLayoutPanel1.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50.0!))
-        Me.TableLayoutPanel1.Size = New System.Drawing.Size(300, 377)
+        Me.TableLayoutPanel1.Size = New System.Drawing.Size(300, 482)
         Me.TableLayoutPanel1.TabIndex = 347
         '
         'GroupBox2
         '
         Me.GroupBox2.Controls.Add(Me.lstAlunos)
-        Me.GroupBox2.Location = New System.Drawing.Point(3, 191)
+        Me.GroupBox2.Location = New System.Drawing.Point(3, 244)
         Me.GroupBox2.Name = "GroupBox2"
         Me.GroupBox2.Size = New System.Drawing.Size(294, 183)
         Me.GroupBox2.TabIndex = 337
@@ -312,7 +316,7 @@ Partial Class frmControleMensalidades
         Me.Label13.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.Label13.AutoSize = True
         Me.Label13.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label13.Location = New System.Drawing.Point(859, 419)
+        Me.Label13.Location = New System.Drawing.Point(859, 524)
         Me.Label13.Name = "Label13"
         Me.Label13.Size = New System.Drawing.Size(164, 13)
         Me.Label13.TabIndex = 355
@@ -324,7 +328,7 @@ Partial Class frmControleMensalidades
         Me.txtTotalLiquidoParcelas.BackColor = System.Drawing.SystemColors.Window
         Me.txtTotalLiquidoParcelas.Font = New System.Drawing.Font("Verdana", 14.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.txtTotalLiquidoParcelas.ForeColor = System.Drawing.Color.DarkGreen
-        Me.txtTotalLiquidoParcelas.Location = New System.Drawing.Point(853, 435)
+        Me.txtTotalLiquidoParcelas.Location = New System.Drawing.Point(853, 540)
         Me.txtTotalLiquidoParcelas.Multiline = True
         Me.txtTotalLiquidoParcelas.Name = "txtTotalLiquidoParcelas"
         Me.txtTotalLiquidoParcelas.ReadOnly = True
@@ -338,7 +342,7 @@ Partial Class frmControleMensalidades
         Me.Label12.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.Label12.AutoSize = True
         Me.Label12.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label12.Location = New System.Drawing.Point(522, 419)
+        Me.Label12.Location = New System.Drawing.Point(522, 524)
         Me.Label12.Name = "Label12"
         Me.Label12.Size = New System.Drawing.Size(61, 13)
         Me.Label12.TabIndex = 353
@@ -349,7 +353,7 @@ Partial Class frmControleMensalidades
         Me.Label11.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.Label11.AutoSize = True
         Me.Label11.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label11.Location = New System.Drawing.Point(689, 419)
+        Me.Label11.Location = New System.Drawing.Point(689, 524)
         Me.Label11.Name = "Label11"
         Me.Label11.Size = New System.Drawing.Size(37, 13)
         Me.Label11.TabIndex = 352
@@ -361,7 +365,7 @@ Partial Class frmControleMensalidades
         Me.txtTotalDesconto.BackColor = System.Drawing.SystemColors.Window
         Me.txtTotalDesconto.Font = New System.Drawing.Font("Verdana", 14.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.txtTotalDesconto.ForeColor = System.Drawing.Color.Blue
-        Me.txtTotalDesconto.Location = New System.Drawing.Point(519, 435)
+        Me.txtTotalDesconto.Location = New System.Drawing.Point(519, 540)
         Me.txtTotalDesconto.Multiline = True
         Me.txtTotalDesconto.Name = "txtTotalDesconto"
         Me.txtTotalDesconto.ReadOnly = True
@@ -376,7 +380,7 @@ Partial Class frmControleMensalidades
         Me.txtTotalJuros.BackColor = System.Drawing.SystemColors.Window
         Me.txtTotalJuros.Font = New System.Drawing.Font("Verdana", 14.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.txtTotalJuros.ForeColor = System.Drawing.Color.Red
-        Me.txtTotalJuros.Location = New System.Drawing.Point(686, 435)
+        Me.txtTotalJuros.Location = New System.Drawing.Point(686, 540)
         Me.txtTotalJuros.Multiline = True
         Me.txtTotalJuros.Name = "txtTotalJuros"
         Me.txtTotalJuros.ReadOnly = True
@@ -390,7 +394,7 @@ Partial Class frmControleMensalidades
         Me.lblTotalBrutoParcelas.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.lblTotalBrutoParcelas.AutoSize = True
         Me.lblTotalBrutoParcelas.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lblTotalBrutoParcelas.Location = New System.Drawing.Point(322, 419)
+        Me.lblTotalBrutoParcelas.Location = New System.Drawing.Point(322, 524)
         Me.lblTotalBrutoParcelas.Name = "lblTotalBrutoParcelas"
         Me.lblTotalBrutoParcelas.Size = New System.Drawing.Size(151, 13)
         Me.lblTotalBrutoParcelas.TabIndex = 349
@@ -402,7 +406,7 @@ Partial Class frmControleMensalidades
         Me.txtTotal.BackColor = System.Drawing.SystemColors.Window
         Me.txtTotal.Font = New System.Drawing.Font("Verdana", 14.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.txtTotal.ForeColor = System.Drawing.Color.DarkGoldenrod
-        Me.txtTotal.Location = New System.Drawing.Point(319, 435)
+        Me.txtTotal.Location = New System.Drawing.Point(319, 540)
         Me.txtTotal.Multiline = True
         Me.txtTotal.Name = "txtTotal"
         Me.txtTotal.ReadOnly = True
@@ -418,7 +422,7 @@ Partial Class frmControleMensalidades
         Me.dgvMensalidades.BackgroundColor = System.Drawing.SystemColors.ButtonHighlight
         Me.dgvMensalidades.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.dgvMensalidades.GridColor = System.Drawing.SystemColors.HotTrack
-        Me.dgvMensalidades.Location = New System.Drawing.Point(309, 260)
+        Me.dgvMensalidades.Location = New System.Drawing.Point(306, 298)
         Me.dgvMensalidades.Margin = New System.Windows.Forms.Padding(12, 10, 12, 10)
         Me.dgvMensalidades.Name = "dgvMensalidades"
         Me.dgvMensalidades.ReadOnly = True
@@ -433,19 +437,24 @@ Partial Class frmControleMensalidades
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.lblMensagemPagamentos.BackColor = System.Drawing.Color.White
         Me.lblMensagemPagamentos.ForeColor = System.Drawing.SystemColors.ControlDark
-        Me.lblMensagemPagamentos.Location = New System.Drawing.Point(348, 336)
+        Me.lblMensagemPagamentos.Location = New System.Drawing.Point(330, 355)
         Me.lblMensagemPagamentos.Name = "lblMensagemPagamentos"
-        Me.lblMensagemPagamentos.Size = New System.Drawing.Size(684, 18)
+        Me.lblMensagemPagamentos.Size = New System.Drawing.Size(684, 31)
         Me.lblMensagemPagamentos.TabIndex = 356
         Me.lblMensagemPagamentos.Text = "< Não foram encontradas nenhuma parcela no momento para o aluno selecionado. >"
         Me.lblMensagemPagamentos.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
+        Me.lblMensagemPagamentos.Visible = False
         '
         'GroupBox3
         '
         Me.GroupBox3.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.GroupBox3.BackColor = System.Drawing.Color.Silver
+        Me.GroupBox3.Controls.Add(Me.lblidCurso)
         Me.GroupBox3.Controls.Add(Me.txtCelular)
+        Me.GroupBox3.Controls.Add(Me.Label10)
+        Me.GroupBox3.Controls.Add(Me.txtEmail)
+        Me.GroupBox3.Controls.Add(Me.Label8)
         Me.GroupBox3.Controls.Add(Me.Label14)
         Me.GroupBox3.Controls.Add(Me.txtBairro)
         Me.GroupBox3.Controls.Add(Me.Label6)
@@ -470,33 +479,68 @@ Partial Class frmControleMensalidades
         Me.GroupBox3.Controls.Add(Me.rdExbirParcelasPagas)
         Me.GroupBox3.Controls.Add(Me.rdTodasParcelas)
         Me.GroupBox3.Controls.Add(Me.rdExibirParcelasNaoPagar)
-        Me.GroupBox3.Controls.Add(Me.Label10)
-        Me.GroupBox3.Controls.Add(Me.txtEmail)
-        Me.GroupBox3.Controls.Add(Me.Label8)
         Me.GroupBox3.Controls.Add(Me.Label3)
         Me.GroupBox3.Controls.Add(Me.Label1)
         Me.GroupBox3.Controls.Add(Me.txtNome)
         Me.GroupBox3.Controls.Add(Me.txtCodigo)
-        Me.GroupBox3.Location = New System.Drawing.Point(310, 88)
+        Me.GroupBox3.Location = New System.Drawing.Point(310, 129)
         Me.GroupBox3.Name = "GroupBox3"
         Me.GroupBox3.Size = New System.Drawing.Size(734, 159)
         Me.GroupBox3.TabIndex = 357
         Me.GroupBox3.TabStop = False
         Me.GroupBox3.Text = "Detalhes (Principais) do Alunos"
         '
+        'lblidCurso
+        '
+        Me.lblidCurso.AutoSize = True
+        Me.lblidCurso.Location = New System.Drawing.Point(20, 21)
+        Me.lblidCurso.Name = "lblidCurso"
+        Me.lblidCurso.Size = New System.Drawing.Size(13, 13)
+        Me.lblidCurso.TabIndex = 206
+        Me.lblidCurso.Text = "0"
+        Me.lblidCurso.Visible = False
+        '
         'txtCelular
         '
-        Me.txtCelular.Location = New System.Drawing.Point(350, 133)
+        Me.txtCelular.Location = New System.Drawing.Point(404, 64)
         Me.txtCelular.Mask = "(99) 9 9999-9999"
         Me.txtCelular.Name = "txtCelular"
         Me.txtCelular.Size = New System.Drawing.Size(89, 20)
-        Me.txtCelular.TabIndex = 201
+        Me.txtCelular.TabIndex = 205
+        '
+        'Label10
+        '
+        Me.Label10.AutoSize = True
+        Me.Label10.Location = New System.Drawing.Point(366, 68)
+        Me.Label10.Name = "Label10"
+        Me.Label10.Size = New System.Drawing.Size(37, 13)
+        Me.Label10.TabIndex = 204
+        Me.Label10.Text = "Fone.:"
+        '
+        'txtEmail
+        '
+        Me.txtEmail.BackColor = System.Drawing.Color.White
+        Me.txtEmail.Font = New System.Drawing.Font("Verdana", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.txtEmail.Location = New System.Drawing.Point(43, 61)
+        Me.txtEmail.Name = "txtEmail"
+        Me.txtEmail.ReadOnly = True
+        Me.txtEmail.Size = New System.Drawing.Size(303, 21)
+        Me.txtEmail.TabIndex = 203
+        '
+        'Label8
+        '
+        Me.Label8.AutoSize = True
+        Me.Label8.Location = New System.Drawing.Point(5, 67)
+        Me.Label8.Name = "Label8"
+        Me.Label8.Size = New System.Drawing.Size(41, 13)
+        Me.Label8.TabIndex = 202
+        Me.Label8.Text = "E-mail.:"
         '
         'Label14
         '
         Me.Label14.AutoSize = True
         Me.Label14.Font = New System.Drawing.Font("Verdana", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label14.Location = New System.Drawing.Point(93, 111)
+        Me.Label14.Location = New System.Drawing.Point(95, 138)
         Me.Label14.Name = "Label14"
         Me.Label14.Size = New System.Drawing.Size(51, 13)
         Me.Label14.TabIndex = 200
@@ -505,7 +549,7 @@ Partial Class frmControleMensalidades
         'txtBairro
         '
         Me.txtBairro.Enabled = False
-        Me.txtBairro.Location = New System.Drawing.Point(142, 107)
+        Me.txtBairro.Location = New System.Drawing.Point(144, 133)
         Me.txtBairro.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
         Me.txtBairro.Name = "txtBairro"
         Me.txtBairro.ReadOnly = True
@@ -516,7 +560,7 @@ Partial Class frmControleMensalidades
         '
         Me.Label6.AutoSize = True
         Me.Label6.Font = New System.Drawing.Font("Verdana", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label6.Location = New System.Drawing.Point(348, 114)
+        Me.Label6.Location = New System.Drawing.Point(348, 138)
         Me.Label6.Name = "Label6"
         Me.Label6.Size = New System.Drawing.Size(56, 13)
         Me.Label6.TabIndex = 198
@@ -525,16 +569,16 @@ Partial Class frmControleMensalidades
         'txtCidade
         '
         Me.txtCidade.Enabled = False
-        Me.txtCidade.Location = New System.Drawing.Point(402, 111)
+        Me.txtCidade.Location = New System.Drawing.Point(402, 135)
         Me.txtCidade.Name = "txtCidade"
         Me.txtCidade.ReadOnly = True
-        Me.txtCidade.Size = New System.Drawing.Size(100, 20)
+        Me.txtCidade.Size = New System.Drawing.Size(137, 20)
         Me.txtCidade.TabIndex = 197
         '
         'txtUF
         '
         Me.txtUF.Enabled = False
-        Me.txtUF.Location = New System.Drawing.Point(36, 106)
+        Me.txtUF.Location = New System.Drawing.Point(41, 132)
         Me.txtUF.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
         Me.txtUF.Name = "txtUF"
         Me.txtUF.ReadOnly = True
@@ -543,17 +587,17 @@ Partial Class frmControleMensalidades
         '
         'txtCompl
         '
-        Me.txtCompl.Location = New System.Drawing.Point(348, 85)
+        Me.txtCompl.Location = New System.Drawing.Point(369, 111)
         Me.txtCompl.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
         Me.txtCompl.Name = "txtCompl"
-        Me.txtCompl.Size = New System.Drawing.Size(120, 20)
+        Me.txtCompl.Size = New System.Drawing.Size(170, 20)
         Me.txtCompl.TabIndex = 194
         '
         'Label5
         '
         Me.Label5.AutoSize = True
         Me.Label5.Font = New System.Drawing.Font("Verdana", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label5.Location = New System.Drawing.Point(12, 109)
+        Me.Label5.Location = New System.Drawing.Point(3, 135)
         Me.Label5.Name = "Label5"
         Me.Label5.Size = New System.Drawing.Size(26, 13)
         Me.Label5.TabIndex = 195
@@ -562,18 +606,18 @@ Partial Class frmControleMensalidades
         'txtComplemento
         '
         Me.txtComplemento.Enabled = False
-        Me.txtComplemento.Location = New System.Drawing.Point(183, 85)
+        Me.txtComplemento.Location = New System.Drawing.Point(183, 111)
         Me.txtComplemento.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
         Me.txtComplemento.Name = "txtComplemento"
         Me.txtComplemento.ReadOnly = True
-        Me.txtComplemento.Size = New System.Drawing.Size(159, 20)
+        Me.txtComplemento.Size = New System.Drawing.Size(180, 20)
         Me.txtComplemento.TabIndex = 193
         '
         'Label28
         '
         Me.Label28.AutoSize = True
         Me.Label28.Font = New System.Drawing.Font("Verdana", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label28.Location = New System.Drawing.Point(93, 88)
+        Me.Label28.Location = New System.Drawing.Point(93, 114)
         Me.Label28.Name = "Label28"
         Me.Label28.Size = New System.Drawing.Size(92, 13)
         Me.Label28.TabIndex = 192
@@ -581,7 +625,7 @@ Partial Class frmControleMensalidades
         '
         'txtNum
         '
-        Me.txtNum.Location = New System.Drawing.Point(33, 83)
+        Me.txtNum.Location = New System.Drawing.Point(41, 109)
         Me.txtNum.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
         Me.txtNum.Name = "txtNum"
         Me.txtNum.Size = New System.Drawing.Size(54, 20)
@@ -591,7 +635,7 @@ Partial Class frmControleMensalidades
         '
         Me.Label24.AutoSize = True
         Me.Label24.Font = New System.Drawing.Font("Verdana", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label24.Location = New System.Drawing.Point(10, 87)
+        Me.Label24.Location = New System.Drawing.Point(3, 113)
         Me.Label24.Name = "Label24"
         Me.Label24.Size = New System.Drawing.Size(25, 13)
         Me.Label24.TabIndex = 191
@@ -601,7 +645,7 @@ Partial Class frmControleMensalidades
         '
         Me.Label4.AutoSize = True
         Me.Label4.Font = New System.Drawing.Font("Verdana", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label4.Location = New System.Drawing.Point(7, 64)
+        Me.Label4.Location = New System.Drawing.Point(3, 90)
         Me.Label4.Name = "Label4"
         Me.Label4.Size = New System.Drawing.Size(39, 13)
         Me.Label4.TabIndex = 189
@@ -611,7 +655,7 @@ Partial Class frmControleMensalidades
         '
         Me.Label25.AutoSize = True
         Me.Label25.Font = New System.Drawing.Font("Verdana", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label25.Location = New System.Drawing.Point(129, 64)
+        Me.Label25.Location = New System.Drawing.Point(129, 90)
         Me.Label25.Name = "Label25"
         Me.Label25.Size = New System.Drawing.Size(69, 13)
         Me.Label25.TabIndex = 188
@@ -619,7 +663,7 @@ Partial Class frmControleMensalidades
         '
         'txtCep
         '
-        Me.txtCep.Location = New System.Drawing.Point(49, 60)
+        Me.txtCep.Location = New System.Drawing.Point(41, 86)
         Me.txtCep.Mask = "00000-999"
         Me.txtCep.Name = "txtCep"
         Me.txtCep.Size = New System.Drawing.Size(69, 20)
@@ -628,11 +672,11 @@ Partial Class frmControleMensalidades
         'txtEndereco
         '
         Me.txtEndereco.Enabled = False
-        Me.txtEndereco.Location = New System.Drawing.Point(196, 61)
+        Me.txtEndereco.Location = New System.Drawing.Point(196, 87)
         Me.txtEndereco.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
         Me.txtEndereco.Name = "txtEndereco"
         Me.txtEndereco.ReadOnly = True
-        Me.txtEndereco.Size = New System.Drawing.Size(272, 20)
+        Me.txtEndereco.Size = New System.Drawing.Size(343, 20)
         Me.txtEndereco.TabIndex = 187
         '
         'txtRG
@@ -640,7 +684,7 @@ Partial Class frmControleMensalidades
         Me.txtRG.BackColor = System.Drawing.Color.White
         Me.txtRG.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.txtRG.ForeColor = System.Drawing.Color.Black
-        Me.txtRG.Location = New System.Drawing.Point(338, 12)
+        Me.txtRG.Location = New System.Drawing.Point(409, 13)
         Me.txtRG.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
         Me.txtRG.Name = "txtRG"
         Me.txtRG.Size = New System.Drawing.Size(130, 20)
@@ -650,7 +694,7 @@ Partial Class frmControleMensalidades
         '
         Me.Label22.AutoSize = True
         Me.Label22.Font = New System.Drawing.Font("Verdana", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label22.Location = New System.Drawing.Point(268, 16)
+        Me.Label22.Location = New System.Drawing.Point(339, 17)
         Me.Label22.Name = "Label22"
         Me.Label22.Size = New System.Drawing.Size(65, 13)
         Me.Label22.TabIndex = 185
@@ -658,7 +702,7 @@ Partial Class frmControleMensalidades
         '
         'txtCPF
         '
-        Me.txtCPF.Location = New System.Drawing.Point(167, 14)
+        Me.txtCPF.Location = New System.Drawing.Point(238, 15)
         Me.txtCPF.Mask = "000.000.000-00"
         Me.txtCPF.Name = "txtCPF"
         Me.txtCPF.Size = New System.Drawing.Size(92, 20)
@@ -668,7 +712,7 @@ Partial Class frmControleMensalidades
         '
         Me.Label2.AutoSize = True
         Me.Label2.Font = New System.Drawing.Font("Verdana", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label2.Location = New System.Drawing.Point(129, 18)
+        Me.Label2.Location = New System.Drawing.Point(200, 19)
         Me.Label2.Name = "Label2"
         Me.Label2.Size = New System.Drawing.Size(34, 13)
         Me.Label2.TabIndex = 184
@@ -679,9 +723,9 @@ Partial Class frmControleMensalidades
         Me.chkExibirTodasMensalidadeCursos.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.chkExibirTodasMensalidadeCursos.Appearance = System.Windows.Forms.Appearance.Button
         Me.chkExibirTodasMensalidadeCursos.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.chkExibirTodasMensalidadeCursos.Location = New System.Drawing.Point(533, 87)
+        Me.chkExibirTodasMensalidadeCursos.Location = New System.Drawing.Point(569, 84)
         Me.chkExibirTodasMensalidadeCursos.Name = "chkExibirTodasMensalidadeCursos"
-        Me.chkExibirTodasMensalidadeCursos.Size = New System.Drawing.Size(195, 23)
+        Me.chkExibirTodasMensalidadeCursos.Size = New System.Drawing.Size(143, 23)
         Me.chkExibirTodasMensalidadeCursos.TabIndex = 34
         Me.chkExibirTodasMensalidadeCursos.Text = "Exibir Todas Mensalidades"
         Me.chkExibirTodasMensalidadeCursos.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
@@ -696,7 +740,7 @@ Partial Class frmControleMensalidades
         Me.btnExportarExcel.ForeColor = System.Drawing.Color.White
         Me.btnExportarExcel.Image = Global.MinhaEscola.My.Resources.Resources.Excel_24
         Me.btnExportarExcel.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.btnExportarExcel.Location = New System.Drawing.Point(545, 108)
+        Me.btnExportarExcel.Location = New System.Drawing.Point(556, 108)
         Me.btnExportarExcel.Name = "btnExportarExcel"
         Me.btnExportarExcel.Size = New System.Drawing.Size(168, 30)
         Me.btnExportarExcel.TabIndex = 32
@@ -738,38 +782,10 @@ Partial Class frmControleMensalidades
         Me.rdExibirParcelasNaoPagar.Text = "Exibir Mensalidades Não Pagas"
         Me.rdExibirParcelasNaoPagar.UseVisualStyleBackColor = True
         '
-        'Label10
-        '
-        Me.Label10.AutoSize = True
-        Me.Label10.Location = New System.Drawing.Point(312, 137)
-        Me.Label10.Name = "Label10"
-        Me.Label10.Size = New System.Drawing.Size(37, 13)
-        Me.Label10.TabIndex = 17
-        Me.Label10.Text = "Fone.:"
-        '
-        'txtEmail
-        '
-        Me.txtEmail.BackColor = System.Drawing.Color.White
-        Me.txtEmail.Font = New System.Drawing.Font("Verdana", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txtEmail.Location = New System.Drawing.Point(52, 130)
-        Me.txtEmail.Name = "txtEmail"
-        Me.txtEmail.ReadOnly = True
-        Me.txtEmail.Size = New System.Drawing.Size(247, 21)
-        Me.txtEmail.TabIndex = 16
-        '
-        'Label8
-        '
-        Me.Label8.AutoSize = True
-        Me.Label8.Location = New System.Drawing.Point(12, 133)
-        Me.Label8.Name = "Label8"
-        Me.Label8.Size = New System.Drawing.Size(41, 13)
-        Me.Label8.TabIndex = 14
-        Me.Label8.Text = "E-mail.:"
-        '
         'Label3
         '
         Me.Label3.AutoSize = True
-        Me.Label3.Location = New System.Drawing.Point(5, 43)
+        Me.Label3.Location = New System.Drawing.Point(3, 43)
         Me.Label3.Name = "Label3"
         Me.Label3.Size = New System.Drawing.Size(41, 13)
         Me.Label3.TabIndex = 8
@@ -778,21 +794,21 @@ Partial Class frmControleMensalidades
         'Label1
         '
         Me.Label1.AutoSize = True
-        Me.Label1.Location = New System.Drawing.Point(6, 20)
+        Me.Label1.Location = New System.Drawing.Point(93, 18)
         Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(46, 13)
+        Me.Label1.Size = New System.Drawing.Size(32, 13)
         Me.Label1.TabIndex = 6
-        Me.Label1.Text = "Código.:"
+        Me.Label1.Text = "Cód.:"
         '
         'txtNome
         '
         Me.txtNome.BackColor = System.Drawing.Color.FromArgb(CType(CType(102, Byte), Integer), CType(CType(153, Byte), Integer), CType(CType(153, Byte), Integer))
         Me.txtNome.Font = New System.Drawing.Font("Verdana", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.txtNome.ForeColor = System.Drawing.Color.White
-        Me.txtNome.Location = New System.Drawing.Point(50, 38)
+        Me.txtNome.Location = New System.Drawing.Point(41, 38)
         Me.txtNome.Name = "txtNome"
         Me.txtNome.ReadOnly = True
-        Me.txtNome.Size = New System.Drawing.Size(416, 21)
+        Me.txtNome.Size = New System.Drawing.Size(427, 21)
         Me.txtNome.TabIndex = 2
         '
         'txtCodigo
@@ -800,22 +816,22 @@ Partial Class frmControleMensalidades
         Me.txtCodigo.BackColor = System.Drawing.Color.White
         Me.txtCodigo.Enabled = False
         Me.txtCodigo.Font = New System.Drawing.Font("Verdana", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txtCodigo.Location = New System.Drawing.Point(52, 16)
+        Me.txtCodigo.Location = New System.Drawing.Point(131, 14)
         Me.txtCodigo.Name = "txtCodigo"
-        Me.txtCodigo.Size = New System.Drawing.Size(63, 21)
+        Me.txtCodigo.Size = New System.Drawing.Size(54, 21)
         Me.txtCodigo.TabIndex = 0
         '
-        'ToolStrip2
+        'tsMenu
         '
-        Me.ToolStrip2.BackColor = System.Drawing.Color.Transparent
-        Me.ToolStrip2.ImageScalingSize = New System.Drawing.Size(24, 24)
-        Me.ToolStrip2.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.ToolStripDropDownButton1, Me.ToolStripSeparator1, Me.btnGerarMensalidade, Me.btnAlterarMensalidade, Me.btnExcluirMensalidade, Me.ToolStripSeparator2, Me.btnBaixaMensalidade, Me.ToolStripSeparator3, Me.btnRelatorio})
-        Me.ToolStrip2.Location = New System.Drawing.Point(0, 47)
-        Me.ToolStrip2.Name = "ToolStrip2"
-        Me.ToolStrip2.RenderMode = System.Windows.Forms.ToolStripRenderMode.Professional
-        Me.ToolStrip2.Size = New System.Drawing.Size(1055, 31)
-        Me.ToolStrip2.TabIndex = 358
-        Me.ToolStrip2.Text = "ToolStrip2"
+        Me.tsMenu.BackColor = System.Drawing.Color.Transparent
+        Me.tsMenu.ImageScalingSize = New System.Drawing.Size(24, 24)
+        Me.tsMenu.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.ToolStripDropDownButton1, Me.ToolStripSeparator1, Me.btnGerarMensalidade, Me.btnAlterarMensalidade, Me.btnExcluirMensalidade, Me.ToolStripSeparator2, Me.btnBaixaMensalidade, Me.ToolStripSeparator3, Me.btnRelatorio})
+        Me.tsMenu.Location = New System.Drawing.Point(0, 47)
+        Me.tsMenu.Name = "tsMenu"
+        Me.tsMenu.RenderMode = System.Windows.Forms.ToolStripRenderMode.Professional
+        Me.tsMenu.Size = New System.Drawing.Size(1055, 31)
+        Me.tsMenu.TabIndex = 358
+        Me.tsMenu.Text = "ToolStrip2"
         '
         'ToolStripDropDownButton1
         '
@@ -908,13 +924,51 @@ Partial Class frmControleMensalidades
         Me.btnRelatorio.Size = New System.Drawing.Size(82, 28)
         Me.btnRelatorio.Text = "Relatório"
         '
+        'btLancar
+        '
+        Me.btLancar.Location = New System.Drawing.Point(325, 93)
+        Me.btLancar.Name = "btLancar"
+        Me.btLancar.Size = New System.Drawing.Size(131, 23)
+        Me.btLancar.TabIndex = 359
+        Me.btLancar.Text = "Lançar Conta"
+        Me.btLancar.UseVisualStyleBackColor = True
+        '
+        'Label7
+        '
+        Me.Label7.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.Label7.AutoSize = True
+        Me.Label7.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label7.Location = New System.Drawing.Point(859, 470)
+        Me.Label7.Name = "Label7"
+        Me.Label7.Size = New System.Drawing.Size(40, 13)
+        Me.Label7.TabIndex = 361
+        Me.Label7.Text = "Total "
+        '
+        'txtTotalContasPagar
+        '
+        Me.txtTotalContasPagar.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.txtTotalContasPagar.BackColor = System.Drawing.SystemColors.Window
+        Me.txtTotalContasPagar.Font = New System.Drawing.Font("Verdana", 14.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.txtTotalContasPagar.ForeColor = System.Drawing.Color.Red
+        Me.txtTotalContasPagar.Location = New System.Drawing.Point(853, 486)
+        Me.txtTotalContasPagar.Multiline = True
+        Me.txtTotalContasPagar.Name = "txtTotalContasPagar"
+        Me.txtTotalContasPagar.ReadOnly = True
+        Me.txtTotalContasPagar.RightToLeft = System.Windows.Forms.RightToLeft.Yes
+        Me.txtTotalContasPagar.Size = New System.Drawing.Size(188, 31)
+        Me.txtTotalContasPagar.TabIndex = 360
+        Me.txtTotalContasPagar.Text = "R$ 0,00"
+        '
         'frmControleMensalidades
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.Silver
-        Me.ClientSize = New System.Drawing.Size(1055, 495)
-        Me.Controls.Add(Me.ToolStrip2)
+        Me.ClientSize = New System.Drawing.Size(1055, 600)
+        Me.Controls.Add(Me.Label7)
+        Me.Controls.Add(Me.txtTotalContasPagar)
+        Me.Controls.Add(Me.btLancar)
+        Me.Controls.Add(Me.tsMenu)
         Me.Controls.Add(Me.GroupBox3)
         Me.Controls.Add(Me.lblMensagemPagamentos)
         Me.Controls.Add(Me.dgvMensalidades)
@@ -945,8 +999,8 @@ Partial Class frmControleMensalidades
         CType(Me.dgvMensalidades, System.ComponentModel.ISupportInitialize).EndInit()
         Me.GroupBox3.ResumeLayout(False)
         Me.GroupBox3.PerformLayout()
-        Me.ToolStrip2.ResumeLayout(False)
-        Me.ToolStrip2.PerformLayout()
+        Me.tsMenu.ResumeLayout(False)
+        Me.tsMenu.PerformLayout()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -998,7 +1052,7 @@ Partial Class frmControleMensalidades
     Private WithEvents Label22 As Label
     Friend WithEvents txtCPF As MaskedTextBox
     Private WithEvents Label2 As Label
-    Friend WithEvents ToolStrip2 As ToolStrip
+    Friend WithEvents tsMenu As ToolStrip
     Friend WithEvents ToolStripDropDownButton1 As ToolStripDropDownButton
     Friend WithEvents ToolStripSeparator1 As ToolStripSeparator
     Friend WithEvents btnGerarMensalidade As ToolStripButton
@@ -1027,8 +1081,12 @@ Partial Class frmControleMensalidades
     Private WithEvents txtBairro As TextBox
     Private WithEvents Label6 As Label
     Friend WithEvents txtCidade As TextBox
+    Friend WithEvents txtCelular As MaskedTextBox
     Friend WithEvents Label10 As Label
     Friend WithEvents txtEmail As TextBox
     Friend WithEvents Label8 As Label
-    Friend WithEvents txtCelular As MaskedTextBox
+    Friend WithEvents lblidCurso As Label
+    Friend WithEvents btLancar As Button
+    Friend WithEvents Label7 As Label
+    Friend WithEvents txtTotalContasPagar As TextBox
 End Class

@@ -91,10 +91,34 @@
     <Compile Include="administrativo\frmRelacaoCompletaHorarios.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="administrativo\mensalidades\frmAlterarMensalidade.Designer.vb">
+      <DependentUpon>frmAlterarMensalidade.vb</DependentUpon>
+    </Compile>
+    <Compile Include="administrativo\mensalidades\frmAlterarMensalidade.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="administrativo\mensalidades\frmControleMensalidades.Designer.vb">
       <DependentUpon>frmControleMensalidades.vb</DependentUpon>
     </Compile>
     <Compile Include="administrativo\mensalidades\frmControleMensalidades.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="administrativo\mensalidades\frmExcluirMensalidade.Designer.vb">
+      <DependentUpon>frmExcluirMensalidade.vb</DependentUpon>
+    </Compile>
+    <Compile Include="administrativo\mensalidades\frmExcluirMensalidade.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="administrativo\mensalidades\frmGeraMensalidade.Designer.vb">
+      <DependentUpon>frmGeraMensalidade.vb</DependentUpon>
+    </Compile>
+    <Compile Include="administrativo\mensalidades\frmGeraMensalidade.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="administrativo\mensalidades\frmPagamentoMensalidade.Designer.vb">
+      <DependentUpon>frmPagamentoMensalidade.vb</DependentUpon>
+    </Compile>
+    <Compile Include="administrativo\mensalidades\frmPagamentoMensalidade.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="cadastros\frmCadGrupos.Designer.vb">
@@ -156,6 +180,18 @@
     <Compile Include="financeiro\frmTipoGastos.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="frmAguardar.Designer.vb">
+      <DependentUpon>frmAguardar.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frmAguardar.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmAguarde.Designer.vb">
+      <DependentUpon>frmAguarde.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frmAguarde.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="frmLogin.Designer.vb">
       <DependentUpon>frmLogin.vb</DependentUpon>
     </Compile>
@@ -170,6 +206,7 @@
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="mdlConexao.vb" />
+    <Compile Include="mdlVariaveis.vb" />
     <Compile Include="My Project\AssemblyInfo.vb" />
     <Compile Include="My Project\Application.Designer.vb">
       <AutoGen>True</AutoGen>
@@ -193,8 +230,20 @@
     <EmbeddedResource Include="administrativo\frmRelacaoCompletaHorarios.resx">
       <DependentUpon>frmRelacaoCompletaHorarios.vb</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="administrativo\mensalidades\frmAlterarMensalidade.resx">
+      <DependentUpon>frmAlterarMensalidade.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="administrativo\mensalidades\frmControleMensalidades.resx">
       <DependentUpon>frmControleMensalidades.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="administrativo\mensalidades\frmExcluirMensalidade.resx">
+      <DependentUpon>frmExcluirMensalidade.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="administrativo\mensalidades\frmGeraMensalidade.resx">
+      <DependentUpon>frmGeraMensalidade.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="administrativo\mensalidades\frmPagamentoMensalidade.resx">
+      <DependentUpon>frmPagamentoMensalidade.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="cadastros\frmCadGrupos.resx">
       <DependentUpon>frmCadGrupos.vb</DependentUpon>
@@ -222,6 +271,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="financeiro\frmTipoGastos.resx">
       <DependentUpon>frmTipoGastos.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmAguardar.resx">
+      <DependentUpon>frmAguardar.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmAguarde.resx">
+      <DependentUpon>frmAguarde.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmLogin.resx">
       <DependentUpon>frmLogin.vb</DependentUpon>
@@ -285,6 +340,14 @@
     <None Include="Resources\Report.png" />
     <None Include="Resources\Download.16.png" />
     <None Include="Resources\Excel.24.png" />
+    <None Include="Resources\fechar.png" />
+    <None Include="Resources\Dollar.png" />
+    <None Include="Resources\Icojam-Onebit-4-Currency-dollar.24.png" />
+    <None Include="Resources\Check_16x16.png" />
+    <Content Include="Resources\lock.ico" />
+    <None Include="Resources\Remove_16x16.png" />
+    <None Include="Resources\No-entry.png" />
+    <None Include="Resources\OK.png" />
     <Content Include="school.ico" />
   </ItemGroup>
   <ItemGroup>
